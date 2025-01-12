@@ -1,0 +1,11 @@
+.second-container {
+  display: flex;
+  height: calc(100% - 90px);
+}
+.left-bar {
+  width: 100px;
+}
+.right-bar {
+  background-color: grey;
+  width: calc(100%-100px);
+}

@@ -1,0 +1,99 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  border-bottom: 2px solid #ddd;
+  height: 90px;
+}
+.logo {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  padding: 10px 10px 10px 30px;
+  font-weight: bold;
+}
+.logo-icon {
+  width: 40px;
+  height: 40px;
+  background-color: limegreen;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+.logo-text {
+  font-size: 30pt;
+  font-weight: bold;
+}
+.search-bar {
+  flex: 4;
+  padding: 20px 20px 20px 80px;
+  border-left: 2px solid #ddd;
+}
+.search-bar i {
+  color: #646464;
+  font-size: 18pt;
+}
+.search-bar input {
+  font-size: 28px;
+  width: 90%;
+  /* height: 40px; */
+  padding: 4px;
+  padding-left: 20px;
+  border: 0px solid #ddd;
+  border-radius: 4px;
+  outline: none;
+}
+
+.nav-text {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  height: 40px;
+  padding: 20px;
+  font-size: 24pt;
+  color: rgb(0, 0, 0);
+  border-left: 2px solid #ddd;
+}
+
+.notification-icon {
+  flex: 1.2;
+  /* padding: 10px; */
+  border-left: 2px solid #ddd;
+  font-size: 12px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon {
+  font-size: 30px;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  padding: 20px;
+  flex: 1;
+}
+.icon-bell {
+  position: relative;
+  font-size: 30px;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  padding: 20px;
+  flex: 2;
+}
+.badge {
+  position: absolute;
+  top: 22px;
+  right: 20px;
+  background-color: limegreen;
+  color: rgb(0, 0, 0);
+  font-size: 18pt;
+  font-weight: bold;
+  width: 40px;
+  height: 30px;
+  border-radius: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
