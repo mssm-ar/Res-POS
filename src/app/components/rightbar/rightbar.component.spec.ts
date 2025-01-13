@@ -1,7 +1,6 @@
 import { ComponentFixture, TestBed, waitForAsync } from "@angular/core/testing";
 
 import { RightbarComponent } from "./rightbar.component";
-import { FiltermenuComponent } from "./filtermanu/filtermenu.component";
 
 describe("RightbarComponent", () => {
   let component: RightbarComponent;
