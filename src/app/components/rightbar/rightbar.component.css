@@ -13,6 +13,6 @@
 .thumbnail-container app-thumbnail {
   flex: 0 0 25%;
 }
-.bag-container {
+.bag-product-container {
   flex: 4;
 }
