@@ -1,20 +1,19 @@
 import { ComponentFixture, TestBed, waitForAsync } from "@angular/core/testing";
 
-import { RightbarComponent } from "./rightbar.component";
-import { FiltermenuComponent } from "./filtermanu/filtermenu.component";
+import { FiltermenuComponent } from "./filtermenu.component";
 
-describe("RightbarComponent", () => {
-  let component: RightbarComponent;
-  let fixture: ComponentFixture<RightbarComponent>;
+describe("FiltermenuComponent", () => {
+  let component: FiltermenuComponent;
+  let fixture: ComponentFixture<FiltermenuComponent>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [RightbarComponent],
+      declarations: [FiltermenuComponent],
     }).compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(RightbarComponent);
+    fixture = TestBed.createComponent(FiltermenuComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

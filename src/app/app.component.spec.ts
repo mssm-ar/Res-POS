@@ -4,6 +4,7 @@ import { AppComponent } from "./app.component";
 import { NavbarComponent } from "./components/navbar/navbar.component";
 import { LeftbarComponent } from "./components/leftbar/leftbar.component";
 import { RightbarComponent } from "./components/rightbar/rightbar.component";
+import { FiltermenuComponent } from "./components/rightbar/filtermanu/filtermenu.component";
 
 describe("AppComponent", () => {
   beforeEach(waitForAsync(() => {
@@ -13,6 +14,7 @@ describe("AppComponent", () => {
         NavbarComponent,
         LeftbarComponent,
         RightbarComponent,
+        FiltermenuComponent,
       ],
     }).compileComponents();
   }));

@@ -1,10 +1,9 @@
 .navbar {
+  /* width: calc(100%-16px); */
   display: flex;
   align-items: center;
   justify-content: space-between;
   background-color: #fff;
-  border-bottom: 2px solid #ddd;
-  height: 90px;
 }
 .logo {
   display: flex;
@@ -12,6 +11,7 @@
   align-items: center;
   padding: 10px 10px 10px 30px;
   font-weight: bold;
+  height: 60px;
 }
 .logo-icon {
   width: 40px;
@@ -22,6 +22,7 @@
 }
 .logo-text {
   font-size: 30pt;
+  padding-left: 15px;
   font-weight: bold;
 }
 .search-bar {
@@ -48,17 +49,24 @@
   flex: 1;
   display: flex;
   justify-content: center;
-  text-align: center;
   height: 40px;
   padding: 20px;
   font-size: 24pt;
   color: rgb(0, 0, 0);
   border-left: 2px solid #ddd;
 }
-
+.nav-text-big {
+  font-size: 20pt;
+  padding: 10px;
+  font-weight: bold;
+}
+.nav-text-small {
+  font-size: 11pt;
+  padding: 5px;
+}
 .notification-icon {
   flex: 1.2;
-  /* padding: 10px; */
+  padding: 0px 10px;
   border-left: 2px solid #ddd;
   font-size: 12px;
   height: 80px;
@@ -71,7 +79,7 @@
   font-size: 30px;
   color: rgb(0, 0, 0);
   cursor: pointer;
-  padding: 20px;
+  padding: 20px 10px 20px 20px;
   flex: 1;
 }
 .icon-bell {

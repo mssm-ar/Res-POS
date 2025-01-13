@@ -5,6 +5,7 @@ import { AppComponent } from "./app.component";
 import { NavbarComponent } from "./components/navbar/navbar.component";
 import { LeftbarComponent } from "./components/leftbar/leftbar.component";
 import { RightbarComponent } from "./components/rightbar/rightbar.component";
+import { FiltermenuComponent } from "./components/rightbar/filtermanu/filtermenu.component";
 
 @NgModule({
   declarations: [
@@ -12,6 +13,7 @@ import { RightbarComponent } from "./components/rightbar/rightbar.component";
     NavbarComponent,
     LeftbarComponent,
     RightbarComponent,
+    FiltermenuComponent,
   ],
   imports: [BrowserModule],
   providers: [],
