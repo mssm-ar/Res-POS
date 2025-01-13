@@ -1,0 +1,18 @@
+.filter {
+  display: flex;
+  background-color: white;
+  margin: 10px;
+  border-radius: 10px;
+}
+
+.filter span {
+  margin: 10px 12px;
+  padding: 5px 10px;
+  font-size: 16pt;
+  cursor: pointer;
+  font-family: sans-serif;
+}
+.filter span:hover {
+  background-color: rgb(131, 241, 131);
+  border-radius: 10px;
+}

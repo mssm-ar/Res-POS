@@ -1,0 +1,10 @@
+.rightbar-container {
+  display: flex;
+  width: 100%;
+}
+.filter-thumbnail-container {
+  flex: 2;
+}
+.bag-container {
+  flex: 1;
+}

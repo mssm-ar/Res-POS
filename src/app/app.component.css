@@ -1,17 +1,20 @@
+.root-container {
+  width: 100%;
+}
 .devider {
   background-color: #ddd;
-  /* height: 1px; */
   margin-top: 5px;
   margin-bottom: 0px;
 }
 .second-container {
   display: flex;
-  /* height: calc(100% - 90px); */
+  justify-content: center;
+  width: 100%;
 }
 .left-bar {
   width: 100px;
 }
 .right-bar {
-  background-color: #ddd;
-  width: calc(100%-100px);
+  flex-grow: 1;
+  background-color: #e7e7e7;
 }
