@@ -1,7 +1,7 @@
 .filter {
   display: flex;
   background-color: white;
-  margin: 10px;
+  margin: 5px;
   border-radius: 10px;
 }
 
@@ -13,6 +13,6 @@
   font-family: sans-serif;
 }
 .filter span:hover {
-  background-color: rgb(131, 241, 131);
+  background-color: #89e70a;
   border-radius: 10px;
 }
