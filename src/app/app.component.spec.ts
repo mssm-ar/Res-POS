@@ -7,6 +7,7 @@ import { RightbarComponent } from "./components/rightbar/rightbar.component";
 import { FiltermenuComponent } from "./components/rightbar/filtermanu/filtermenu.component";
 import { ThumbnailComponent } from "./components/rightbar/thumbnail/thumbnail.component";
 import { BagComponent } from "./components/rightbar/bag/bag.component";
+import { OrderlistComponent } from "./components/rightbar/product/orderlist/orderlist.component";
 
 describe("AppComponent", () => {
   beforeEach(waitForAsync(() => {
@@ -19,6 +20,7 @@ describe("AppComponent", () => {
         FiltermenuComponent,
         ThumbnailComponent,
         BagComponent,
+        OrderlistComponent,
       ],
     }).compileComponents();
   }));

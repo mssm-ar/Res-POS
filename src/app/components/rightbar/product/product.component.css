@@ -1,0 +1,15 @@
+.product {
+  margin: 5px;
+  /* padding: 5px; */
+  background-color: white;
+  border-radius: 10px;
+}
+.order-title {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+.order-title span {
+  font-size: 20pt;
+  font-family: sans-serif;
+}

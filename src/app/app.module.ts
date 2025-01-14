@@ -9,6 +9,7 @@ import { FiltermenuComponent } from "./components/rightbar/filtermanu/filtermenu
 import { ThumbnailComponent } from "./components/rightbar/thumbnail/thumbnail.component";
 import { BagComponent } from "./components/rightbar/bag/bag.component";
 import { ProductComponent } from './components/rightbar/product/product.component';
+import { OrderlistComponent } from './components/rightbar/product/orderlist/orderlist.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { ProductComponent } from './components/rightbar/product/product.componen
     ThumbnailComponent,
     BagComponent,
     ProductComponent,
+    OrderlistComponent,
   ],
   imports: [BrowserModule],
   providers: [],
