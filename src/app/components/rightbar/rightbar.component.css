@@ -14,5 +14,29 @@
   flex: 0 0 25%;
 }
 .bag-product-container {
-  flex: 4;
+  flex: 6;
+  margin: 5px;
+}
+.bag-container {
+  display: flex;
+}
+.bag-container app-bag {
+  flex: 0 0 auto;
+}
+.bag-container span {
+  margin-left: auto;
+  font-weight: bold;
+  font-size: 35pt;
+  margin: 5px;
+  background-color: white;
+  border-radius: 10px;
+  width: 50px;
+  text-align: center;
+}
+.bag-container span:hover {
+  background-color: #89e70a;
+  cursor: pointer;
+}
+.bag-container span:last-child {
+  margin-left: auto;
 }

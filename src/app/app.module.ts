@@ -8,6 +8,7 @@ import { RightbarComponent } from "./components/rightbar/rightbar.component";
 import { FiltermenuComponent } from "./components/rightbar/filtermanu/filtermenu.component";
 import { ThumbnailComponent } from "./components/rightbar/thumbnail/thumbnail.component";
 import { BagComponent } from "./components/rightbar/bag/bag.component";
+import { ProductComponent } from './components/rightbar/product/product.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { BagComponent } from "./components/rightbar/bag/bag.component";
     FiltermenuComponent,
     ThumbnailComponent,
     BagComponent,
+    ProductComponent,
   ],
   imports: [BrowserModule],
   providers: [],

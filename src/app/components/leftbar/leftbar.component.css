@@ -20,6 +20,11 @@
 .profile {
   margin-top: 180px;
   cursor: pointer;
+  /* width: 30px; */
+}
+.profile img {
+  width: 50px;
+  border-radius: 50%;
 }
 .leftbar-logout {
   font-size: 30px;

@@ -1,0 +1,11 @@
+.bag-list {
+  background-color: white;
+  margin: 5px;
+  padding: 15px;
+  font-size: 16pt;
+  font-family: sans-serif;
+  border-radius: 10px;
+}
+.bag-list i {
+  padding-right: 5px;
+}
