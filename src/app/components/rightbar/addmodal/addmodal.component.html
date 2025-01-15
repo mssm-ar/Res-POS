@@ -1,1 +1,29 @@
-<p>addmodal works!</p>
+<div class="addmodal" *ngIf="thumbnailData">
+  <div class="addmodal-content-1">
+    <span class="close" (click)="closeModal()">&times;</span>
+    <div class="addmodal-content">
+      <div class="addmodal-image">
+        <img [src]="thumbnailData.image" />
+        <div>-1+</div>
+      </div>
+      <div class="addmodal-text">
+        <h3>{{ thumbnailData.title }}</h3>
+        <p>
+          You can't beat a simple Spag Bol. Spice it up with some chorizo and
+          chills if you want a bit more heat.
+        </p>
+        <hr />
+        <div class="addmodal-size">Size</div>
+        <hr />
+        <div class="addmodal-file">File</div>
+        <hr />
+        <div class="addmodal-ingredient">ingredient</div>
+      </div>
+    </div>
+    <hr />
+    <div class="addmodal-submit">
+      dd
+      <p>${{ thumbnailData.price }}</p>
+    </div>
+  </div>
+</div>

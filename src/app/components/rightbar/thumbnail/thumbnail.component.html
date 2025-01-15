@@ -1,8 +1,8 @@
-<div class="thumbnail">
-  <img src="../../../assets/img/Appse.png" alt="Avatar" style="width: 100%" />
+<div class="thumbnail" (click)="onThumbnailClick()">
+  <img [src]="image" style="width: 100%" />
   <div class="list-container">
-    <p class="food-title-container">Appse Lam7645</p>
-    <p class="food-stock-container">In stock - 0</p>
-    <p class="food-price-container">$9.09</p>
+    <p class="food-title-container">{{ title }}</p>
+    <p class="food-stock-container">In stock - {{ stock }}</p>
+    <p class="food-price-container">${{ price }}</p>
   </div>
 </div>
