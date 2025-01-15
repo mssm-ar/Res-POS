@@ -1,23 +1,60 @@
 <div class="addmodal" *ngIf="thumbnailData">
   <div class="addmodal-content-1">
-    <span class="close" (click)="closeModal()">&times;</span>
+    <span class="addmodel-close" (click)="closeModal()">&times;</span>
     <div class="addmodal-content">
       <div class="addmodal-image">
         <img [src]="thumbnailData.image" />
         <div>-1+</div>
       </div>
       <div class="addmodal-text">
-        <h3>{{ thumbnailData.title }}</h3>
+        <span>{{ thumbnailData.title }}</span>
         <p>
           You can't beat a simple Spag Bol. Spice it up with some chorizo and
           chills if you want a bit more heat.
         </p>
         <hr />
-        <div class="addmodal-size">Size</div>
+        <div class="addmodal-size">
+          <p>Size</p>
+          <label
+            ><input
+              type="radio"
+              name="size"
+              value="medium"
+              checked
+            />Medium</label
+          >
+          <label><input type="radio" name="size" value="large" />Large</label>
+          <label
+            ><input type="radio" name="size" value="extra-large" /> Extra
+            large</label
+          >
+        </div>
         <hr />
-        <div class="addmodal-file">File</div>
+        <div class="addmodal-ficha">
+          <p>Ficha</p>
+          <div class="addmodal-check">
+            <label><input type="checkbox" /> Second</label>
+            <label><input type="checkbox" /> Second</label>
+            <label><input type="checkbox" /> Second</label>
+            <label><input type="checkbox" /> Second</label>
+            <label><input type="checkbox" /> Second</label>
+            <label><input type="checkbox" /> Second</label>
+          </div>
+        </div>
         <hr />
-        <div class="addmodal-ingredient">ingredient</div>
+        <div class="addmodal-ingredient">
+          <p>ingredients</p>
+          <div class="addmodal-quantity">
+            <div>
+              <label><input type="checkbox" /></label>
+              <button>-</button>
+              <input type="number" value="1" min="1" />
+              <button>+</button>
+            </div>
+            <label>Vassabi $10.10</label>
+            <label>Vassabi $10.10</label>
+          </div>
+        </div>
       </div>
     </div>
     <hr />

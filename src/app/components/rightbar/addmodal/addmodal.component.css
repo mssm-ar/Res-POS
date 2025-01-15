@@ -1,4 +1,5 @@
 .addmodal {
+  font-family: sans-serif;
   display: none;
   width: 100%;
   height: 100%;
@@ -14,20 +15,83 @@
 .addmodal-content-1 {
   background-color: white;
   width: 60%;
-  height: 80%;
+  height: 60%;
   margin: auto;
   padding: 40px;
-  /* text-align: right; */
 }
 .addmodal-content-1 span {
+  align-items: right;
 }
-.close {
+.addmodel-close {
   cursor: pointer;
   font-size: 18pt;
 }
 .addmodal-content {
   display: flex;
 }
-.addmodal-img {
-  border-radius: 20px;
+.addmodal-image {
+  flex: 2;
+}
+.addmodal-image img {
+  border-radius: 15px;
+  width: 90%;
+}
+.addmodal-text {
+  flex: 4;
+  padding-right: 150px;
+}
+.addmodal-text span {
+  font-size: 20pt;
+}
+.addmodal-text p {
+  font-size: 15pt;
+  color: gray;
+}
+.addmodal-size {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.addmodal-size p {
+  font-size: 15pt;
+  font-weight: bold;
+  color: black;
+  margin: 0px;
+  padding-top: 10px;
+}
+.addmodal-size label {
+  font-size: 14pt;
+  cursor: pointer;
+  padding: 10px;
+}
+.addmodal-ficha {
+  display: flex;
+}
+.addmodal-ficha p {
+  font-size: 18pt;
+  font-weight: bold;
+  color: black;
+  margin: 0px;
+}
+.addmodal-check {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 80px;
+}
+.addmodal-check label {
+  flex: 0 0 33%;
+  font-size: 15pt;
+  cursor: pointer;
+}
+.addmodal-check input:checked ~ .checkmar {
+  background-color: #4caf50;
+}
+.addmodal-ingredient p {
+  font-size: 15pt;
+  font-weight: bold;
+  color: black;
+  /* display: flex; */
+}
+.addmodal-quantity {
+  display: flex;
 }
