@@ -10,6 +10,7 @@ import { ThumbnailComponent } from "./components/rightbar/thumbnail/thumbnail.co
 import { BagComponent } from "./components/rightbar/bag/bag.component";
 import { ProductComponent } from './components/rightbar/product/product.component';
 import { OrderlistComponent } from './components/rightbar/product/orderlist/orderlist.component';
+import { AddmodalComponent } from './components/rightbar/addmodal/addmodal.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { OrderlistComponent } from './components/rightbar/product/orderlist/orde
     BagComponent,
     ProductComponent,
     OrderlistComponent,
+    AddmodalComponent,
   ],
   imports: [BrowserModule],
   providers: [],
