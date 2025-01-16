@@ -27,6 +27,9 @@
   font-size: 24pt;
   text-align: right;
 }
+.addmodel-close:hover {
+  color: rgb(255, 51, 0);
+}
 .addmodal-content {
   display: flex;
 }
