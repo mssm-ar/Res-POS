@@ -1,10 +1,18 @@
 <div class="addmodal" *ngIf="thumbnailData">
   <div class="addmodal-content-1">
-    <span class="addmodel-close" (click)="closeModal()">&times;</span>
+    <div class="addmodel-close">
+      <!-- <span (click)="closeModal()">&times;</span> -->
+      <i class="fa-regular fa-circle-xmark" (click)="closeModal()"></i>
+    </div>
+
     <div class="addmodal-content">
       <div class="addmodal-image">
         <img [src]="thumbnailData.image" />
-        <div>-1+</div>
+        <div class="addmodal-counter">
+          <button class="decrement">-</button>
+          <input type="text" value="0" readonly />
+          <button class="increment">+</button>
+        </div>
       </div>
       <div class="addmodal-text">
         <span>{{ thumbnailData.title }}</span>
@@ -45,22 +53,31 @@
         <div class="addmodal-ingredient">
           <p>ingredients</p>
           <div class="addmodal-quantity">
-            <div>
+            <div class="addmodal-quantity-set">
               <label><input type="checkbox" /></label>
-              <button>-</button>
-              <input type="number" value="1" min="1" />
-              <button>+</button>
+              <div class="addmodal-quantity-counter">
+                <button class="decrement">-</button>
+                <input type="text" value="0" readonly />
+                <button class="increment">+</button>
+              </div>
             </div>
-            <label>Vassabi $10.10</label>
-            <label>Vassabi $10.10</label>
+            <label class="addmodal-vassabi">Vassabi <br />$10.10</label>
+            <label><input type="checkbox" /></label>
+            <label class="addmodal-vassabi">Vassabi <br />$10.10</label>
           </div>
         </div>
       </div>
     </div>
     <hr />
     <div class="addmodal-submit">
-      dd
-      <p>${{ thumbnailData.price }}</p>
+      <button class="addmodal-submit-btn">Add</button>
+      <div class="addmodal-submit-text">
+        <textarea placeholder="Observações"></textarea>
+      </div>
+      <div class="addmodal-submit-price">
+        <span>Price</span>
+        <p>${{ thumbnailData.price }}</p>
+      </div>
     </div>
   </div>
 </div>

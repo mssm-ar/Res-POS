@@ -5,7 +5,6 @@
   height: 100%;
   position: fixed;
   z-index: 1;
-  position: fixed;
   top: 0;
   left: 0;
   display: flex;
@@ -15,16 +14,18 @@
 .addmodal-content-1 {
   background-color: white;
   width: 60%;
-  height: 60%;
+  height: 64%;
   margin: auto;
   padding: 40px;
+  border-radius: 10px;
 }
 .addmodal-content-1 span {
   align-items: right;
 }
 .addmodel-close {
   cursor: pointer;
-  font-size: 18pt;
+  font-size: 24pt;
+  text-align: right;
 }
 .addmodal-content {
   display: flex;
@@ -36,39 +37,79 @@
   border-radius: 15px;
   width: 90%;
 }
+
+.addmodal-counter {
+  display: flex;
+  align-items: center;
+  /* border: 1px solid #ccc; */
+  width: 150px;
+  border-radius: 5px;
+  overflow: hidden;
+  background-color: #fff;
+  margin-top: 20px;
+}
+
+.addmodal-counter button {
+  border: none;
+  background-color: #f0f0f0;
+  /* color: #333; */
+  font-size: 18px;
+  padding: 10px 15px;
+  cursor: pointer;
+  outline: none;
+  font-size: 15pt;
+}
+
+.addmodal-counter button:hover {
+  background-color: #e0e0e0;
+}
+
+.addmodal-counter input {
+  width: 50px;
+  text-align: center;
+  border: none;
+  font-size: 18px;
+  background-color: #fff;
+  outline: none;
+  padding: 5px 0;
+  font-size: 15pt;
+}
+
 .addmodal-text {
   flex: 4;
-  padding-right: 150px;
+  padding-right: 200px;
 }
 .addmodal-text span {
-  font-size: 20pt;
+  font-size: 24pt;
+  font-weight: bold;
 }
 .addmodal-text p {
-  font-size: 15pt;
+  font-size: 16pt;
   color: gray;
 }
 .addmodal-size {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 10px;
+  margin-bottom: 40px;
 }
 .addmodal-size p {
-  font-size: 15pt;
+  font-size: 18pt;
   font-weight: bold;
   color: black;
   margin: 0px;
   padding-top: 10px;
 }
 .addmodal-size label {
-  font-size: 14pt;
+  font-size: 16pt;
   cursor: pointer;
   padding: 10px;
 }
 .addmodal-ficha {
   display: flex;
+  margin-bottom: 30px;
 }
 .addmodal-ficha p {
-  font-size: 18pt;
+  font-size: 20pt;
   font-weight: bold;
   color: black;
   margin: 0px;
@@ -76,22 +117,133 @@
 .addmodal-check {
   display: flex;
   flex-wrap: wrap;
-  padding-left: 80px;
+  padding-left: 60px;
 }
 .addmodal-check label {
   flex: 0 0 33%;
-  font-size: 15pt;
+  font-size: 18pt;
   cursor: pointer;
 }
 .addmodal-check input:checked ~ .checkmar {
   background-color: #4caf50;
 }
 .addmodal-ingredient p {
-  font-size: 15pt;
+  font-size: 18pt;
   font-weight: bold;
   color: black;
   /* display: flex; */
 }
 .addmodal-quantity {
   display: flex;
+  align-items: flex-start;
+}
+.addmodal-quantity input {
+  cursor: pointer;
+  margin: 10px;
+}
+.addmodal-quantity-set {
+  display: flex;
+}
+.addmodal-quantity-set button {
+  background-color: rgb(236, 236, 236);
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  font-size: 18pt;
+  padding: 5px;
+}
+.addmodal-quantity-set button:hover {
+  background-color: rgb(214, 214, 214);
+}
+.addmodal-quantity-set input {
+  outline: none;
+}
+.addmodal-quantity-set input:focus {
+  outline: none;
+}
+
+.addmodal-quantity-counter {
+  display: flex;
+  align-items: center;
+  /* border: 1px solid #ccc; */
+  width: 150px;
+  border-radius: 5px;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.addmodal-quantity-counter button {
+  border: none;
+  background-color: #f0f0f0;
+  /* color: #333; */
+  font-size: 18px;
+  padding: 10px 15px;
+  cursor: pointer;
+  outline: none;
+  font-size: 15pt;
+}
+
+.addmodal-quantity-counter button:hover {
+  background-color: #e0e0e0;
+}
+
+.addmodal-quantity-counter input {
+  width: 50px;
+  text-align: center;
+  border: none;
+  font-size: 18px;
+  background-color: #fff;
+  outline: none;
+  padding: 5px 0;
+  font-size: 15pt;
+}
+
+.addmodal-vassabi {
+  font-size: 15pt;
+  margin: 5px;
+}
+.addmodal-submit {
+  display: flex;
+  justify-content: space-between;
+}
+.addmodal-submit-btn {
+  cursor: pointer;
+  background-color: #89e70a;
+  border: none;
+  border-radius: 10px;
+  margin: 15px;
+  font-size: 18pt;
+  width: 200px;
+  height: 50px;
+}
+.addmodal-submit-btn:hover {
+  background-color: #73c409;
+}
+.addmodal-submit-text {
+  margin: 10px;
+  width: 100%;
+}
+.addmodal-submit-text textarea {
+  align-items: center;
+  width: 70%;
+  height: 80px;
+  margin-left: 100px;
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  font-size: 13pt;
+  resize: none;
+  background-color: rgb(236, 236, 236);
+}
+.addmodal-submit-text textarea:focus {
+  outline: none;
+}
+.addmodal-submit-price span {
+  font-size: 18pt;
+  font-weight: bold;
+}
+.addmodal-submit-price p {
+  font-size: 32pt;
+  font-weight: bold;
+  margin: 0px;
 }
