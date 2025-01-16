@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter } from "@angular/core";
+import { Component, Input } from "@angular/core";
 import { SharedService } from "app/services/shared.service";
 
 @Component({
@@ -7,10 +7,10 @@ import { SharedService } from "app/services/shared.service";
   styleUrls: ["./thumbnail.component.css"],
 })
 export class ThumbnailComponent {
-  image: string = "../../../assets/img/Appse.png";
-  title: string = "Appse Lam7645";
-  stock: number = 1;
-  price: number = 19.99;
+  @Input() image: string = "";
+  @Input() title: string = "";
+  @Input() stock: number = 0;
+  @Input() price: number = 0;
 
   constructor(private sharedService: SharedService) {}
 
@@ -23,8 +23,4 @@ export class ThumbnailComponent {
     };
     this.sharedService.setThumbnail(thumbnailData);
   }
-
-  // @Input()
-  // @Output()
-  // titleClick = new EventEmitter<ThumbnailComponent>();
 }
