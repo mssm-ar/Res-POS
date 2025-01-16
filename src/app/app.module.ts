@@ -11,6 +11,7 @@ import { BagComponent } from "./components/rightbar/bag/bag.component";
 import { ProductComponent } from './components/rightbar/product/product.component';
 import { OrderlistComponent } from './components/rightbar/product/orderlist/orderlist.component';
 import { AddmodalComponent } from './components/rightbar/addmodal/addmodal.component';
+import { DeliverformComponent } from './components/rightbar/deliverform/deliverform.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { AddmodalComponent } from './components/rightbar/addmodal/addmodal.compo
     ProductComponent,
     OrderlistComponent,
     AddmodalComponent,
+    DeliverformComponent,
   ],
   imports: [BrowserModule],
   providers: [],
