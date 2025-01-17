@@ -12,6 +12,8 @@ import { ProductComponent } from './components/rightbar/product/product.componen
 import { OrderlistComponent } from './components/rightbar/product/orderlist/orderlist.component';
 import { AddmodalComponent } from './components/rightbar/addmodal/addmodal.component';
 import { DeliverformComponent } from './components/rightbar/deliverform/deliverform.component';
+import { SelectuserComponent } from './components/rightbar/deliverform/selectuser/selectuser.component';
+import { SelectaddressComponent } from './components/rightbar/deliverform/selectaddress/selectaddress.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +28,8 @@ import { DeliverformComponent } from './components/rightbar/deliverform/deliverf
     OrderlistComponent,
     AddmodalComponent,
     DeliverformComponent,
+    SelectuserComponent,
+    SelectaddressComponent,
   ],
   imports: [BrowserModule],
   providers: [],
