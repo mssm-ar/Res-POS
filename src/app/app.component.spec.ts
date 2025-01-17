@@ -8,6 +8,7 @@ import { ThumbnailComponent } from "./components/rightbar/thumbnail/thumbnail.co
 import { BagComponent } from "./components/rightbar/bag/bag.component";
 import { OrderlistComponent } from "./components/rightbar/product/orderlist/orderlist.component";
 import { AddmodalComponent } from "./components/rightbar/addmodal/addmodal.component";
+import { DeliverformComponent } from "./components/rightbar/deliverform/deliverform.component";
 
 describe("AppComponent", () => {
   beforeEach(waitForAsync(() => {
@@ -22,6 +23,7 @@ describe("AppComponent", () => {
         BagComponent,
         OrderlistComponent,
         AddmodalComponent,
+        DeliverformComponent,
       ],
     }).compileComponents();
   }));

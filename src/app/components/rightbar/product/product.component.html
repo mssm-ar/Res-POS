@@ -31,6 +31,10 @@
       <span>Total price</span>
       <span>$ 119.33</span>
     </div>
-    <button>Order</button>
+    <button (click)="onOrderClick()">Order</button>
+    <app-deliverform
+      *ngIf="showDeliverForm"
+      (closeForm)="onCloseDeliverForm()"
+    ></app-deliverform>
   </div>
 </div>

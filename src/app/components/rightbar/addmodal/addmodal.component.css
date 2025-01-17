@@ -8,8 +8,8 @@
   top: 0;
   left: 0;
   display: flex;
-  background-color: rgb(0, 0, 0); /* Fallback color */
-  background-color: rgba(0, 0, 0, 0.7); /* Black w/ opacity */
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.7);
 }
 .addmodal-content-1 {
   background-color: white;

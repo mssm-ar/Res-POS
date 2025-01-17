@@ -1,1 +1,120 @@
-<p>deliverform works!</p>
+<div class="delivermodal">
+  <div class="delivermodal-content-1">
+    <div class="delivermodal-close">
+      <p>Order</p>
+      <i (click)="onCloseDeliver()">&times;</i>
+    </div>
+
+    <div class="delivermodal-container">
+      <div class="delivermodal-row">
+        <div class="delivermodal-item">
+          <select class="delivermodal-select">
+            <option>Select user</option>
+          </select>
+          <button class="delivermodal-icon-button">
+            <i class="fa-solid fa-user-plus"></i>
+          </button>
+        </div>
+        <div class="delivermodal-item">
+          <select class="delivermodal-select">
+            <option>Select address</option>
+          </select>
+          <button class="delivermodal-icon-button">
+            <i class="fa-solid fa-plus"></i>
+          </button>
+        </div>
+      </div>
+      <div class="delivermodal-row">
+        <div class="delivermodal-item">
+          <input
+            type="text"
+            placeholder="Promo code"
+            class="delivermodal-input"
+          />
+          <button class="delivermodal-icon-button">
+            <i class="fa-solid fa-plus"></i>
+          </button>
+        </div>
+        <div class="delivermodal-item">
+          <select class="delivermodal-select">
+            <option>Forma de Pagamento</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <hr />
+    <!-- deliver tab -->
+    <div class="delivermodal-tab-container">
+      <h2 class="delivermodal-tab-heading">Shipping information</h2>
+      <div class="delivermodal-tab-options">
+        <button class="delivermodal-tab-option delivermodal-tab-active">
+          <i class="fa-solid fa-truck"></i>
+          Delivery
+        </button>
+        <button class="delivermodal-tab-option">
+          <i class="fa-solid fa-person-walking"></i>
+          Pickup
+        </button>
+        <button class="delivermodal-tab-option">
+          <i class="fa-solid fa-utensils"></i>
+          Dine-In
+        </button>
+      </div>
+      <div class="delivermodal-tab-dropdowns">
+        <select class="delivermodal-tab-select">
+          <option>Select delivery date</option>
+        </select>
+        <select class="delivermodal-tab-select">
+          <option>Select delivery time</option>
+        </select>
+      </div>
+    </div>
+    <hr />
+    <!-- deliver user -->
+    <div class="delivermodal-user-container">
+      <div class="delivermodal-user-section-container">
+        <div class="delivermodal-user-section">
+          <label for="user" class="delivermodal-user-label">* User</label>
+          <select id="user" class="delivermodal-user-select">
+            <option>Select client</option>
+          </select>
+        </div>
+        <div class="delivermodal-user-section">
+          <label for="address" class="delivermodal-user-label">* Address</label>
+          <select id="address" class="delivermodal-user-select">
+            <option>Select address</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="delivermodal-user-prices">
+        <div class="delivermodal-user-price-item">
+          <span>Subtotal</span>
+          <span class="delivermodal-user-price-value">$ 18.18</span>
+        </div>
+        <div class="delivermodal-user-price-item">
+          <span>Tax</span>
+          <span class="delivermodal-user-price-value">$ 0.18</span>
+        </div>
+        <div class="delivermodal-user-price-item">
+          <span>Service fee</span>
+          <span class="delivermodal-user-price-value">$ 1.00</span>
+        </div>
+        <div class="delivermodal-user-price-item">
+          <span>Delivery free</span>
+          <span class="delivermodal-user-price-value">$ 26,489.66</span>
+        </div>
+      </div>
+    </div>
+    <hr />
+
+    <!-- Place order -->
+    <div class="delivermodal-place-container">
+      <button class="delivermodal-place-button">Place Order</button>
+      <div class="delivermodal-place-total">
+        <span class="delivermodal-place-total-label">Total price</span>
+        <span class="delivermodal-place-total-value">$ 26,509.02</span>
+      </div>
+    </div>
+  </div>
+</div>
