@@ -1,4 +1,57 @@
-<p class="ddd">
-  selectuser works!
-  <i (click)="onCloseSelect()">&times;</i>
-</p>
+<div class="selectuser">
+  <div class="selectuser-content">
+    <div class="selectuser-header">
+      <p>Cadastrar Cliente</p>
+      <i (click)="onCloseSelect()">&times;</i>
+    </div>
+    <hr />
+
+    <div class="selectuser-text-container">
+      <div class="selectuser-text-row">
+        <div class="selectuser-text-input-group">
+          <label class="selectuser-text-label" for="cellphone">* Celular</label>
+          <input
+            class="selectuser-text-input"
+            type="text"
+            id="cellphone"
+            placeholder="Enter your cellphone"
+          />
+        </div>
+        <div class="selectuser-text-input-group">
+          <label class="selectuser-text-label" for="email">* Email</label>
+          <input
+            class="selectuser-text-input"
+            type="email"
+            id="email"
+            placeholder="Enter your email"
+          />
+        </div>
+      </div>
+      <div class="selectuser-text-row">
+        <div class="selectuser-text-input-group-full">
+          <label class="selectuser-text-label" for="fullname"
+            >* Nome Completo</label
+          >
+          <input
+            class="selectuser-text-input"
+            type="text"
+            id="fullname"
+            placeholder="Enter your full name"
+          />
+        </div>
+      </div>
+      <hr />
+      <div class="selectuser-text-actions">
+        <button class="selectuser-text-button selectuser-text-save">
+          Salvar
+        </button>
+        <button
+          class="selectuser-text-button selectuser-text-cancel"
+          (click)="onCloseSelect()"
+        >
+          Cancelar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
