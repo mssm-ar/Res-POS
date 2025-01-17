@@ -1,3 +1,7 @@
+<app-deliverform
+  *ngIf="showDeliverForm"
+  (closeForm)="onCloseDeliverForm()"
+></app-deliverform>
 <div class="product">
   <div class="order-title">
     <span>Products</span>
@@ -32,9 +36,5 @@
       <span>$ 119.33</span>
     </div>
     <button (click)="onOrderClick()">Order</button>
-    <app-deliverform
-      *ngIf="showDeliverForm"
-      (closeForm)="onCloseDeliverForm()"
-    ></app-deliverform>
   </div>
 </div>

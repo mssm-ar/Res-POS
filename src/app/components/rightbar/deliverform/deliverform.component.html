@@ -1,3 +1,7 @@
+<app-selectuser
+  *ngIf="showSelectUser"
+  (closeUser)="onCloseSelectUser()"
+></app-selectuser>
 <div class="delivermodal">
   <div class="delivermodal-content-1">
     <div class="delivermodal-close">
@@ -11,7 +15,10 @@
           <select class="delivermodal-select">
             <option>Select user</option>
           </select>
-          <button class="delivermodal-icon-button">
+          <button
+            class="delivermodal-icon-button"
+            (click)="onSelectUserClick()"
+          >
             <i class="fa-solid fa-user-plus"></i>
           </button>
         </div>

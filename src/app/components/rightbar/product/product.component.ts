@@ -1,6 +1,4 @@
-import { Component } from "@angular/core";
-import { SharedService } from "app/services/shared.service";
-import { DeliverformComponent } from "../deliverform/deliverform.component";
+import { Component, EventEmitter, Output } from "@angular/core";
 
 @Component({
   selector: "app-product",
