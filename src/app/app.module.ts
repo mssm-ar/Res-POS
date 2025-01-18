@@ -14,6 +14,7 @@ import { AddmodalComponent } from './components/rightbar/addmodal/addmodal.compo
 import { DeliverformComponent } from './components/rightbar/deliverform/deliverform.component';
 import { SelectuserComponent } from './components/rightbar/deliverform/selectuser/selectuser.component';
 import { SelectaddressComponent } from './components/rightbar/deliverform/selectaddress/selectaddress.component';
+import { ConfirmComponent } from './components/rightbar/deliverform/confirm/confirm.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { SelectaddressComponent } from './components/rightbar/deliverform/select
     DeliverformComponent,
     SelectuserComponent,
     SelectaddressComponent,
+    ConfirmComponent,
   ],
   imports: [BrowserModule],
   providers: [],
