@@ -282,3 +282,205 @@
   padding: 30px;
   border-radius: 10px;
 }
+/* confirm order */
+.confirm-background {
+  font-family: sans-serif;
+  display: none;
+  width: calc(100% - 85px);
+  height: calc(100% - 92px);
+  position: fixed;
+  z-index: 1;
+  top: 92px;
+  left: 85px;
+  display: flex;
+  background-color: #e7e7e7;
+}
+.confirm-container {
+  margin: 10px;
+  display: flex;
+  width: 100%;
+}
+.confirmorder-container {
+  flex: 1;
+  margin: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  padding: 20px;
+}
+
+.confirmorder-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.confirmorder-back-button {
+  background: none;
+  border: none;
+  color: #007bff;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.confirmorder-dine-in {
+  font-size: 14px;
+  color: #555;
+}
+
+.confirmorder-order-details {
+  margin-bottom: 20px;
+}
+
+.confirmorder-title {
+  font-size: 24pt;
+  margin: 0 0 10px;
+}
+
+.confirmorder-item {
+  font-size: 22pt;
+  color: #555;
+  padding: 0px;
+}
+
+.confirmorder-item-value {
+  font-size: 20pt;
+  font-weight: bold;
+  padding: 10px 0px;
+}
+
+.confirmorder-summary,
+.confirmorder-total {
+  margin-bottom: 20px;
+}
+
+.confirmorder-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.confirmorder-label {
+  font-size: 18pt;
+  color: #555;
+}
+
+.confirmorder-value {
+  font-size: 18pt;
+  font-weight: bold;
+}
+
+.confirmorder-actions {
+  text-align: center;
+}
+
+.confirmorder-button {
+  background-color: #5eff83;
+  width: 100%;
+  color: rgb(27, 27, 27);
+  border: none;
+  border-radius: 5px;
+  padding: 20px;
+  cursor: pointer;
+  font-size: 18pt;
+}
+
+.confirmorder-button:hover {
+  background-color: #218838;
+}
+/* confirm calculator */
+.confirm-container-calc {
+  flex: 1;
+  margin: 50px auto;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.confirmcal-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.confirmcal-payable-label {
+  font-size: 22pt;
+  color: #555;
+  margin: 0;
+}
+
+.confirmcal-payable-amount {
+  font-size: 22pt;
+  font-weight: bold;
+  margin: 5px 0 0;
+}
+
+.confirmcal-input-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.confirmcal-input {
+  font-size: 22pt;
+  font-weight: bold;
+  width: 100%;
+  padding: 20px 10px;
+  text-align: right;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  box-sizing: border-box;
+  color: #333;
+}
+
+.confirmcal-input:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+.confirmcal-keypad {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.confirmcal-key {
+  padding: 25px 15px;
+  font-size: 22pt;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.confirmcal-key:hover {
+  background-color: #e0e0e0;
+}
+
+.confirmcal-double-zero {
+  grid-column: span 2;
+}
+
+.confirmcal-backspace {
+  font-size: 20pt;
+}
+
+.confirmcal-dot {
+  grid-column: span 1;
+}
+
+.confirmcal-ok {
+  grid-column: span 2;
+  background-color: #28a745;
+  color: white;
+  font-weight: bold;
+  border: none;
+}
+
+.confirmcal-ok:hover {
+  background-color: #218838;
+}

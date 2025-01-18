@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Output } from "@angular/core";
+import { DeliverformComponent } from "../deliverform/deliverform.component";
 
 @Component({
   selector: "app-product",

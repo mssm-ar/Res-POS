@@ -137,7 +137,13 @@
 
     <!-- Place order -->
     <div class="delivermodal-place-container">
-      <button class="delivermodal-place-button">Place Order</button>
+      <button
+        class="delivermodal-place-button"
+        [class.delivermodal-tab-active]="activeTab === 'confirm'"
+        (click)="activeTab = 'confirm'"
+      >
+        Place Order
+      </button>
       <div class="delivermodal-place-total">
         <span class="delivermodal-place-total-label">Total price</span>
         <span class="delivermodal-place-total-value">$ 26,509.02</span>
@@ -217,7 +223,13 @@
     <hr />
     <!-- Place order -->
     <div class="delivermodal-place-container">
-      <button class="delivermodal-place-button">Place Order</button>
+      <button
+        class="delivermodal-place-button"
+        [class.delivermodal-tab-active]="activeTab === 'confirm'"
+        (click)="activeTab = 'confirm'"
+      >
+        Place Order
+      </button>
       <div class="delivermodal-place-total">
         <span class="delivermodal-place-total-label">Total price</span>
         <span class="delivermodal-place-total-value">$ 74.75</span>
@@ -291,10 +303,105 @@
     <hr />
     <!-- Place order -->
     <div class="delivermodal-place-container">
-      <button class="delivermodal-place-button">Place Order</button>
+      <button
+        class="delivermodal-place-button"
+        [class.delivermodal-tab-active]="activeTab === 'confirm'"
+        (click)="activeTab = 'confirm'"
+      >
+        Place Order
+      </button>
       <div class="delivermodal-place-total">
         <span class="delivermodal-place-total-label">Total price</span>
         <span class="delivermodal-place-total-value">$ 74.75</span>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- confirm form -->
+<div *ngIf="activeTab === 'confirm'" class="confirm-background">
+  <div class="confirm-container">
+    <div class="confirmorder-container">
+      <div class="confirmorder-header">
+        <button
+          class="confirmorder-back-button"
+          [class.delivermodal-tab-active]="activeTab === 'delivery'"
+          (click)="activeTab = 'delivery'"
+        >
+          &lt; Back
+        </button>
+        <span class="confirmorder-dine-in">dine_in</span>
+      </div>
+      <div class="confirmorder-order-details">
+        <h2 class="confirmorder-title">Order</h2>
+        <p class="confirmorder-item">Total item</p>
+        <p class="confirmorder-item-value">Spaghetti Bolognese</p>
+      </div>
+      <hr />
+
+      <div class="confirmorder-summary">
+        <div class="confirmorder-row">
+          <span class="confirmorder-label">Subtotal</span>
+          <span class="confirmorder-value">$ 0.00</span>
+        </div>
+        <div class="confirmorder-row">
+          <span class="confirmorder-label">Tax</span>
+          <span class="confirmorder-value">R$ 0.00</span>
+        </div>
+        <div class="confirmorder-row">
+          <span class="confirmorder-label">Servicio</span>
+          <span class="confirmorder-value">R$ 1.00</span>
+        </div>
+        <div class="confirmorder-row">
+          <span class="confirmorder-label">Delivery free</span>
+          <span class="confirmorder-value">R$ 0.00</span>
+        </div>
+        <div class="confirmorder-row">
+          <span class="confirmorder-label">Discount</span>
+          <span class="confirmorder-value">-R$ 0.00</span>
+        </div>
+      </div>
+      <hr />
+      <div class="confirmorder-total">
+        <div class="confirmorder-row">
+          <span class="confirmorder-label">Total price</span>
+          <span class="confirmorder-value">R$ 1.00</span>
+        </div>
+        <div class="confirmorder-row">
+          <span class="confirmorder-label">Refund</span>
+          <span class="confirmorder-value">-R$ 9.00</span>
+        </div>
+      </div>
+
+      <div class="confirmorder-actions">
+        <button class="confirmorder-button">Confirm order</button>
+      </div>
+    </div>
+
+    <div class="confirm-container-calc">
+      <div class="confirmcal-header">
+        <p class="confirmcal-payable-label">Payable amount</p>
+        <p class="confirmcal-payable-amount">$ 0.00</p>
+      </div>
+      <hr />
+      <div class="confirmcal-input-container">
+        <input type="text" class="confirmcal-input" value="10" readonly />
+      </div>
+
+      <div class="confirmcal-keypad">
+        <button class="confirmcal-key">1</button>
+        <button class="confirmcal-key">2</button>
+        <button class="confirmcal-key">3</button>
+        <button class="confirmcal-key">4</button>
+        <button class="confirmcal-key">5</button>
+        <button class="confirmcal-key">6</button>
+        <button class="confirmcal-key">7</button>
+        <button class="confirmcal-key">8</button>
+        <button class="confirmcal-key">9</button>
+        <button class="confirmcal-key">00</button>
+        <button class="confirmcal-key">0</button>
+        <button class="confirmcal-key confirmcal-backspace">⌫</button>
+        <button class="confirmcal-key confirmcal-dot">.</button>
+        <button class="confirmcal-key confirmcal-ok">Ok</button>
       </div>
     </div>
   </div>

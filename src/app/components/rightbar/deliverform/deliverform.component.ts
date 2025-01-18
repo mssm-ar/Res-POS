@@ -7,7 +7,7 @@ import { Component, EventEmitter, Output } from "@angular/core";
 })
 export class DeliverformComponent {
   activeTab: string = "delivery";
-
+  // deliver form
   showDeliverForm: boolean = false;
 
   @Output() closeForm = new EventEmitter<void>();
@@ -15,7 +15,7 @@ export class DeliverformComponent {
   onCloseDeliver() {
     this.closeForm.emit();
   }
-
+  // select user form
   showSelectUser: boolean = false;
 
   onSelectUserClick() {
@@ -24,7 +24,7 @@ export class DeliverformComponent {
   onCloseSelectUser() {
     this.showSelectUser = false;
   }
-
+  // select address form
   showSelectAddress: boolean = false;
 
   onSelectAddressClick() {
@@ -32,5 +32,11 @@ export class DeliverformComponent {
   }
   onCloseSelectAddress() {
     this.showSelectAddress = false;
+  }
+  // place order
+  showConfirmComponent: boolean = false;
+
+  onPlaceOrder() {
+    this.showConfirmComponent = true;
   }
 }
