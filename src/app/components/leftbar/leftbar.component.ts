@@ -6,7 +6,7 @@ import { Component, Input, Output, EventEmitter } from "@angular/core";
   styleUrls: ["./leftbar.component.css"],
 })
 export class LeftbarComponent {
-  private totalClicks = 0;
+  activeTab: string = "home";
 
   @Input()
   title = "Leftbar";

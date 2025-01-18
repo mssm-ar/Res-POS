@@ -13,6 +13,10 @@
   padding: 15px;
   margin-top: 20px;
 }
+.leftbar-menu.leftbar-menu-active {
+  background-color: #89e70a;
+  border-radius: 10px;
+}
 .leftbar-menu:hover {
   background-color: #89e70a;
   border-radius: 10px;

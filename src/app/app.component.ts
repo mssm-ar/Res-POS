@@ -6,6 +6,7 @@ import { Component } from "@angular/core";
   styleUrls: ["./app.component.css"],
 })
 export class AppComponent {
+  activeTab: string = "home";
   title = "app";
   headerClicks = 0;
   footerClicks = 0;

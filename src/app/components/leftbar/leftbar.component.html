@@ -1,25 +1,49 @@
 <div class="leftbar-container">
-  <div class="leftbar-menu">
+  <div
+    class="leftbar-menu"
+    [class.leftbar-menu-active]="activeTab === 'home'"
+    (click)="activeTab = 'home'"
+  >
     <i class="fa-solid fa-house"></i>
   </div>
 
-  <div class="leftbar-menu">
+  <div
+    class="leftbar-menu"
+    [class.leftbar-menu-active]="activeTab === 'shopping'"
+    (click)="activeTab = 'shopping'"
+  >
     <i class="fa-solid fa-bag-shopping"></i>
   </div>
 
-  <div class="leftbar-menu">
+  <div
+    class="leftbar-menu"
+    [class.leftbar-menu-active]="activeTab === 'user'"
+    (click)="activeTab = 'user'"
+  >
     <i class="fas fa-user"></i>
   </div>
 
-  <div class="leftbar-menu">
+  <div
+    class="leftbar-menu"
+    [class.leftbar-menu-active]="activeTab === 'dashboard'"
+    (click)="activeTab = 'dashboard'"
+  >
     <i class="fas fa-th-large"></i>
   </div>
 
-  <div class="leftbar-menu">
+  <div
+    class="leftbar-menu"
+    [class.leftbar-menu-active]="activeTab === 'dollar'"
+    (click)="activeTab = 'dollar'"
+  >
     <i class="fa-solid fa-dollar-sign"></i>
   </div>
 
-  <div class="leftbar-menu">
+  <div
+    class="leftbar-menu"
+    [class.leftbar-menu-active]="activeTab === 'clock'"
+    (click)="activeTab = 'clock'"
+  >
     <i class="fa-regular fa-clock"></i>
   </div>
   <div class="profile">

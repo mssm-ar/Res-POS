@@ -8,6 +8,17 @@
   <hr class="devider" />
   <div class="second-container">
     <app-leftbar class="left-bar"></app-leftbar>
-    <app-rightbar class="right-bar"> </app-rightbar>
+    <div class="right-bar" *ngIf="activeTab === 'home'">
+      <app-rightbar></app-rightbar>
+    </div>
+    <div *ngIf="activeTab === 'shopping'">
+      <app-shopping-component></app-shopping-component>
+    </div>
+    <div *ngIf="activeTab === 'user'">
+      <app-user-component></app-user-component>
+    </div>
+    <div *ngIf="activeTab === 'dashboard'">
+      <app-dashboard-component></app-dashboard-component>
+    </div>
   </div>
 </div>
