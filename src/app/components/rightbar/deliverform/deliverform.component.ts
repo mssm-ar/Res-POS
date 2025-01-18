@@ -22,4 +22,13 @@ export class DeliverformComponent {
   onCloseSelectUser() {
     this.showSelectUser = false;
   }
+
+  showSelectAddress: boolean = false;
+
+  onSelectAddressClick() {
+    this.showSelectAddress = true;
+  }
+  onCloseSelectAddress() {
+    this.showSelectAddress = false;
+  }
 }

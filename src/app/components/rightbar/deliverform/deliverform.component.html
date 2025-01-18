@@ -2,6 +2,10 @@
   *ngIf="showSelectUser"
   (closeUser)="onCloseSelectUser()"
 ></app-selectuser>
+<app-selectaddress
+  *ngIf="showSelectAddress"
+  (closeAddress)="onCloseSelectAddress()"
+></app-selectaddress>
 <div class="delivermodal">
   <div class="delivermodal-content-1">
     <div class="delivermodal-close">
@@ -26,7 +30,10 @@
           <select class="delivermodal-select">
             <option>Select address</option>
           </select>
-          <button class="delivermodal-icon-button">
+          <button
+            class="delivermodal-icon-button"
+            (click)="onSelectAddressClick()"
+          >
             <i class="fa-solid fa-plus"></i>
           </button>
         </div>
