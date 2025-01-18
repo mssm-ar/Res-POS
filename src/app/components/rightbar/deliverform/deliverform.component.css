@@ -273,3 +273,12 @@
   font-weight: bold;
   color: #1f1f1f;
 }
+/* pickup tab */
+.delivermodal-content-2 {
+  background-color: white;
+  width: 55%;
+  height: 60%;
+  margin: auto;
+  padding: 30px;
+  border-radius: 10px;
+}

@@ -6,6 +6,8 @@ import { Component, EventEmitter, Output } from "@angular/core";
   styleUrls: ["./deliverform.component.css"],
 })
 export class DeliverformComponent {
+  activeTab: string = "delivery";
+
   showDeliverForm: boolean = false;
 
   @Output() closeForm = new EventEmitter<void>();
