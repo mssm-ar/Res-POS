@@ -2,8 +2,28 @@
   <span class="gear">
     <i class="fa-solid fa-sliders"></i>
   </span>
-  <span>All</span>
-  <span>CS2</span>
-  <span>Meat</span>
-  <span>Fish Foods</span>
+  <span
+    class="filtermenu-home"
+    [class.filter-menu-active]="activeFilter === 'all'"
+    (click)="activeFilter = 'all'"
+    >All</span
+  >
+  <span
+    class="filtermenu-home"
+    [class.filter-menu-active]="activeFilter === 'cs2'"
+    (click)="activeFilter = 'cs2'"
+    >CS2</span
+  >
+  <span
+    class="filtermenu-home"
+    [class.filter-menu-active]="activeFilter === 'meat'"
+    (click)="activeFilter = 'meat'"
+    >Meat</span
+  >
+  <span
+    class="filtermenu-home"
+    [class.filter-menu-active]="activeFilter === 'fish'"
+    (click)="activeFilter = 'fish'"
+    >Fish Foods</span
+  >
 </div>

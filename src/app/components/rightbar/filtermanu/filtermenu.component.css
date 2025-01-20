@@ -16,3 +16,7 @@
   background-color: #89e70a;
   border-radius: 10px;
 }
+.filtermenu-home.filter-menu-active {
+  background-color: #7cd803;
+  border-radius: 10px;
+}

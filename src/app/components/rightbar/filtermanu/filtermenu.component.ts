@@ -6,7 +6,7 @@ import { Component, Input, Output, EventEmitter } from "@angular/core";
   styleUrls: ["./filtermenu.component.css"],
 })
 export class FiltermenuComponent {
-  private totalClicks = 0;
+  activeFilter: string = "all";
 
   @Input()
   title = "Leftbar";

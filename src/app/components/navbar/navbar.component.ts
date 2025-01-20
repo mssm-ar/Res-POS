@@ -6,8 +6,6 @@ import { Component, Input, Output, EventEmitter } from "@angular/core";
   styleUrls: ["./navbar.component.css"],
 })
 export class NavbarComponent {
-  private totalClicks = 0;
-
   @Input()
   title = "Footer";
 
