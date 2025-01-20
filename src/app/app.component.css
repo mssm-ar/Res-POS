@@ -18,3 +18,11 @@
   flex-grow: 1;
   background-color: #e7e7e7;
 }
+@media (max-width: 800px) {
+  .second-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+  }
+}
