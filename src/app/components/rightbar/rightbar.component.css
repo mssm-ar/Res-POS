@@ -55,3 +55,18 @@
     flex: 0 0 50%;
   }
 }
+@media (max-width: 768px) {
+  .rightbar-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .thumbnail-container app-thumbnail {
+    flex: 0 0 33.333333%;
+  }
+}
+@media (max-width: 500px) {
+  .thumbnail-container app-thumbnail {
+    flex: 0 0 50%;
+  }
+}

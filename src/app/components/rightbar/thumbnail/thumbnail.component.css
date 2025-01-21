@@ -48,3 +48,8 @@
     font-size: 16pt;
   }
 }
+@media only screen and (max-width: 768px) {
+  .food-title-container {
+    font-size: 14pt;
+  }
+}
