@@ -18,7 +18,7 @@ export class RightbarComponent {
       image: "../../../assets/img/Appse.png",
       title: "Appse Lam7645",
       stock: 1,
-      price: 19.99,
+      price: 9.09,
     },
     {
       image: "../../../assets/img/Spagetti.png",

@@ -1,5 +1,6 @@
-import { Component, EventEmitter, Output } from "@angular/core";
-import { DeliverformComponent } from "../deliverform/deliverform.component";
+import { Component, OnInit, OnDestroy } from "@angular/core";
+import { Subscription } from "rxjs";
+import { SharedService } from "../../../services/shared.service";
 
 @Component({
   selector: "app-product",
@@ -7,6 +8,11 @@ import { DeliverformComponent } from "../deliverform/deliverform.component";
   styleUrls: ["./product.component.css"],
 })
 export class ProductComponent {
+  // product component
+
+  constructor(private sharedService: SharedService) {}
+
+  // deliver form
   showDeliverForm: boolean = false;
 
   onOrderClick() {

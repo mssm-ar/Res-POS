@@ -1,5 +1,7 @@
-import { Component, OnInit } from "@angular/core";
-import { SharedService } from "app/services/shared.service";
+import { Component, OnInit, OnDestroy } from "@angular/core";
+// import { SharedService } from "app/services/shared.service";
+import { Subscription } from "rxjs";
+import { SharedService, AddOrder } from "../../../services/shared.service";
 
 @Component({
   selector: "app-addmodal",
@@ -7,9 +9,9 @@ import { SharedService } from "app/services/shared.service";
   styleUrls: ["./addmodal.component.css"],
 })
 export class AddmodalComponent implements OnInit {
-  thumbnailData: any;
-
   constructor(private sharedService: SharedService) {}
+
+  thumbnailData: any;
 
   ngOnInit() {
     this.sharedService.thumbnail$.subscribe((data) => {
@@ -19,5 +21,27 @@ export class AddmodalComponent implements OnInit {
 
   closeModal() {
     this.sharedService.clearThumbnail();
+  }
+  // in-decrease evennt
+  ordernumber: number = 1;
+  decrementorder() {
+    if (this.ordernumber > 1) {
+      this.ordernumber--;
+    }
+  }
+
+  incrementorder() {
+    this.ordernumber++;
+  }
+  //ingredient number
+  ingredient_number: number = 1;
+  decrementingredient() {
+    if (this.ingredient_number > 1) {
+      this.ingredient_number--;
+    }
+  }
+
+  incrementingredient() {
+    this.ingredient_number++;
   }
 }

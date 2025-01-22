@@ -121,10 +121,19 @@
     display: flex;
     flex-wrap: wrap;
   }
+  .logo {
+    border-bottom: 2px solid #ddd;
+  }
   .search-bar {
     order: 3;
     width: 100%;
     min-width: 600px;
+  }
+  .nav-text {
+    border-bottom: 2px solid #ddd;
+  }
+  .notification-icon {
+    border-bottom: 2px solid #ddd;
   }
 }
 @media (max-width: 768px) {

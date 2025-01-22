@@ -1,15 +1,17 @@
 <div class="order-list-container">
-  <p class="food-title">Watering Meals (Black)</p>
+  <!-- <p class="food-title">{{ orderData.orderTitle }}</p> -->
+  <p class="food-title">dd</p>
   <div class="detail-container">
     <div class="order-number">
-      <p>1</p>
+      <p>{{ ingredient_number }}</p>
       <i class="fa-solid fa-xmark"></i>
     </div>
     <div class="in-de-crease">
-      <button class="minus-btn">-</button>
-      <button class="plus-btn">+</button>
+      <button class="minus-btn" (click)="decrementingredient()">-</button>
+      <button class="plus-btn" (click)="incrementingredient()">+</button>
     </div>
-    <span class="order-price">$ 115.4</span>
+    <!-- <span class="order-price">$ {{ orderData.price * ingredient_number }}</span> -->
+    <span class="order-price">$ dd</span>
   </div>
   <hr />
 </div>
