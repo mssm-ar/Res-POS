@@ -1,7 +1,6 @@
 import { Component, OnInit, OnDestroy } from "@angular/core";
-// import { SharedService } from "app/services/shared.service";
 import { Subscription } from "rxjs";
-import { SharedService, AddOrder } from "../../../services/shared.service";
+import { SharedService } from "../../../services/shared.service";
 
 @Component({
   selector: "app-addmodal",

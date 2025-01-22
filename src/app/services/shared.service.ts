@@ -2,16 +2,11 @@ import { Injectable } from "@angular/core";
 import { BehaviorSubject } from "rxjs";
 
 // tumbnail data
-interface ThumbnailData {
+export interface ThumbnailData {
   image: string;
   title: string;
   stock: number;
   price: number;
-}
-// add order data
-export interface AddOrder {
-  price: number;
-  orderTitle: string;
 }
 
 @Injectable({
@@ -19,25 +14,14 @@ export interface AddOrder {
 })
 export class SharedService {
   // Thumbnail Methods
-  private thumbnailSubject = new BehaviorSubject<ThumbnailData | null>(null);
-  thumbnail$ = this.thumbnailSubject.asObservable();
+  private thumbnailHolder = new BehaviorSubject<ThumbnailData | null>(null);
+  thumbnail$ = this.thumbnailHolder.asObservable();
 
   setThumbnail(data: ThumbnailData) {
-    this.thumbnailSubject.next(data);
+    this.thumbnailHolder.next(data);
   }
 
   clearThumbnail() {
-    this.thumbnailSubject.next(null);
-  }
-
-  // add order data method
-  private orderData = new BehaviorSubject<AddOrder | null>(null);
-
-  setOrderData(price: number, orderTitle: string) {
-    this.orderData.next({ price, orderTitle });
-  }
-
-  getOrderData() {
-    return this.orderData.asObservable();
+    this.thumbnailHolder.next(null);
   }
 }

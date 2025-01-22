@@ -9,8 +9,15 @@ import { SharedService } from "../../../services/shared.service";
 })
 export class ProductComponent {
   // product component
-
   constructor(private sharedService: SharedService) {}
+
+  thumbnailData: any;
+
+  ngOnInit() {
+    this.sharedService.thumbnail$.subscribe((data) => {
+      this.thumbnailData = data;
+    });
+  }
 
   // deliver form
   showDeliverForm: boolean = false;
