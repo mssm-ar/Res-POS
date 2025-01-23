@@ -286,12 +286,12 @@
 .confirm-background {
   font-family: sans-serif;
   display: none;
-  width: calc(100% - 85px);
-  height: calc(100% - 92px);
+  width: calc(100% - 73px);
+  height: calc(100% - 86px);
   position: fixed;
   z-index: 1;
-  top: 92px;
-  left: 85px;
+  top: 86px;
+  left: 73px;
   display: flex;
   background-color: #e7e7e7;
 }

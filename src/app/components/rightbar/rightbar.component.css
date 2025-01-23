@@ -9,6 +9,11 @@
 .thumbnail-container {
   display: flex;
   flex-wrap: wrap;
+  max-height: 783px;
+  overflow-y: auto;
+}
+.thumbnail-container::-webkit-scrollbar {
+  display: none;
 }
 .thumbnail-container app-thumbnail {
   flex: 0 0 20%;
