@@ -1,5 +1,7 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
+import { HttpClientModule } from "@angular/common/http";
+
 import { AppComponent } from "./app.component";
 import { NavbarComponent } from "./components/navbar/navbar.component";
 import { LeftbarComponent } from "./components/leftbar/leftbar.component";
@@ -32,7 +34,7 @@ import { ConfirmComponent } from "./components/rightbar/deliverform/confirm/conf
     SelectaddressComponent,
     ConfirmComponent,
   ],
-  imports: [BrowserModule],
+  imports: [BrowserModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })

@@ -4,26 +4,17 @@
   </span>
   <span
     class="filtermenu-home"
-    [class.filter-menu-active]="activeFilter === 'all'"
-    (click)="activeFilter = 'all'"
-    >All</span
+    [class.filter-menu-active]="activeFilter === 'Todos'"
+    (click)="setActiveFilterToAll()"
+    >Todos</span
   >
   <span
+    *ngFor="let category of categories"
     class="filtermenu-home"
-    [class.filter-menu-active]="activeFilter === 'cs2'"
-    (click)="activeFilter = 'cs2'"
-    >CS2</span
+    [class.filter-menu-active]="activeFilter === category.nome"
+    (click)="setActiveFilter(category.nome)"
+    >{{ category.nome }}</span
   >
-  <span
-    class="filtermenu-home"
-    [class.filter-menu-active]="activeFilter === 'meat'"
-    (click)="activeFilter = 'meat'"
-    >Meat</span
-  >
-  <span
-    class="filtermenu-home"
-    [class.filter-menu-active]="activeFilter === 'fish'"
-    (click)="activeFilter = 'fish'"
-    >Fish Foods</span
-  >
+  <div *ngIf="!categories.length">No categories available.</div>
+  <div *ngIf="errorMessage">{{ errorMessage }}</div>
 </div>

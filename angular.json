@@ -15,16 +15,9 @@
             "index": "src/index.html",
             "main": "src/main.ts",
             "tsConfig": "src/tsconfig.app.json",
-            "polyfills": [
-              "zone.js"
-            ],
-            "assets": [
-              "src/assets",
-              "src/favicon.ico"
-            ],
-            "styles": [
-              "src/styles.css"
-            ],
+            "polyfills": ["zone.js"],
+            "assets": ["src/assets", "src/favicon.ico"],
+            "styles": ["src/styles.css"],
             "scripts": [],
             "vendorChunk": true,
             "extractLicenses": false,
@@ -61,7 +54,8 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "basic-components:build"
+            "browserTarget": "basic-components:build",
+            "proxyConfig": "proxy.conf.json"
           },
           "configurations": {
             "production": {
@@ -72,19 +66,11 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ],
+            "polyfills": ["zone.js", "zone.js/testing"],
             "tsConfig": "src/tsconfig.spec.json",
             "scripts": [],
-            "styles": [
-              "src/styles.css"
-            ],
-            "assets": [
-              "src/assets",
-              "src/favicon.ico"
-            ]
+            "styles": ["src/styles.css"],
+            "assets": ["src/assets", "src/favicon.ico"]
           }
         }
       }
