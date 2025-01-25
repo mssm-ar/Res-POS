@@ -2,13 +2,8 @@
   <div class="filter-thumbnail-container">
     <app-filtermenu class="filtermenu-container"></app-filtermenu>
     <div class="thumbnail-container">
-      <app-thumbnail
-        *ngFor="let thumbnail of thumbnails"
-        [image]="thumbnail.image"
-        [title]="thumbnail.title"
-        [stock]="thumbnail.stock"
-        [price]="thumbnail.price"
-      >
+      <div *ngIf="!products.length">Não há produtos disponíveis.</div>
+      <app-thumbnail *ngFor="let product of products" [product]="product">
       </app-thumbnail>
       <app-addmodal></app-addmodal>
     </div>

@@ -4,15 +4,15 @@
   </span>
   <span
     class="filtermenu-home"
-    [class.filter-menu-active]="activeFilter === 'Todos'"
+    [class.filter-menu-active]="activeFilter === 0"
     (click)="setActiveFilterToAll()"
     >Todos</span
   >
   <span
     *ngFor="let category of categories"
     class="filtermenu-home"
-    [class.filter-menu-active]="activeFilter === category.nome"
-    (click)="setActiveFilter(category.nome)"
+    [class.filter-menu-active]="activeFilter === category.id"
+    (click)="setActiveFilter(category.id)"
     >{{ category.nome }}</span
   >
   <div *ngIf="!categories.length">No categories available.</div>

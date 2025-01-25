@@ -18,6 +18,10 @@
 .thumbnail-container app-thumbnail {
   flex: 0 0 20%;
 }
+.thumbnail-container div {
+  font-size: 20pt;
+  margin: 10px;
+}
 .bag-product-container {
   flex: 2;
   margin: 5px;

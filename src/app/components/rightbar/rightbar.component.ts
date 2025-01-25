@@ -1,4 +1,5 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
+import { SharedService } from "app/services/shared.service";
 
 interface Thumbnail {
   image: string;
@@ -12,7 +13,17 @@ interface Thumbnail {
   templateUrl: "./rightbar.component.html",
   styleUrls: ["./rightbar.component.css"],
 })
-export class RightbarComponent {
+export class RightbarComponent implements OnInit {
+  products: any[] = [];
+  constructor(private sharedService: SharedService) {}
+
+  ngOnInit(): void {
+    // this.fetchProducts(1, 1);
+    this.sharedService.products$.subscribe((data) => {
+      this.products = data; // Update products when data changes
+    });
+  }
+
   thumbnails: Thumbnail[] = [
     {
       image: "../../../assets/img/Appse.png",

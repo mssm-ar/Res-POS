@@ -15,12 +15,11 @@ export interface ThumbnailData {
 })
 export class SharedService {
   // API CALL SERVICE
+  constructor(private http: HttpClient) {}
 
   // private apiUrl = "";
   private categoriesSubject = new BehaviorSubject<any[]>([]);
   categories$ = this.categoriesSubject.asObservable();
-
-  constructor(private http: HttpClient) {}
 
   // Fetch categories from the API
   fetchCategories(tenantId: number): void {
@@ -35,7 +34,51 @@ export class SharedService {
     );
   }
 
+  // Fetch products from the API
+  private productsSubject = new BehaviorSubject<any[]>([]);
+  products$ = this.productsSubject.asObservable(); // Observable for products
+
+  fetchProducts(categoryId: number, tenantId: number): void {
+    const url = `/api/Product/Product?category=${categoryId}&tenantId=${tenantId}`;
+    this.http.get<any[]>(url).subscribe(
+      (data) => {
+        this.productsSubject.next(data); // Emit the fetched data
+      },
+      (error) => {
+        console.error("Error fetching products:", error);
+      }
+    );
+  }
+
+  fetchProductsForMultipleCategories(
+    tenantId: number,
+    categoryIds: number[]
+  ): void {
+    var allData = [];
+    categoryIds.forEach((id) => {
+      const url = `/api/Product/Product?category=${id}&tenantId=${tenantId}`;
+      console.log(url); // Log each URL for debugging
+      this.http.get<any[]>(url).subscribe(
+        (data) => {
+          console.log(data);
+          allData.push(...data);
+          //this.productsSubject.next(data); // Emit the fetched data
+        },
+        (error) => {
+          console.error("Error fetching products for category:", id, error);
+        }
+      );
+    });
+    console.log("allData:  ", allData);
+    this.productsSubject.next(allData);
+  }
+
+  getCategories() {
+    // Method to fetch categories (assuming it's implemented)
+    return this.http.get<any[]>("/api/Category/Category?tenantId=1"); // Replace with actual URL
+  }
   // STATE MANAGEMENT SERVICE
+
   // Thumbnail Methods
   private thumbnailHolder = new BehaviorSubject<ThumbnailData | null>(null);
   thumbnail$ = this.thumbnailHolder.asObservable();

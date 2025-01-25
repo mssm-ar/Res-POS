@@ -28,7 +28,12 @@
   margin: 5px 0px;
 }
 .food-title-container {
-  font-size: 16pt;
+  font-size: 10pt;
+  /* white-space: nowrap; */
+  /* overflow: hidden; */
+  /* text-overflow: ellipsis; */
+  /* width: 100%;  */
+  /* display: inline-block; */
 }
 .food-stock-container {
   color: #5ca102;

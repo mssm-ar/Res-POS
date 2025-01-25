@@ -7,6 +7,7 @@ import { SharedService } from "app/services/shared.service";
   styleUrls: ["./thumbnail.component.css"],
 })
 export class ThumbnailComponent {
+  @Input() product: any;
   @Input() image: string = "";
   @Input() title: string = "";
   @Input() stock: number = 0;
