@@ -14,7 +14,7 @@
 .addmodal-content-1 {
   background-color: white;
   width: 60%;
-  height: 64%;
+  height: 70%;
   margin: auto;
   padding: 40px;
   border-radius: 10px;
@@ -79,7 +79,7 @@
 
 .addmodal-text {
   flex: 4;
-  padding-right: 200px;
+  padding-right: 120px;
 }
 .addmodal-text span {
   font-size: 24pt;
