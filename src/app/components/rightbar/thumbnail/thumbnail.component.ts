@@ -7,20 +7,15 @@ import { SharedService } from "app/services/shared.service";
   styleUrls: ["./thumbnail.component.css"],
 })
 export class ThumbnailComponent {
-  products: any[] = []; // Array to hold products
+  products: any[] = [];
 
   @Input() product: any;
-  @Input() image: string = "";
-  @Input() title: string = "";
-  @Input() stock: number = 0;
-  @Input() price: number = 0;
 
   constructor(private sharedService: SharedService) {}
 
   ngOnInit() {
-    // Subscribe to the products observable
     this.sharedService.products$.subscribe((data) => {
-      this.products = data; // Update products array
+      this.products = data;
     });
   }
 

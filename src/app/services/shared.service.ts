@@ -54,7 +54,6 @@ export class SharedService {
     // Method to fetch categories (assuming it's implemented)
     return this.http.get<any[]>("/api/Category/Category?tenantId=1"); // Replace with actual URL
   }
-  // STATE MANAGEMENT SERVICE
 
   // Thumbnail Methods
   private thumbnailHolder = new BehaviorSubject<ThumbnailData | null>(null);
@@ -67,4 +66,13 @@ export class SharedService {
   clearThumbnail() {
     this.thumbnailHolder.next(null);
   }
+
+  // Orderlist method
+  // private orderListSubject = new BehaviorSubject<any[]>([]);
+  // orderList$ = this.orderListSubject.asObservable();
+
+  // addToOrderList(product: any) {
+  //   const currentOrders = this.orderListSubject.value;
+  //   this.orderListSubject.next([...currentOrders, product]); // Add new product to the order list
+  // }
 }

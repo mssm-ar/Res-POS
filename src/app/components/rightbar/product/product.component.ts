@@ -8,16 +8,16 @@ import { SharedService } from "../../../services/shared.service";
   styleUrls: ["./product.component.css"],
 })
 export class ProductComponent {
-  // product component
+  products: any[] = [];
+  orderList: any[] = [];
+
   constructor(private sharedService: SharedService) {}
 
-  thumbnailData: any;
-
-  ngOnInit() {
-    this.sharedService.thumbnail$.subscribe((data) => {
-      this.thumbnailData = data;
-    });
-  }
+  // ngOnInit() {
+  //   this.sharedService.orderList$.subscribe((orders) => {
+  //     this.orderList = orders; // Update order list
+  //   });
+  // }
 
   // deliver form
   showDeliverForm: boolean = false;

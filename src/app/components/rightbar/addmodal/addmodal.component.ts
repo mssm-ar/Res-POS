@@ -21,6 +21,13 @@ export class AddmodalComponent implements OnInit {
   closeModal() {
     this.sharedService.clearThumbnail();
   }
+  // add to orderlist
+  // addToOrderList() {
+  //   if (this.thumbnailData) {
+  //     this.sharedService.addToOrderList(this.thumbnailData); // Add product to order list
+  //   }
+  //   this.sharedService.clearThumbnail();
+  // }
   // in-decrease evennt
   ordernumber: number = 1;
   decrementorder() {

@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from "@angular/core";
+import { Component, Input, OnInit, OnDestroy } from "@angular/core";
 import { Subscription } from "rxjs";
 import { SharedService } from "app/services/shared.service";
 
@@ -10,13 +10,16 @@ import { SharedService } from "app/services/shared.service";
 export class OrderlistComponent {
   constructor(private sharedService: SharedService) {}
 
-  thumbnailData: any;
+  // thumbnailData: any;
+  @Input() orderList: any[] = [];
 
-  ngOnInit() {
-    this.sharedService.thumbnail$.subscribe((data) => {
-      this.thumbnailData = data;
-    });
-  }
+  ngOnInit() {}
+
+  // ngOnInit() {
+  //   this.sharedService.thumbnail$.subscribe((data) => {
+  //     this.thumbnailData = data;
+  //   });
+  // }
   // order number
   ingredient_number: number = 1;
   decrementingredient() {
