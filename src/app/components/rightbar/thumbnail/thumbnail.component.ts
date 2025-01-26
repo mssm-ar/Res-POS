@@ -1,4 +1,4 @@
-import { Component, Input } from "@angular/core";
+import { Component, Input, OnInit } from "@angular/core";
 import { SharedService } from "app/services/shared.service";
 
 @Component({
@@ -7,6 +7,8 @@ import { SharedService } from "app/services/shared.service";
   styleUrls: ["./thumbnail.component.css"],
 })
 export class ThumbnailComponent {
+  products: any[] = []; // Array to hold products
+
   @Input() product: any;
   @Input() image: string = "";
   @Input() title: string = "";
@@ -15,12 +17,20 @@ export class ThumbnailComponent {
 
   constructor(private sharedService: SharedService) {}
 
-  onThumbnailClick() {
+  ngOnInit() {
+    // Subscribe to the products observable
+    this.sharedService.products$.subscribe((data) => {
+      this.products = data; // Update products array
+    });
+  }
+
+  onThumbnailClick(product: any) {
     const thumbnailData = {
-      image: this.image,
-      title: this.title,
-      stock: this.stock,
-      price: this.price,
+      image: product.urlFotoProduto,
+      title: product.nome,
+      stock: product.estoqueMinimo,
+      price: product.precoVenda,
+      description: product.descricao,
     };
     this.sharedService.setThumbnail(thumbnailData);
   }
