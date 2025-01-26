@@ -1,5 +1,7 @@
 <div class="thumbnail" (click)="onThumbnailClick()">
-  <img [src]="product.urlFotoProduto" />
+  <div class="thumbnail-image">
+    <img [src]="product.urlFotoProduto" />
+  </div>
   <div class="list-container">
     <p class="food-title-container">{{ product.nome }}</p>
     <p class="food-stock-container">In stock - {{ product.estoqueMinimo }}</p>

@@ -50,29 +50,6 @@ export class SharedService {
     );
   }
 
-  fetchProductsForMultipleCategories(
-    tenantId: number,
-    categoryIds: number[]
-  ): void {
-    var allData = [];
-    categoryIds.forEach((id) => {
-      const url = `/api/Product/Product?category=${id}&tenantId=${tenantId}`;
-      console.log(url); // Log each URL for debugging
-      this.http.get<any[]>(url).subscribe(
-        (data) => {
-          console.log(data);
-          allData.push(...data);
-          //this.productsSubject.next(data); // Emit the fetched data
-        },
-        (error) => {
-          console.error("Error fetching products for category:", id, error);
-        }
-      );
-    });
-    console.log("allData:  ", allData);
-    this.productsSubject.next(allData);
-  }
-
   getCategories() {
     // Method to fetch categories (assuming it's implemented)
     return this.http.get<any[]>("/api/Category/Category?tenantId=1"); // Replace with actual URL

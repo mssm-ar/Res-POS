@@ -32,8 +32,7 @@ export class FiltermenuComponent {
   }
   setActiveFilterToAll(): void {
     this.activeFilter = 0; // Reset active filter to show all products
-    const categoryIds = [1, 2, 3, 4, 5, 6, 1006]; // List of category IDs
-    this.sharedService.fetchProductsForMultipleCategories(1, categoryIds); // Fetch products for all categories
+    this.sharedService.fetchProducts(0, 1);
   }
   setActiveFilter(categoryId: number): void {
     this.activeFilter = categoryId; // Set the active filter

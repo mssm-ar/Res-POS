@@ -1,5 +1,6 @@
 .filter {
   display: flex;
+  flex-wrap: wrap;
   background-color: white;
   margin: 5px;
   border-radius: 10px;
