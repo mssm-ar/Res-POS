@@ -39,6 +39,7 @@
 .addmodal-image img {
   border-radius: 15px;
   width: 90%;
+  height: 66%;
 }
 
 .addmodal-counter {

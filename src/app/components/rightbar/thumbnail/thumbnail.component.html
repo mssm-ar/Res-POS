@@ -4,7 +4,9 @@
   </div>
   <div class="list-container">
     <p class="food-title-container">{{ product.nome }}</p>
-    <p class="food-stock-container">In stock - {{ product.estoqueInicial }}</p>
+    <p class="food-stock-container">
+      Em estoque - {{ product.estoqueInicial }}
+    </p>
     <p class="food-price-container">{{ product.precoVenda | currency }}</p>
   </div>
 </div>

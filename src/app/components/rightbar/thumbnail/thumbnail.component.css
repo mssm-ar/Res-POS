@@ -7,6 +7,7 @@
   background-color: white;
   font-family: sans-serif;
   overflow: hidden;
+  height: 90%;
 }
 
 .thumbnail:hover {
@@ -16,29 +17,43 @@
 }
 .thumbnail-image {
   width: 100%;
-  height: 100%;
+  height: 70%;
   object-fit: contain;
 }
 .thumbnail-image img {
   border-radius: 10px;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  /* object-fit: cover; */
 }
 
 .list-container {
   padding: 2px;
+  width: 97%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  position: relative;
+  /* width: 200px; */
+}
+.list-container:hover {
+  animation: scroll-text 5s linear infinite;
+}
+.scrolling-text {
+  display: inline-block; /* Ensure it behaves like text */
+  white-space: nowrap; /* Prevent wrapping */
+  position: relative; /* Required for animation */
 }
 .list-container p {
   margin: 5px 0px;
 }
 .food-title-container {
   font-size: 16pt;
+  width: 150px;
   /* white-space: nowrap; */
   /* overflow: hidden; */
   /* text-overflow: ellipsis; */
   /* width: 100%;  */
-  /* display: inline-block; */
 }
 .food-stock-container {
   color: #5ca102;

@@ -18,6 +18,7 @@
 }
 .thumbnail-container app-thumbnail {
   flex: 0 0 20%;
+  height: 340px;
 }
 .thumbnail-container div {
   font-size: 20pt;

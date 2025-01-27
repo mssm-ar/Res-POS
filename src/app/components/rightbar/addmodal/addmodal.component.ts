@@ -24,6 +24,7 @@ export class AddmodalComponent implements OnInit {
       // Add the product to the order list
       this.sharedService.addToOrderList(this.thumbnailData);
     }
+    this.sharedService.clearThumbnail();
   }
 
   closeModal() {
