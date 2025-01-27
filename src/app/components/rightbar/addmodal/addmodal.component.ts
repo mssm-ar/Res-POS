@@ -18,17 +18,17 @@ export class AddmodalComponent implements OnInit {
     });
   }
 
+  // add to orderlist
+  onAddClick() {
+    if (this.thumbnailData) {
+      // Add the product to the order list
+      this.sharedService.addToOrderList(this.thumbnailData);
+    }
+  }
+
   closeModal() {
     this.sharedService.clearThumbnail();
   }
-  // add to orderlist
-  // addToOrderList() {
-  //   if (this.thumbnailData) {
-  //     this.sharedService.addToOrderList(this.thumbnailData); // Add product to order list
-  //   }
-  //   this.sharedService.clearThumbnail();
-  // }
-  // in-decrease evennt
   ordernumber: number = 1;
   decrementorder() {
     if (this.ordernumber > 1) {

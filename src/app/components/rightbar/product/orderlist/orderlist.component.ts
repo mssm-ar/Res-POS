@@ -15,6 +15,8 @@ export class OrderlistComponent {
 
   ngOnInit() {}
 
+  // constructor() {}
+
   // ngOnInit() {
   //   this.sharedService.thumbnail$.subscribe((data) => {
   //     this.thumbnailData = data;

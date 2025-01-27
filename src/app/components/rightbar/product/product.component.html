@@ -4,25 +4,29 @@
 ></app-deliverform>
 <div class="product">
   <div class="order-title">
-    <span>Products</span>
+    <span>Produtos</span>
     <i class="fa-regular fa-trash-can"></i>
   </div>
   <hr />
-  <div class="deliver-list-container">
-    <app-orderlist></app-orderlist>
+  <div class="deliver-list-container-empty" *ngIf="orderList.length == 0">
+    <i class="fa-solid fa-book"></i>
+    <p>Não há itens na bolsa.</p>
+  </div>
+  <div class="deliver-list-container" *ngIf="orderList.length > 0">
+    <app-orderlist [orderList]="orderList"></app-orderlist>
   </div>
   <div class="subtotal-container">
     <hr />
     <div>
       <span>Subtotal</span>
-      <span>$ 117.16</span>
+      <span>$ {{ totalPrice | number : "1.2-2" }}</span>
     </div>
     <div>
-      <span>Tax</span>
-      <span>$ 1.17</span>
+      <span>Imposto</span>
+      <span>$ {{ totalPrice / 10 | number : "1.2-2" }}</span>
     </div>
     <div>
-      <span>Service fee</span>
+      <span>Taxa de serviço</span>
       <span>$ 1.00</span>
     </div>
   </div>
@@ -30,8 +34,8 @@
   <div class="total-price">
     <hr />
     <div>
-      <span>Total price</span>
-      <span>$ 119.33</span>
+      <span>Preço total</span>
+      <span>$ {{ 1 + totalPrice * 1.1 | number : "1.2-2" }}</span>
     </div>
     <button (click)="onOrderClick()">Order</button>
   </div>

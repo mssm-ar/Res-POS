@@ -1,6 +1,6 @@
-<div class="order-list-container">
+<div class="order-list-container" *ngFor="let product of orderList">
   <!-- <p class="food-title">{{ orderData.orderTitle }}</p> -->
-  <p class="food-title">dd</p>
+  <p class="food-title">{{ product.title }}</p>
   <div class="detail-container">
     <div class="order-number">
       <p>{{ ingredient_number }}</p>
@@ -10,8 +10,7 @@
       <button class="minus-btn" (click)="decrementingredient()">-</button>
       <button class="plus-btn" (click)="incrementingredient()">+</button>
     </div>
-    <!-- <span class="order-price">$ {{ orderData.price * ingredient_number }}</span> -->
-    <span class="order-price">$ {{ 8 * ingredient_number }}</span>
+    <span class="order-price">$ {{ product.price * ingredient_number }}</span>
   </div>
   <hr />
 </div>

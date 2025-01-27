@@ -68,11 +68,11 @@ export class SharedService {
   }
 
   // Orderlist method
-  // private orderListSubject = new BehaviorSubject<any[]>([]);
-  // orderList$ = this.orderListSubject.asObservable();
+  private orderListSubject = new BehaviorSubject<any[]>([]);
+  orderList$ = this.orderListSubject.asObservable();
 
-  // addToOrderList(product: any) {
-  //   const currentOrders = this.orderListSubject.value;
-  //   this.orderListSubject.next([...currentOrders, product]); // Add new product to the order list
-  // }
+  addToOrderList(product: any) {
+    const currentOrderList = this.orderListSubject.value;
+    this.orderListSubject.next([...currentOrderList, product]);
+  }
 }

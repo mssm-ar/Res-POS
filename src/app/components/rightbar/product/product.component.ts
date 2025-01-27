@@ -10,15 +10,24 @@ import { SharedService } from "../../../services/shared.service";
 export class ProductComponent {
   products: any[] = [];
   orderList: any[] = [];
+  totalPrice: number = 0;
 
   constructor(private sharedService: SharedService) {}
 
-  // ngOnInit() {
-  //   this.sharedService.orderList$.subscribe((orders) => {
-  //     this.orderList = orders; // Update order list
-  //   });
-  // }
+  ngOnInit() {
+    // Subscribe to the order list
+    this.sharedService.orderList$.subscribe((orderList) => {
+      this.orderList = orderList;
+      this.calculateTotalPrice();
+    });
+  }
 
+  calculateTotalPrice() {
+    this.totalPrice = this.orderList.reduce(
+      (acc, product) => acc + product.price,
+      0
+    );
+  }
   // deliver form
   showDeliverForm: boolean = false;
 
