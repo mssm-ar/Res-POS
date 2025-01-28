@@ -5,7 +5,7 @@
 <div class="product">
   <div class="order-title">
     <span>Produtos</span>
-    <i class="fa-regular fa-trash-can"></i>
+    <i class="fa-regular fa-trash-can" (click)="clearOrderList()"></i>
   </div>
   <hr />
   <div class="deliver-list-container-empty" *ngIf="orderList.length == 0">

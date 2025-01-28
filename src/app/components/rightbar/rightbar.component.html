@@ -10,8 +10,12 @@
   </div>
   <div class="bag-product-container">
     <div class="bag-container">
-      <app-bag class=""></app-bag>
-      <span>+</span>
+      <app-bag
+        *ngFor="let bag of bags; let i = index"
+        [bagNumber]="i + 1"
+        (close)="removeBag(i)"
+      ></app-bag>
+      <span (click)="addBag()">+</span>
     </div>
     <div class="product-container">
       <app-product></app-product>

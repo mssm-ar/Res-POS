@@ -30,9 +30,18 @@
 }
 .bag-container {
   display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  /* max-width: 500px; */
+  overflow: hidden;
+  overflow-x: auto;
+  /* white-space: nowrap; */
 }
 .bag-container app-bag {
-  flex: 0 0 auto;
+  /* flex: 0 0 auto; */
+  cursor: pointer;
+  min-width: 50px;
+  /* width: 100%; */
 }
 .bag-container span {
   margin-left: auto;

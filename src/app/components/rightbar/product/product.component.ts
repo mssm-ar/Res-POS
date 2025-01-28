@@ -21,6 +21,10 @@ export class ProductComponent {
       this.calculateTotalPrice();
     });
   }
+  clearOrderList() {
+    this.orderList = [];
+    this.sharedService.clearThumbnail();
+  }
 
   calculateTotalPrice() {
     this.totalPrice = this.orderList.reduce(

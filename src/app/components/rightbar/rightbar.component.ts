@@ -7,13 +7,27 @@ import { SharedService } from "app/services/shared.service";
   styleUrls: ["./rightbar.component.css"],
 })
 export class RightbarComponent implements OnInit {
-  products: any[] = [];
   constructor(private sharedService: SharedService) {}
+  products: any[] = [];
+  bags: number[] = [1];
+
+  // Method to add a new bag
+  addBag() {
+    this.bags.push(this.bags.length + 1);
+  }
+  removeBag(index: number) {
+    if (this.bags.length > 1) {
+      this.bags.splice(index, 1);
+      this.updateBagNumbers();
+    }
+  }
+  updateBagNumbers() {
+    this.bags = this.bags.map((_, index) => index + 1);
+  }
 
   ngOnInit(): void {
-    // this.fetchProducts(1, 1);
     this.sharedService.products$.subscribe((data) => {
-      this.products = data; // Update products when data changes
+      this.products = data;
     });
   }
 }
