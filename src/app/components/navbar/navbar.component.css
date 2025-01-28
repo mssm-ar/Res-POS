@@ -141,5 +141,11 @@
     order: 3;
     width: 100%;
     min-width: 400px;
+    display: flex;
+    margin-top: 8px;
+    padding: 10px;
+  }
+  .search-bar i {
+    padding-top: 6px;
   }
 }

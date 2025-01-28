@@ -7,7 +7,7 @@ import { SharedService } from "../../../services/shared.service";
   templateUrl: "./product.component.html",
   styleUrls: ["./product.component.css"],
 })
-export class ProductComponent {
+export class ProductComponent implements OnInit {
   products: any[] = [];
   orderList: any[] = [];
   totalPrice: number = 0;
@@ -23,12 +23,17 @@ export class ProductComponent {
   }
   clearOrderList() {
     this.orderList = [];
+    this.totalPrice = 0;
     this.sharedService.clearThumbnail();
+    this.sharedService.updateOrderList([]);
   }
 
   calculateTotalPrice() {
-    this.totalPrice = this.orderList.reduce(
-      (acc, product) => acc + product.price,
+    const uniquePrices = new Set(
+      this.orderList.map((product) => product.price)
+    );
+    this.totalPrice = Array.from(uniquePrices).reduce(
+      (acc, price) => acc + price,
       0
     );
   }

@@ -75,4 +75,7 @@ export class SharedService {
     const currentOrderList = this.orderListSubject.value;
     this.orderListSubject.next([...currentOrderList, product]);
   }
+  updateOrderList(orderList: any[]) {
+    this.orderListSubject.next(orderList);
+  }
 }

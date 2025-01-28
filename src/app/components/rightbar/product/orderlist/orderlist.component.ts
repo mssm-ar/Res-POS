@@ -15,13 +15,6 @@ export class OrderlistComponent {
 
   ngOnInit() {}
 
-  // constructor() {}
-
-  // ngOnInit() {
-  //   this.sharedService.thumbnail$.subscribe((data) => {
-  //     this.thumbnailData = data;
-  //   });
-  // }
   // order number
   ingredient_number: number = 1;
   decrementingredient() {
@@ -32,5 +25,11 @@ export class OrderlistComponent {
 
   incrementingredient() {
     this.ingredient_number++;
+  }
+  // Method to calculate the total price for the entire order list
+  getSubtotal(): number {
+    return this.orderList.reduce((acc, product) => {
+      return acc + product.price * product.ingredient_number; // Multiply price by quantity
+    }, 0);
   }
 }
