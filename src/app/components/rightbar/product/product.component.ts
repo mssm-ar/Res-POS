@@ -1,5 +1,4 @@
 import { Component, OnInit, OnDestroy } from "@angular/core";
-import { Subscription } from "rxjs";
 import { SharedService } from "../../../services/shared.service";
 
 @Component({
@@ -11,23 +10,17 @@ export class ProductComponent implements OnInit {
   products: any[] = [];
   orderList: any[] = [];
   totalPrice: number = 0;
+  serviceFee: number = 0;
 
   constructor(private sharedService: SharedService) {}
 
   ngOnInit() {
-    // Subscribe to the order list
     this.sharedService.orderList$.subscribe((orderList) => {
       this.orderList = orderList;
       this.calculateTotalPrice();
+      this.updateServiceFee();
     });
   }
-  clearOrderList() {
-    this.orderList = [];
-    this.totalPrice = 0;
-    this.sharedService.clearThumbnail();
-    this.sharedService.updateOrderList([]);
-  }
-
   calculateTotalPrice() {
     const uniquePrices = new Set(
       this.orderList.map((product) => product.price)
@@ -37,6 +30,17 @@ export class ProductComponent implements OnInit {
       0
     );
   }
+  clearOrderList() {
+    this.orderList = [];
+    this.totalPrice = 0;
+    this.serviceFee = 0;
+    this.sharedService.clearThumbnail();
+    this.sharedService.updateOrderList([]);
+  }
+  updateServiceFee() {
+    this.serviceFee = this.orderList.length > 0 ? 1 : 0;
+  }
+
   // deliver form
   showDeliverForm: boolean = false;
 

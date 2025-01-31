@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, OnDestroy } from "@angular/core";
+import { Component, Input, Output, OnInit, EventEmitter } from "@angular/core";
 import { Subscription } from "rxjs";
 import { SharedService } from "app/services/shared.service";
 
@@ -8,28 +8,30 @@ import { SharedService } from "app/services/shared.service";
   styleUrls: ["./orderlist.component.css"],
 })
 export class OrderlistComponent {
-  constructor(private sharedService: SharedService) {}
-
-  // thumbnailData: any;
   @Input() orderList: any[] = [];
+  @Output() orderListChange = new EventEmitter<any[]>();
+
+  constructor() {}
 
   ngOnInit() {}
 
   // order number
   ingredient_number: number = 1;
-  decrementingredient() {
-    if (this.ingredient_number > 1) {
-      this.ingredient_number--;
+  decrementingredient(product: any) {
+    if (product.ingredient_number > 1) {
+      product.ingredient_number--;
+      this.emitUpdatedOrderList();
     }
   }
 
-  incrementingredient() {
-    this.ingredient_number++;
+  incrementingredient(product: any) {
+    product.ingredient_number++;
+    this.emitUpdatedOrderList();
+  }
+
+  emitUpdatedOrderList() {
+    this.orderListChange.emit(this.orderList);
+    console.log(this.ingredient_number);
   }
   // Method to calculate the total price for the entire order list
-  getSubtotal(): number {
-    return this.orderList.reduce((acc, product) => {
-      return acc + product.price * product.ingredient_number; // Multiply price by quantity
-    }, 0);
-  }
 }

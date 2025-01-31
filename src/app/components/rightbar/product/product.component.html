@@ -13,7 +13,11 @@
     <p>Não há itens na bolsa.</p>
   </div>
   <div class="deliver-list-container" *ngIf="orderList.length > 0">
-    <app-orderlist [orderList]="orderList"></app-orderlist>
+    <app-orderlist
+      [orderList]="orderList"
+      (orderListChange)="calculateTotalPrice($event)"
+    >
+    </app-orderlist>
   </div>
   <div class="subtotal-container">
     <hr />
@@ -27,7 +31,7 @@
     </div>
     <div>
       <span>Taxa de serviço</span>
-      <span>$ 1.00</span>
+      <span>$ {{ serviceFee | number : "1.2-2" }}</span>
     </div>
   </div>
 
@@ -35,7 +39,7 @@
     <hr />
     <div>
       <span>Preço total</span>
-      <span>$ {{ 1 + totalPrice * 1.1 | number : "1.2-2" }}</span>
+      <span>$ {{ serviceFee + totalPrice * 1.1 | number : "1.2-2" }}</span>
     </div>
     <button (click)="onOrderClick()">Pedido</button>
   </div>
