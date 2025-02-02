@@ -12,13 +12,20 @@
     <div class="bag-container">
       <app-bag
         *ngFor="let bag of bags; let i = index"
-        [bagNumber]="i + 1"
+        [class.active]="bag.id === selectedBagId"
+        [bagNumber]="bag.id"
+        [isActive]="bag.isActive"
+        (select)="selectBag(i)"
+        (click)="selectBag(bag.id)"
         (close)="removeBag(i)"
       ></app-bag>
-      <span (click)="addBag()">+</span>
+      <span class="add-bag-btn" (click)="addBag()">+</span>
     </div>
     <div class="product-container">
-      <app-product></app-product>
+      <app-product
+        *ngFor="let bag of bags"
+        [orderList]="bag.isActive ? bag.orderList : []"
+      ></app-product>
     </div>
   </div>
 </div>

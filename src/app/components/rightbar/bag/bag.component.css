@@ -9,6 +9,9 @@
   flex-wrap: nowrap;
 }
 .bag-list:hover {
+  background-color: rgb(255, 255, 255);
+}
+.bag-list.active {
   background-color: white;
 }
 .bag-list i {

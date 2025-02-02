@@ -8,8 +8,14 @@ import { Component, Input, Output, EventEmitter } from "@angular/core";
 export class BagComponent {
   @Input() bagNumber!: number;
   @Output() close = new EventEmitter<void>();
+  @Input() isActive!: boolean;
+  @Output() select = new EventEmitter<void>();
 
   closeBag() {
     this.close.emit();
+  }
+
+  selectBag() {
+    this.select.emit();
   }
 }

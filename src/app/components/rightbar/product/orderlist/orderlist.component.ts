@@ -8,6 +8,7 @@ import { SharedService } from "app/services/shared.service";
   styleUrls: ["./orderlist.component.css"],
 })
 export class OrderlistComponent {
+  constructor(private sharedService: SharedService) {}
   @Input() orderList: any[] = [];
   @Output() orderListChange = new EventEmitter<any[]>();
 
@@ -19,6 +20,8 @@ export class OrderlistComponent {
     } else {
       this.orderList = this.orderList.filter((item) => item !== product);
     }
+    // this.sharedService.clearThumbnail();
+    // this.sharedService.updateOrderList([]);
     this.emitUpdatedOrderList();
   }
 

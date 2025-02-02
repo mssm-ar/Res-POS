@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from "@angular/core";
+import { Component, OnInit, Input } from "@angular/core";
 import { SharedService } from "../../../services/shared.service";
 
 @Component({
@@ -7,7 +7,7 @@ import { SharedService } from "../../../services/shared.service";
   styleUrls: ["./product.component.css"],
 })
 export class ProductComponent implements OnInit {
-  products: any[] = [];
+  @Input() products: any[] = [];
   orderList: any[] = [];
   totalPrice: number = 0;
   serviceFee: number = 0;

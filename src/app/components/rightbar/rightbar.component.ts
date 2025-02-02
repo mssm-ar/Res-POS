@@ -9,22 +9,39 @@ import { SharedService } from "app/services/shared.service";
 export class RightbarComponent implements OnInit {
   constructor(private sharedService: SharedService) {}
   products: any[] = [];
-  bags: number[] = [1];
+  bags: { id: number; orderList: any[]; isActive: boolean }[] = [
+    { id: 1, orderList: [], isActive: true },
+  ];
+  selectedBagId: number = 1;
 
   // Method to add a new bag
   addBag() {
-    this.bags.push(this.bags.length + 1);
+    const newBagId = this.bags.length + 1;
+    this.bags.push({ id: newBagId, orderList: [], isActive: false });
   }
+
+  // Method to remove a bag
   removeBag(index: number) {
     if (this.bags.length > 1) {
       this.bags.splice(index, 1);
       this.updateBagNumbers();
     }
   }
+
+  // Update bag numbers after removal
   updateBagNumbers() {
-    this.bags = this.bags.map((_, index) => index + 1);
+    this.bags = this.bags.map((_, index) => ({ ..._, id: index + 1 }));
   }
 
+  // Activate the selected bag and deactivate others
+  selectBag(index: number) {
+    this.bags.forEach((bag, i) => {
+      bag.isActive = i + 1 === index;
+      if (bag.isActive) {
+        this.selectedBagId = bag.id;
+      }
+    });
+  }
   ngOnInit(): void {
     this.sharedService.products$.subscribe((data) => {
       this.products = data;

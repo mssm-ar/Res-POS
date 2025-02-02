@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from "@angular/core";
+import { Component, EventEmitter, OnInit, Input, Output } from "@angular/core";
 import { Subscription } from "rxjs";
 import { SharedService } from "../../../services/shared.service";
 
@@ -8,6 +8,8 @@ import { SharedService } from "../../../services/shared.service";
   styleUrls: ["./addmodal.component.css"],
 })
 export class AddmodalComponent implements OnInit {
+  @Input() selectedBagId!: number; // Receive the selected bag ID
+  @Output() productAdded = new EventEmitter<void>();
   constructor(private sharedService: SharedService) {}
 
   thumbnailData: any;
