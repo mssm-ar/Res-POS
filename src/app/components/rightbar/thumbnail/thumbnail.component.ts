@@ -18,7 +18,7 @@ export class ThumbnailComponent {
       this.products = data;
     });
   }
-
+  // set product thumbnail data when click this
   onThumbnailClick(product: any) {
     const thumbnailData = {
       image: product.urlFotoProduto,

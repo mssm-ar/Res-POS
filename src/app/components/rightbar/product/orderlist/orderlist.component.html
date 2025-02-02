@@ -3,15 +3,15 @@
   <p class="food-title">{{ product.title }}</p>
   <div class="detail-container">
     <div class="order-number">
-      <p>{{ this.ingredient_number }}</p>
+      <p>{{ product.ordernumber }}</p>
       <i class="fa-solid fa-xmark"></i>
     </div>
     <div class="in-de-crease">
-      <button class="minus-btn" (click)="decrementingredient(this)">-</button>
-      <button class="plus-btn" (click)="incrementingredient(this)">+</button>
+      <button class="minus-btn" (click)="decrementorder(this)">-</button>
+      <button class="plus-btn" (click)="incrementorder(this)">+</button>
     </div>
     <span class="order-price"
-      >$ {{ product.price * this.ingredient_number | number : "1.2-2" }}
+      >$ {{ product.price * product.ordernumber | number : "1.2-2" }}
     </span>
   </div>
   <hr />

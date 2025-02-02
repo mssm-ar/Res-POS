@@ -10,6 +10,6 @@ export class BagComponent {
   @Output() close = new EventEmitter<void>();
 
   closeBag() {
-    this.close.emit(); // Notify parent to remove the bag
+    this.close.emit();
   }
 }

@@ -21,15 +21,23 @@ export class AddmodalComponent implements OnInit {
   // add to orderlist
   onAddClick() {
     if (this.thumbnailData) {
-      // Add the product to the order list
-      this.sharedService.addToOrderList(this.thumbnailData);
+      const newProduct = {
+        ...this.thumbnailData,
+        ordernumber: this.ordernumber,
+        ingredient_number: this.ingredient_number,
+      };
+      this.sharedService.addToOrderList(newProduct);
     }
     this.sharedService.clearThumbnail();
+    this.ordernumber = 1;
+    this.ingredient_number = 1;
   }
 
   closeModal() {
     this.sharedService.clearThumbnail();
   }
+
+  // order number
   ordernumber: number = 1;
   decrementorder() {
     if (this.ordernumber > 1) {
@@ -40,6 +48,7 @@ export class AddmodalComponent implements OnInit {
   incrementorder() {
     this.ordernumber++;
   }
+
   //ingredient number
   ingredient_number: number = 1;
   decrementingredient() {

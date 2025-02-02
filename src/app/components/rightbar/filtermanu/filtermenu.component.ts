@@ -7,19 +7,19 @@ import { SharedService } from "../../../services/shared.service";
   styleUrls: ["./filtermenu.component.css"],
 })
 export class FiltermenuComponent {
-  activeFilter: number = 0; // Default active filter (0 for "Todos")
+  activeFilter: number = 0;
   products: any[] = [];
-  categories: any[] = []; // Array to hold categories
-  errorMessage: string = ""; // Variable to hold error messages
+  categories: any[] = [];
+  errorMessage: string = "";
 
   constructor(private sharedService: SharedService) {}
 
   ngOnInit(): void {
-    this.setActiveFilterToAll(); // Fetch all products by default
-    this.fetchCategories(1); // Fetch categories for tenantId 1
+    this.setActiveFilterToAll();
+    this.fetchCategories(1);
     this.sharedService.categories$.subscribe(
       (data) => {
-        this.categories = data; // Update the local categories array
+        this.categories = data;
       },
       (error) => {
         console.error("Error in subscription:", error);
@@ -28,14 +28,14 @@ export class FiltermenuComponent {
   }
 
   fetchCategories(tenantId: number): void {
-    this.sharedService.fetchCategories(tenantId); // Call the service to fetch categories
+    this.sharedService.fetchCategories(tenantId);
   }
   setActiveFilterToAll(): void {
-    this.activeFilter = 0; // Reset active filter to show all products
+    this.activeFilter = 0;
     this.sharedService.fetchProducts(0, 1);
   }
   setActiveFilter(categoryId: number): void {
-    this.activeFilter = categoryId; // Set the active filter
+    this.activeFilter = categoryId;
     this.sharedService.fetchProducts(categoryId, 1);
   }
 }

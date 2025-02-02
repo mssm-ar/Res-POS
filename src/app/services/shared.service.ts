@@ -18,10 +18,10 @@ export class SharedService {
   constructor(private http: HttpClient) {}
 
   // private apiUrl = "";
+  // Fetch categories from the API to display on filtermenu
   private categoriesSubject = new BehaviorSubject<any[]>([]);
   categories$ = this.categoriesSubject.asObservable();
 
-  // Fetch categories from the API
   fetchCategories(tenantId: number): void {
     const url = `/api/Category/Category?tenantId=${tenantId}`;
     this.http.get<any[]>(url).subscribe(
@@ -34,7 +34,7 @@ export class SharedService {
     );
   }
 
-  // Fetch products from the API
+  // Fetch products from the API according to filtermenu
   private productsSubject = new BehaviorSubject<any[]>([]);
   products$ = this.productsSubject.asObservable(); // Observable for products
 
@@ -42,7 +42,7 @@ export class SharedService {
     const url = `/api/Product/Product?category=${categoryId}&tenantId=${tenantId}`;
     this.http.get<any[]>(url).subscribe(
       (data) => {
-        this.productsSubject.next(data); // Emit the fetched data
+        this.productsSubject.next(data);
       },
       (error) => {
         console.error("Error fetching products:", error);
@@ -50,12 +50,12 @@ export class SharedService {
     );
   }
 
+  // fetch category for filter menu
   getCategories() {
-    // Method to fetch categories (assuming it's implemented)
-    return this.http.get<any[]>("/api/Category/Category?tenantId=1"); // Replace with actual URL
+    return this.http.get<any[]>("/api/Category/Category?tenantId=1");
   }
 
-  // Thumbnail Methods
+  // Thumbnail Holder when i click product thumbnail
   private thumbnailHolder = new BehaviorSubject<ThumbnailData | null>(null);
   thumbnail$ = this.thumbnailHolder.asObservable();
 
@@ -67,7 +67,7 @@ export class SharedService {
     this.thumbnailHolder.next(null);
   }
 
-  // Orderlist method
+  // Method to display product detail on orderlist
   private orderListSubject = new BehaviorSubject<any[]>([]);
   orderList$ = this.orderListSubject.asObservable();
 

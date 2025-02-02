@@ -16,22 +16,21 @@ export class OrderlistComponent {
   ngOnInit() {}
 
   // order number
-  ingredient_number: number = 1;
-  decrementingredient(product: any) {
-    if (product.ingredient_number > 1) {
-      product.ingredient_number--;
+  ordernumber: number = 1;
+  decrementorder(product: any) {
+    if (product.ordernumber > 1) {
+      product.ordernumber--;
       this.emitUpdatedOrderList();
     }
   }
 
-  incrementingredient(product: any) {
-    product.ingredient_number++;
+  incrementorder(product: any) {
+    product.ordernumber++;
     this.emitUpdatedOrderList();
   }
 
   emitUpdatedOrderList() {
     this.orderListChange.emit(this.orderList);
-    console.log(this.ingredient_number);
+    console.log(this.ordernumber);
   }
-  // Method to calculate the total price for the entire order list
 }
