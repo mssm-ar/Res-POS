@@ -22,11 +22,8 @@ export class ProductComponent implements OnInit {
     });
   }
   calculateTotalPrice() {
-    const uniquePrices = new Set(
-      this.orderList.map((product) => product.price)
-    );
-    this.totalPrice = Array.from(uniquePrices).reduce(
-      (acc, price) => acc + price,
+    this.totalPrice = this.orderList.reduce(
+      (acc, product) => acc + product.price * product.ordernumber,
       0
     );
   }

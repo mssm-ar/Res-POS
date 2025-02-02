@@ -11,17 +11,15 @@ export class OrderlistComponent {
   @Input() orderList: any[] = [];
   @Output() orderListChange = new EventEmitter<any[]>();
 
-  constructor() {}
-
-  ngOnInit() {}
-
   // order number
   ordernumber: number = 1;
   decrementorder(product: any) {
     if (product.ordernumber > 1) {
       product.ordernumber--;
-      this.emitUpdatedOrderList();
+    } else {
+      this.orderList = this.orderList.filter((item) => item !== product);
     }
+    this.emitUpdatedOrderList();
   }
 
   incrementorder(product: any) {
