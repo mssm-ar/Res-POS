@@ -32,6 +32,5 @@ export class OrderlistComponent {
 
   emitUpdatedOrderList() {
     this.orderListChange.emit(this.orderList);
-    console.log(this.ordernumber);
   }
 }

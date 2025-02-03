@@ -70,10 +70,16 @@ export class SharedService {
   // Method to display product detail on orderlist
   private orderListSubject = new BehaviorSubject<any[]>([]);
   orderList$ = this.orderListSubject.asObservable();
+  bags: { id: number; orderList: any[]; isActive: boolean }[] = [
+    { id: 1, orderList: [], isActive: true },
+  ];
 
-  addToOrderList(product: any) {
-    const currentOrderList = this.orderListSubject.value;
-    this.orderListSubject.next([...currentOrderList, product]);
+  addToOrderList(product: any, bagId: number) {
+    const bag = this.bags.find((b) => b.id === bagId);
+    if (bag) {
+      bag.orderList.push(product);
+      this.updateOrderList(bag.orderList); // Update the order list for the specific bag
+    }
   }
   updateOrderList(orderList: any[]) {
     this.orderListSubject.next(orderList);

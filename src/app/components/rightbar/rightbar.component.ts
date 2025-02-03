@@ -35,16 +35,14 @@ export class RightbarComponent implements OnInit {
 
   // Activate the selected bag and deactivate others
   selectBag(index: number) {
-    this.bags.forEach((bag, i) => {
-      bag.isActive = i + 1 === index;
-      if (bag.isActive) {
-        this.selectedBagId = bag.id;
-      }
-    });
+    this.bags.forEach((bag, i) => (bag.isActive = i + 1 === index));
   }
   ngOnInit(): void {
     this.sharedService.products$.subscribe((data) => {
       this.products = data;
     });
+  }
+  getActiveBag() {
+    return this.bags.find((bag) => bag.isActive);
   }
 }
