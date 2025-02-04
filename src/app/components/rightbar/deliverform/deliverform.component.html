@@ -17,8 +17,10 @@
     <div class="delivermodal-container">
       <div class="delivermodal-row">
         <div class="delivermodal-item">
-          <select class="delivermodal-select">
-            <option>Select user</option>
+          <select class="delivermodal-select" (click)="onSelectBoxClick()">
+            <option *ngFor="let customer of customers" [value]="customer.id">
+              {{ customer.nome }}
+            </option>
           </select>
           <button
             class="delivermodal-icon-button"

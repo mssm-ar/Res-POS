@@ -62,8 +62,6 @@
 .bag-container span:last-child {
   margin-left: auto;
 }
-.product-container {
-}
 
 @media (max-width: 1630px) {
   .thumbnail-container app-thumbnail {

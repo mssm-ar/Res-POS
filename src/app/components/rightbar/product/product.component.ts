@@ -37,6 +37,15 @@ export class ProductComponent implements OnInit {
   updateServiceFee() {
     this.serviceFee = this.orderList.length > 0 ? 1 : 0;
   }
+  removeOrderList(index: number) {
+    if (this.orderList[index].ordernumber > 1) {
+      this.orderList[index].ordernumber--;
+    } else {
+      this.orderList.splice(index, 1);
+    }
+    this.calculateTotalPrice();
+    this.sharedService.updateOrderList(this.orderList);
+  }
 
   // deliver form
   showDeliverForm: boolean = false;

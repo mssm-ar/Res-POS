@@ -15,7 +15,7 @@
   <div class="deliver-list-container" *ngIf="orderList.length > 0">
     <app-orderlist
       [orderList]="orderList"
-      (orderListChange)="calculateTotalPrice($event)"
+      (orderListChange)="calculateTotalPrice()"
     >
     </app-orderlist>
   </div>
