@@ -70,7 +70,9 @@
   background-color: #fff;
   cursor: pointer;
 }
-
+.delivermodal-select option {
+  cursor: pointer;
+}
 .delivermodal-select:focus,
 .delivermodal-input:focus {
   border-color: #6de866;

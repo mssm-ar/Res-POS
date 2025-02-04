@@ -17,7 +17,14 @@
     <div class="delivermodal-container">
       <div class="delivermodal-row">
         <div class="delivermodal-item">
-          <select class="delivermodal-select" (click)="onSelectBoxClick()">
+          <select
+            class="delivermodal-select"
+            (click)="onCustomerSelectBoxClick()"
+            (change)="onCustomerSelect($event.target.value)"
+          >
+            <option *ngIf="!hasSelectedCustomer" value="" disabled selected>
+              Select user
+            </option>
             <option *ngFor="let customer of customers" [value]="customer.id">
               {{ customer.nome }}
             </option>
@@ -30,8 +37,19 @@
           </button>
         </div>
         <div class="delivermodal-item">
-          <select class="delivermodal-select">
-            <option>Select address</option>
+          <select
+            class="delivermodal-select"
+            (click)="onAddressSelectBoxClick()"
+            [disabled]="!selectedCustomerId"
+          >
+            <option *ngIf="addresses.length === 0" disabled selected>
+              Select address
+            </option>
+            <option *ngFor="let address of addresses" [value]="address.id">
+              {{ address.tipo }} - {{ address.rua }}, {{ address.numero }},
+              {{ address.bairro }}, {{ address.cidade }}, {{ address.uf }} -
+              {{ address.cep }}
+            </option>
           </select>
           <button
             class="delivermodal-icon-button"
@@ -53,8 +71,16 @@
           </button>
         </div>
         <div class="delivermodal-item">
-          <select class="delivermodal-select">
-            <option>Forma de Pagamento</option>
+          <select
+            class="delivermodal-select"
+            (click)="onPaymentSelectBoxClick()"
+          >
+            <option value="" disabled selected *ngIf="!hasSelectedCustomer">
+              Forma de Pagamento
+            </option>
+            <option *ngFor="let method of paymentMethods" [value]="method.id">
+              {{ method.formaPagamento }}
+            </option>
           </select>
         </div>
       </div>

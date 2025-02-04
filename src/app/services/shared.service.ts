@@ -72,6 +72,43 @@ export class SharedService {
     );
   }
 
+  // Fetch address from the API to display address according to customer
+  private addressSubject = new BehaviorSubject<any[]>([]);
+  addresses$ = this.addressSubject.asObservable();
+
+  fetchAddresses(customerId: number): void {
+    const url = `/api/Customer/Customer?tenantId=1&ClientId=${customerId}`;
+    this.http.get<any[]>(url).subscribe(
+      (data) => {
+        const customer = data.find((c) => c.id === customerId);
+        if (customer) {
+          this.addressSubject.next(customer.listaEndereco);
+        } else {
+          this.addressSubject.next([]); // Clear addresses if no customer found
+        }
+      },
+      (error) => {
+        console.error("Error fetching addresses:", error);
+      }
+    );
+  }
+
+  // Fetch payment methods from the API to display methods on select menu
+  private paymentMethodSubject = new BehaviorSubject<any[]>([]);
+  paymentMethods$ = this.paymentMethodSubject.asObservable();
+
+  fetchPaymentMethods(tenantId: number): void {
+    const url = `/api/Payment/GetPaymentMethods?tenantId=${tenantId}`;
+    this.http.get<any[]>(url).subscribe(
+      (data) => {
+        this.paymentMethodSubject.next(data);
+      },
+      (error) => {
+        console.error("Error fetching payment methods:", error);
+      }
+    );
+  }
+
   // Thumbnail Holder when i click product thumbnail
   private thumbnailHolder = new BehaviorSubject<ThumbnailData | null>(null);
   thumbnail$ = this.thumbnailHolder.asObservable();
