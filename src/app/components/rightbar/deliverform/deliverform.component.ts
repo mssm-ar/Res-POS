@@ -1,4 +1,10 @@
-import { Component, EventEmitter, Output, OnInit } from "@angular/core";
+import {
+  Component,
+  EventEmitter,
+  Output,
+  OnInit,
+  HostListener,
+} from "@angular/core";
 import { SharedService } from "app/services/shared.service";
 
 @Component({
@@ -119,5 +125,51 @@ export class DeliverformComponent implements OnInit {
 
   onPlaceOrder() {
     this.showConfirmComponent = true;
+  }
+
+  //Calculator effect here
+  inputValue: string = "0";
+
+  appendToInput(value: string) {
+    if (this.inputValue === "0") {
+      this.inputValue = value; // Replace zero if it's the current value
+    } else {
+      this.inputValue += value; // Append the value to the existing input
+    }
+  }
+
+  // Method to handle backspace
+  backspace() {
+    this.inputValue = this.inputValue.slice(0, -1) || "0"; // Remove last character or set to zero
+  }
+
+  // Method to handle OK button click
+  confirm() {
+    // Add your logic for what happens when OK is clicked
+    console.log("Confirmed value:", this.inputValue);
+  }
+
+  // Method to handle dot button click
+  appendDot() {
+    if (!this.inputValue.includes(".")) {
+      this.inputValue += "."; // Append dot if not already present
+    }
+  }
+
+  // Listen for keyboard events
+  @HostListener("document:keydown", ["$event"])
+  handleKeyboardEvent(event: KeyboardEvent) {
+    const key = event.key;
+
+    // Check if the key is a number or specific keys
+    if ("0123456789".includes(key)) {
+      this.appendToInput(key);
+    } else if (key === "Backspace") {
+      this.backspace();
+    } else if (key === ".") {
+      this.appendDot();
+    } else if (key === "Enter") {
+      this.confirm();
+    }
   }
 }
