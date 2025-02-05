@@ -26,6 +26,8 @@ export class ProductComponent implements OnInit {
       (acc, product) => acc + product.price * product.ordernumber,
       0
     );
+    const tax = this.totalPrice / 100; // Assuming tax is 1%
+    this.sharedService.setPrices(this.totalPrice, tax, this.serviceFee);
   }
   clearOrderList() {
     this.orderList = [];
@@ -36,6 +38,11 @@ export class ProductComponent implements OnInit {
   }
   updateServiceFee() {
     this.serviceFee = this.orderList.length > 0 ? 1 : 0;
+    this.sharedService.setPrices(
+      this.totalPrice,
+      this.totalPrice / 100,
+      this.serviceFee
+    );
   }
   removeOrderList(index: number) {
     if (this.orderList[index].ordernumber > 1) {

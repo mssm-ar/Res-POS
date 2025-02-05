@@ -19,6 +19,7 @@ export class SharedService {
 
   // private apiUrl = "";  This is base url of api
 
+  //Here is display product method.
   // Fetch categories from the API to display categories on filtermenu
   private categoriesSubject = new BehaviorSubject<any[]>([]);
   categories$ = this.categoriesSubject.asObservable();
@@ -27,7 +28,7 @@ export class SharedService {
     const url = `/api/Category/Category?tenantId=${tenantId}`;
     this.http.get<any[]>(url).subscribe(
       (data) => {
-        this.categoriesSubject.next(data); // Update the state with the fetched data
+        this.categoriesSubject.next(data);
       },
       (error) => {
         console.error("Error fetching categories:", error);
@@ -35,14 +36,9 @@ export class SharedService {
     );
   }
 
-  // fetch category for filter menu
-  getCategories() {
-    return this.http.get<any[]>("/api/Category/Category?tenantId=1");
-  }
-
-  // Fetch products from the API to display product thumbnaiul according to filtermenu
+  // Fetch product thumbnails from the API to display product thumbnaiul according to filtermenu
   private productsSubject = new BehaviorSubject<any[]>([]);
-  products$ = this.productsSubject.asObservable(); // Observable for products
+  products$ = this.productsSubject.asObservable();
 
   fetchProducts(categoryId: number, tenantId: number): void {
     const url = `/api/Product/Product?category=${categoryId}&tenantId=${tenantId}`;
@@ -56,6 +52,55 @@ export class SharedService {
     );
   }
 
+  // Thumbnail Holder when i click product thumbnail
+  private thumbnailHolder = new BehaviorSubject<ThumbnailData | null>(null);
+  thumbnail$ = this.thumbnailHolder.asObservable();
+
+  setThumbnail(data: ThumbnailData) {
+    this.thumbnailHolder.next(data);
+  }
+
+  clearThumbnail() {
+    this.thumbnailHolder.next(null);
+  }
+
+  // Method to display product detail on orderlist
+  private orderListSubject = new BehaviorSubject<any[]>([]);
+  orderList$ = this.orderListSubject.asObservable();
+
+  bags: { id: number; orderList: any[]; isActive: boolean }[] = [
+    { id: 1, orderList: [], isActive: true },
+  ];
+
+  addToOrderList(product: any, bagId: number) {
+    const bag = this.bags.find((b) => b.id === bagId);
+    if (bag) {
+      bag.orderList.push(product);
+      this.updateOrderList(bag.orderList); // Update the order list for the specific bag
+    }
+  }
+
+  updateOrderList(orderList: any[]) {
+    this.orderListSubject.next(orderList);
+  }
+
+  // Set total price and subscribed to deliverform.component
+  private subtotalSubject = new BehaviorSubject<number>(0);
+  subtotal$ = this.subtotalSubject.asObservable();
+
+  private taxSubject = new BehaviorSubject<number>(0);
+  tax$ = this.taxSubject.asObservable();
+
+  private serviceFeeSubject = new BehaviorSubject<number>(0);
+  serviceFee$ = this.serviceFeeSubject.asObservable();
+
+  setPrices(subtotal: number, tax: number, serviceFee: number): void {
+    this.subtotalSubject.next(subtotal);
+    this.taxSubject.next(tax);
+    this.serviceFeeSubject.next(serviceFee);
+  }
+
+  //Here is deliverform method.
   // Fetch customer from the API to display customers on select menu
   private customerSubject = new BehaviorSubject<any[]>([]);
   customers$ = this.customerSubject.asObservable();
@@ -68,6 +113,23 @@ export class SharedService {
       },
       (error) => {
         console.error("Error fetching customers:", error);
+      }
+    );
+  }
+
+  // Create a new customer
+  createCustomer(customerData: any): void {
+    const url = `/api/Customer/CreateCustomer`;
+    this.http.post(url, customerData).subscribe(
+      (response) => {
+        // Update the customer list with the new customer
+        this.customerSubject.next([
+          ...this.customerSubject.getValue(),
+          response,
+        ]);
+      },
+      (error) => {
+        console.error("Error creating customer:", error);
       }
     );
   }
@@ -107,37 +169,5 @@ export class SharedService {
         console.error("Error fetching payment methods:", error);
       }
     );
-  }
-
-  // Thumbnail Holder when i click product thumbnail
-  private thumbnailHolder = new BehaviorSubject<ThumbnailData | null>(null);
-  thumbnail$ = this.thumbnailHolder.asObservable();
-
-  setThumbnail(data: ThumbnailData) {
-    this.thumbnailHolder.next(data);
-  }
-
-  clearThumbnail() {
-    this.thumbnailHolder.next(null);
-  }
-
-  // Method to display product detail on orderlist
-  private orderListSubject = new BehaviorSubject<any[]>([]);
-  orderList$ = this.orderListSubject.asObservable();
-
-  bags: { id: number; orderList: any[]; isActive: boolean }[] = [
-    { id: 1, orderList: [], isActive: true },
-  ];
-
-  addToOrderList(product: any, bagId: number) {
-    const bag = this.bags.find((b) => b.id === bagId);
-    if (bag) {
-      bag.orderList.push(product);
-      this.updateOrderList(bag.orderList); // Update the order list for the specific bag
-    }
-  }
-
-  updateOrderList(orderList: any[]) {
-    this.orderListSubject.next(orderList);
   }
 }

@@ -180,42 +180,6 @@
 .delivermodal-tab-select:focus {
   border-color: #6de866;
 }
-/* deliver user */
-.delivermodal-user-container {
-  align-items: flex-start;
-  font-family: Arial, sans-serif;
-  font-size: 14px;
-}
-.delivermodal-user-section-container {
-  position: absolute;
-  top: 57%;
-  left: 36%;
-  width: 30%;
-  background-color: white;
-}
-.delivermodal-user-section {
-  flex: 1;
-  margin-right: 20px;
-  margin-bottom: 20px;
-  padding: 0px 20px;
-}
-
-.delivermodal-user-label {
-  display: block;
-  font-weight: bold;
-  font-size: 15pt;
-  margin-bottom: 10px;
-  color: #333;
-}
-
-.delivermodal-user-select {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 15pt;
-  cursor: pointer;
-}
 
 .delivermodal-user-prices {
   flex: 1;

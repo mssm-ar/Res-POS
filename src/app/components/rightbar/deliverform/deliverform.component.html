@@ -1,6 +1,7 @@
 <app-selectuser
   *ngIf="showSelectUser"
   (closeUser)="onCloseSelectUser()"
+  (save)="handleNewCustomer($event)"
 ></app-selectuser>
 <app-selectaddress
   *ngIf="showSelectAddress"
@@ -40,7 +41,7 @@
           <select
             class="delivermodal-select"
             (click)="onAddressSelectBoxClick()"
-            [disabled]="!selectedCustomerId"
+            [disabled]="selectedCustomerId"
           >
             <option *ngIf="addresses.length === 0" disabled selected>
               Select address
@@ -75,7 +76,7 @@
             class="delivermodal-select"
             (click)="onPaymentSelectBoxClick()"
           >
-            <option value="" disabled selected *ngIf="!hasSelectedCustomer">
+            <option value="" disabled selected *ngIf="!hasSelectedPayment">
               Forma de Pagamento
             </option>
             <option *ngFor="let method of paymentMethods" [value]="method.id">
@@ -127,37 +128,28 @@
     <hr />
     <!-- deliver user -->
     <div class="delivermodal-user-container">
-      <div class="delivermodal-user-section-container">
-        <div class="delivermodal-user-section">
-          <label for="user" class="delivermodal-user-label">* User</label>
-          <select id="user" class="delivermodal-user-select">
-            <option>Select client</option>
-          </select>
-        </div>
-        <div class="delivermodal-user-section">
-          <label for="address" class="delivermodal-user-label">* Address</label>
-          <select id="address" class="delivermodal-user-select">
-            <option>Select address</option>
-          </select>
-        </div>
-      </div>
-
       <div class="delivermodal-user-prices">
         <div class="delivermodal-user-price-item">
           <span>Subtotal</span>
-          <span class="delivermodal-user-price-value">$ 18.18</span>
+          <span class="delivermodal-user-price-value"
+            >${{ subtotal | number : "1.2-2" }}</span
+          >
         </div>
         <div class="delivermodal-user-price-item">
           <span>Tax</span>
-          <span class="delivermodal-user-price-value">$ 0.18</span>
+          <span class="delivermodal-user-price-value"
+            >${{ tax | number : "1.2-2" }}</span
+          >
         </div>
         <div class="delivermodal-user-price-item">
           <span>Service fee</span>
-          <span class="delivermodal-user-price-value">$ 1.00</span>
+          <span class="delivermodal-user-price-value"
+            >${{ serviceFee | number : "1.2-2" }}</span
+          >
         </div>
         <div class="delivermodal-user-price-item">
           <span>Delivery free</span>
-          <span class="delivermodal-user-price-value">$ 26,489.66</span>
+          <span class="delivermodal-user-price-value">$122</span>
         </div>
       </div>
     </div>
@@ -174,7 +166,9 @@
       </button>
       <div class="delivermodal-place-total">
         <span class="delivermodal-place-total-label">Total price</span>
-        <span class="delivermodal-place-total-value">$ 26,509.02</span>
+        <span class="delivermodal-place-total-value"
+          >$ {{ subtotal + tax + serviceFee | number : "1.2-2" }}</span
+        >
       </div>
     </div>
   </div>
@@ -196,8 +190,16 @@
           </select>
         </div>
         <div class="delivermodal-item">
-          <select class="delivermodal-select">
-            <option>Forma de Pagamento</option>
+          <select
+            class="delivermodal-select"
+            (click)="onPaymentSelectBoxClick()"
+          >
+            <option value="" disabled selected *ngIf="!hasSelectedPayment">
+              Forma de Pagamento
+            </option>
+            <option *ngFor="let method of paymentMethods" [value]="method.id">
+              {{ method.formaPagamento }}
+            </option>
           </select>
         </div>
       </div>
@@ -237,15 +239,21 @@
     <div class="delivermodal-user-prices">
       <div class="delivermodal-user-price-item">
         <span>Subtotal</span>
-        <span class="delivermodal-user-price-value">$ 72.72</span>
+        <span class="delivermodal-user-price-value"
+          >${{ subtotal | number : "1.2-2" }}</span
+        >
       </div>
       <div class="delivermodal-user-price-item">
         <span>Tax</span>
-        <span class="delivermodal-user-price-value">$ 0.73</span>
+        <span class="delivermodal-user-price-value"
+          >${{ tax | number : "1.2-2" }}</span
+        >
       </div>
       <div class="delivermodal-user-price-item">
         <span>Service fee</span>
-        <span class="delivermodal-user-price-value">$ 1.00</span>
+        <span class="delivermodal-user-price-value"
+          >${{ serviceFee | number : "1.2-2" }}</span
+        >
       </div>
     </div>
     <hr />
@@ -260,7 +268,9 @@
       </button>
       <div class="delivermodal-place-total">
         <span class="delivermodal-place-total-label">Total price</span>
-        <span class="delivermodal-place-total-value">$ 74.75</span>
+        <span class="delivermodal-place-total-value"
+          >$ {{ subtotal + tax + serviceFee | number : "1.2-2" }}</span
+        >
       </div>
     </div>
   </div>
@@ -277,7 +287,7 @@
       <div class="delivermodal-row">
         <div class="delivermodal-item">
           <select class="delivermodal-select">
-            <option>Forma de Pagamento</option>
+            <option>Select table</option>
           </select>
         </div>
       </div>
@@ -317,15 +327,21 @@
     <div class="delivermodal-user-prices">
       <div class="delivermodal-user-price-item">
         <span>Subtotal</span>
-        <span class="delivermodal-user-price-value">$ 72.72</span>
+        <span class="delivermodal-user-price-value"
+          >${{ subtotal | number : "1.2-2" }}</span
+        >
       </div>
       <div class="delivermodal-user-price-item">
         <span>Tax</span>
-        <span class="delivermodal-user-price-value">$ 0.73</span>
+        <span class="delivermodal-user-price-value"
+          >${{ tax | number : "1.2-2" }}</span
+        >
       </div>
       <div class="delivermodal-user-price-item">
         <span>Service fee</span>
-        <span class="delivermodal-user-price-value">$ 1.00</span>
+        <span class="delivermodal-user-price-value"
+          >${{ serviceFee | number : "1.2-2" }}</span
+        >
       </div>
     </div>
     <hr />
@@ -340,7 +356,9 @@
       </button>
       <div class="delivermodal-place-total">
         <span class="delivermodal-place-total-label">Total price</span>
-        <span class="delivermodal-place-total-value">$ 74.75</span>
+        <span class="delivermodal-place-total-value"
+          >$ {{ subtotal + tax + serviceFee | number : "1.2-2" }}</span
+        >
       </div>
     </div>
   </div>
@@ -369,11 +387,13 @@
       <div class="confirmorder-summary">
         <div class="confirmorder-row">
           <span class="confirmorder-label">Subtotal</span>
-          <span class="confirmorder-value">$ 0.00</span>
+          <span class="confirmorder-value"
+            >${{ subtotal | number : "1.2-2" }}</span
+          >
         </div>
         <div class="confirmorder-row">
           <span class="confirmorder-label">Tax</span>
-          <span class="confirmorder-value">R$ 0.00</span>
+          <span class="confirmorder-value">${{ tax | number : "1.2-2" }}</span>
         </div>
         <div class="confirmorder-row">
           <span class="confirmorder-label">Servicio</span>
@@ -392,7 +412,9 @@
       <div class="confirmorder-total">
         <div class="confirmorder-row">
           <span class="confirmorder-label">Total price</span>
-          <span class="confirmorder-value">R$ 1.00</span>
+          <span class="confirmorder-value"
+            >$ {{ subtotal + tax + serviceFee | number : "1.2-2" }}</span
+          >
         </div>
         <div class="confirmorder-row">
           <span class="confirmorder-label">Refund</span>

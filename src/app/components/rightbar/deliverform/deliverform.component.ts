@@ -12,6 +12,11 @@ export class DeliverformComponent implements OnInit {
   constructor(private sharedService: SharedService) {}
 
   activeTab: string = "delivery";
+
+  subtotal: number = 0;
+  tax: number = 0;
+  serviceFee: number = 0;
+
   customers: any[] = [];
   addresses: any[] = [];
   paymentMethods: any[] = [];
@@ -21,6 +26,19 @@ export class DeliverformComponent implements OnInit {
   selectedCustomerId: number | null = null;
 
   ngOnInit(): void {
+    // Subscribe to price data
+    this.sharedService.subtotal$.subscribe((data) => {
+      this.subtotal = data;
+    });
+
+    this.sharedService.tax$.subscribe((data) => {
+      this.tax = data;
+    });
+
+    this.sharedService.serviceFee$.subscribe((data) => {
+      this.serviceFee = data;
+    });
+
     // Subscribe to customer data
     this.sharedService.customers$.subscribe((data) => {
       this.customers = data;
@@ -78,6 +96,11 @@ export class DeliverformComponent implements OnInit {
 
   onCloseSelectUser() {
     this.showSelectUser = false;
+  }
+
+  handleNewCustomer(customerData: any) {
+    this.sharedService.createCustomer(customerData);
+    this.onCloseSelectUser(); // Close the form after saving
   }
 
   // select address form
