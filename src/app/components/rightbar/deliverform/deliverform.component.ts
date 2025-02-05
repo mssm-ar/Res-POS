@@ -31,6 +31,12 @@ export class DeliverformComponent implements OnInit {
   hasSelectedPayment: boolean = false;
   selectedCustomerId: number | null = null;
 
+  promoCodeInput: string = "";
+  promoCodes: any[] = [];
+  selectedPromoCode: string = "";
+  discount: number = 0;
+  totalPrice: number = this.subtotal + this.tax + this.serviceFee;
+
   ngOnInit(): void {
     // Subscribe to price data
     this.sharedService.subtotal$.subscribe((data) => {
@@ -55,6 +61,9 @@ export class DeliverformComponent implements OnInit {
       this.addresses = data;
     });
 
+    // Subscirbe promo code
+    this.promoCodes = this.sharedService.getPromoCodes();
+
     // Subscribe to payment method data
     this.sharedService.paymentMethods$.subscribe((data) => {
       this.paymentMethods = data;
@@ -78,6 +87,26 @@ export class DeliverformComponent implements OnInit {
   onCustomerSelect(customerId: number): void {
     this.selectedCustomerId = customerId;
     this.sharedService.fetchAddresses(customerId);
+  }
+
+  // Fetch promo code
+  addPromoCode() {
+    this.sharedService.validatePromoCode(this.promoCodeInput).subscribe(
+      (response) => {
+        if (response) {
+          this.selectedPromoCode = this.promoCodeInput;
+          this.discount = this.sharedService.calculateDiscount(
+            this.selectedPromoCode,
+            this.totalPrice
+          );
+        } else {
+          alert("Invalid promo code");
+        }
+      },
+      (error) => {
+        alert("Error validating promo code");
+      }
+    );
   }
 
   // payment select method

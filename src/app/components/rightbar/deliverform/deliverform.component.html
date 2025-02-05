@@ -66,8 +66,9 @@
             type="text"
             placeholder="Promo code"
             class="delivermodal-input"
+            [(ngModel)]="promoCodeInput"
           />
-          <button class="delivermodal-icon-button">
+          <button class="delivermodal-icon-button" (click)="addPromoCode()">
             <i class="fa-solid fa-plus"></i>
           </button>
         </div>
@@ -186,7 +187,10 @@
       <div class="delivermodal-row">
         <div class="delivermodal-item">
           <select class="delivermodal-select">
-            <option>Promo code</option>
+            <option value="" disabled>Select Promo Code</option>
+            <option *ngFor="let code of promoCodes" [value]="code.code">
+              {{ code.code }}
+            </option>
           </select>
         </div>
         <div class="delivermodal-item">
@@ -415,7 +419,9 @@
           </div>
           <div class="confirmorder-row">
             <span class="confirmorder-label">Desconto</span>
-            <span class="confirmorder-value-red">-R$ 0.00</span>
+            <span class="confirmorder-value-red"
+              >-R$ {{ discount.toFixed(2) }}</span
+            >
           </div>
         </div>
         <hr />

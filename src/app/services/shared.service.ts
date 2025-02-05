@@ -152,6 +152,49 @@ export class SharedService {
     );
   }
 
+  // Fetch promo code from the API
+  private promoCodes = [
+    {
+      code: "cupom12",
+      valorPreco: 0,
+      valorPorcentagem: 0,
+    },
+    {
+      code: "desconto20",
+      valorPreco: 10,
+      valorPorcentagem: 20,
+    },
+    {
+      code: "desc5",
+      valorPreco: 0,
+      valorPorcentagem: 20,
+    },
+  ];
+
+  getPromoCodes() {
+    return this.promoCodes;
+  }
+
+  validatePromoCode(code: string): Observable<any> {
+    const url = `/api/Order/ValidarVoucher/${code}?tenantId=1`;
+    return this.http.get(url);
+  }
+
+  calculateDiscount(code: string, totalPrice: number): number {
+    const promo = this.promoCodes.find((p) => p.code === code);
+    if (!promo) return 0;
+
+    if (promo.code === "cupom12") {
+      return 0; // No discount
+    } else if (promo.code === "desconto20") {
+      return (promo.valorPorcentagem / 100) * totalPrice; // Percentage discount
+    } else if (promo.code === "desc5") {
+      return promo.valorPorcentagem; // Fixed discount
+    }
+
+    return 0;
+  }
+
   // Fetch payment methods from the API to display methods on select menu
   private paymentMethodSubject = new BehaviorSubject<any[]>([]);
   paymentMethods$ = this.paymentMethodSubject.asObservable();
