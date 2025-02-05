@@ -16,6 +16,7 @@
     <app-orderlist
       [orderList]="orderList"
       (orderListChange)="calculateTotalPrice()"
+      (removeOrder)="removeOrderList($event)"
     >
     </app-orderlist>
   </div>

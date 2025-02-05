@@ -8,7 +8,7 @@ import { SharedService } from "../../../services/shared.service";
   styleUrls: ["./addmodal.component.css"],
 })
 export class AddmodalComponent implements OnInit {
-  @Input() selectedBagId!: number; // Receive the selected bag ID
+  @Input() selectedBagId!: number;
   @Output() productAdded = new EventEmitter<void>();
   constructor(private sharedService: SharedService) {}
 
@@ -28,7 +28,7 @@ export class AddmodalComponent implements OnInit {
         ordernumber: this.ordernumber,
         ingredient_number: this.ingredient_number,
       };
-      this.sharedService.addToOrderList(newProduct, this.selectedBagId);
+      this.sharedService.addToOrderList(newProduct);
     }
     this.sharedService.clearThumbnail();
     this.ordernumber = 1;

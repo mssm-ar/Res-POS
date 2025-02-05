@@ -11,17 +11,19 @@ export class OrderlistComponent {
   constructor(private sharedService: SharedService) {}
   @Input() orderList: any[] = [];
   @Output() orderListChange = new EventEmitter<any[]>();
+  @Output() removeOrder = new EventEmitter<number>();
 
   // order number
   ordernumber: number = 1;
+
   decrementorder(product: any) {
+    const index = this.orderList.indexOf(product);
     if (product.ordernumber > 1) {
       product.ordernumber--;
     } else {
-      this.orderList = this.orderList.filter((item) => item !== product);
+      this.orderList.splice(index, 1);
+      this.removeOrder.emit(product); // Emit the product to the parent for removal
     }
-    // this.sharedService.clearThumbnail();
-    // this.sharedService.updateOrderList([]);
     this.emitUpdatedOrderList();
   }
 

@@ -72,12 +72,9 @@ export class SharedService {
     { id: 1, orderList: [], isActive: true },
   ];
 
-  addToOrderList(product: any, bagId: number) {
-    const bag = this.bags.find((b) => b.id === bagId);
-    if (bag) {
-      bag.orderList.push(product);
-      this.updateOrderList(bag.orderList); // Update the order list for the specific bag
-    }
+  addToOrderList(product: any) {
+    const currentOrders = this.orderListSubject.value;
+    this.orderListSubject.next([...currentOrders, product]);
   }
 
   updateOrderList(orderList: any[]) {
