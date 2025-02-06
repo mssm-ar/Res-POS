@@ -21,53 +21,79 @@
         <hr />
         <div class="addmodal-size">
           <p>Tamanho</p>
-          <label
-            ><input
+          <label>
+            <input
               type="radio"
               name="size"
-              value="medium"
+              value="pequeno"
+              (change)="onSizeChange($event)"
               checked
-            />Medium</label
-          >
-          <label><input type="radio" name="size" value="large" />Large</label>
-          <label
-            ><input type="radio" name="size" value="extra-large" /> Extra
-            large</label
-          >
+            />
+            Pequeno
+          </label>
+          <label>
+            <input
+              type="radio"
+              name="size"
+              value="médio"
+              (change)="onSizeChange($event)"
+            />
+            Médio
+          </label>
+          <label>
+            <input
+              type="radio"
+              name="size"
+              value="grande"
+              (change)="onSizeChange($event)"
+            />
+            Grande
+          </label>
+          <p>Valor: {{ selectedSizeValue }}</p>
         </div>
         <hr />
         <div class="addmodal-ficha">
           <p>Ficha</p>
           <div class="addmodal-check">
-            <label><input type="checkbox" /> Second</label>
-            <label><input type="checkbox" /> Second</label>
-            <label><input type="checkbox" /> Second</label>
-            <label><input type="checkbox" /> Second</label>
-            <label><input type="checkbox" /> Second</label>
-            <label><input type="checkbox" /> Second</label>
-            <label><input type="checkbox" /> Second</label>
-            <label><input type="checkbox" /> Second</label>
+            <label *ngFor="let ingrediente of product.listaIngredientes">
+              <input type="checkbox" [checked]="ingrediente.quantidade === 1" />
+              {{ ingrediente.nomeInsumo }}
+            </label>
           </div>
         </div>
         <hr />
         <div class="addmodal-ingredient">
           <p>ingredients</p>
-          <div class="addmodal-quantity">
-            <div class="addmodal-quantity-set">
-              <label><input type="checkbox" /></label>
-              <div class="addmodal-quantity-counter">
-                <button class="decrement" (click)="decrementingredient()">
-                  -
-                </button>
-                <label>{{ ingredient_number }}</label>
-                <button class="increment" (click)="incrementingredient()">
-                  +
-                </button>
+          <div class="addmodal-quantity-container">
+            <div
+              class="addmodal-quantity"
+              *ngFor="let complemento of product.listaComplementos"
+            >
+              <div class="addmodal-quantity-set">
+                <label>
+                  <input type="checkbox" />
+                </label>
+                <div class="addmodal-quantity-counter">
+                  <button
+                    class="decrement"
+                    (click)="decrementIngredient(complemento)"
+                    [disabled]="complemento.qtd <= 1"
+                  >
+                    -
+                  </button>
+                  <label>{{ complemento.qtd }}</label>
+                  <button
+                    class="increment"
+                    (click)="incrementingredient(complemento)"
+                  >
+                    +
+                  </button>
+                </div>
               </div>
+              <label class="addmodal-vassabi"
+                >{{ complemento.nome }} <br />${{ complemento.preco }}</label
+              >
             </div>
-            <label class="addmodal-vassabi">Vassabi <br />$10.10</label>
-            <label><input type="checkbox" /></label>
-            <label class="addmodal-vassabi">Vassabi <br />$10.10</label>
           </div>
         </div>
       </div>

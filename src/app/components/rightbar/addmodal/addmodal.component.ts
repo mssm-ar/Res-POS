@@ -13,11 +13,37 @@ export class AddmodalComponent implements OnInit {
   constructor(private sharedService: SharedService) {}
 
   thumbnailData: any;
+  product: any;
+  selectedSizeValue: number = 200;
+  productId: number = 1;
 
   ngOnInit() {
     this.sharedService.thumbnail$.subscribe((data) => {
       this.thumbnailData = data;
     });
+    this.loadProductDetails(this.productId);
+  }
+  // method to display detailed data of product
+  loadProductDetails(productId: number): void {
+    this.sharedService.getProductDetails(productId).subscribe((data) => {
+      this.product = data;
+      this.selectedSizeValue = this.product.listaTamanhos[0].valor; // Default to first size
+    });
+  }
+
+  onSizeChange(event: any): void {
+    const selectedSize = event.target.value;
+    const size = this.product.listaTamanhos.find(
+      (s: any) => s.tamanho.toLowerCase() === selectedSize
+    );
+    if (size) {
+      this.selectedSizeValue = size.valor;
+    }
+  }
+
+  setProductId(id: number): void {
+    this.productId = id;
+    this.loadProductDetails(id);
   }
 
   // add to orderlist
@@ -52,13 +78,13 @@ export class AddmodalComponent implements OnInit {
 
   //ingredient number
   ingredient_number: number = 1;
-  decrementingredient() {
-    if (this.ingredient_number > 1) {
-      this.ingredient_number--;
+  decrementIngredient(complemento: any): void {
+    if (complemento.qtd > 1) {
+      complemento.qtd -= 1;
     }
   }
 
-  incrementingredient() {
-    this.ingredient_number++;
+  incrementingredient(complemento: any) {
+    complemento.qtd++;
   }
 }

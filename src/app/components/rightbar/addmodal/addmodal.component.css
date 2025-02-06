@@ -123,8 +123,8 @@
   padding-left: 60px;
 }
 .addmodal-check label {
-  flex: 0 0 25%;
-  font-size: 18pt;
+  flex: 0 0 33%;
+  font-size: 16pt;
   cursor: pointer;
 }
 .addmodal-check input:checked ~ .checkmar {
@@ -136,8 +136,13 @@
   font-weight: bold;
   color: black;
 }
+.addmodal-quantity-container {
+  display: flex;
+  flex-wrap: wrap;
+}
 .addmodal-quantity {
   display: flex;
+  width: 50%;
   align-items: flex-start;
 }
 .addmodal-quantity input {
@@ -168,7 +173,6 @@
 .addmodal-quantity-counter {
   display: flex;
   align-items: center;
-  /* width: 150px; */
   border-radius: 5px;
   overflow: hidden;
   background-color: #fff;
@@ -189,7 +193,7 @@
 }
 
 .addmodal-quantity-counter label {
-  width: 50px;
+  width: 30px;
   text-align: center;
   border: none;
   font-size: 18px;

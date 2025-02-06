@@ -64,6 +64,12 @@ export class SharedService {
     this.thumbnailHolder.next(null);
   }
 
+  // Method to display detailed information of clicked product thubnail
+  getProductDetails(productId: number, tenantId: number = 1): Observable<any> {
+    const apiUrl = `/api/Product/Details?productId=${productId}&tenantId=${tenantId}`;
+    return this.http.get<any>(apiUrl);
+  }
+
   // Method to display product detail on orderlist
   private orderListSubject = new BehaviorSubject<any[]>([]);
   orderList$ = this.orderListSubject.asObservable();
