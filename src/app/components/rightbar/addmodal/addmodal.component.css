@@ -39,7 +39,7 @@
 .addmodal-image img {
   border-radius: 15px;
   width: 90%;
-  height: 66%;
+  height: 80%;
 }
 
 .addmodal-counter {
@@ -80,20 +80,20 @@
 
 .addmodal-text {
   flex: 4;
-  padding-right: 120px;
 }
 .addmodal-text span {
-  font-size: 24pt;
+  font-size: 22pt;
   font-weight: bold;
 }
 .addmodal-text p {
-  font-size: 16pt;
+  font-size: 15pt;
   color: gray;
 }
 .addmodal-size {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
+  padding-right: 40px;
 }
 .addmodal-size p {
   font-size: 18pt;
@@ -123,7 +123,7 @@
   padding-left: 60px;
 }
 .addmodal-check label {
-  flex: 0 0 33%;
+  flex: 0 0 25%;
   font-size: 18pt;
   cursor: pointer;
 }
@@ -132,9 +132,9 @@
 }
 .addmodal-ingredient p {
   font-size: 18pt;
+  margin: 5px 0px;
   font-weight: bold;
   color: black;
-  /* display: flex; */
 }
 .addmodal-quantity {
   display: flex;
