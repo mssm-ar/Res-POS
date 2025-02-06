@@ -24,15 +24,15 @@
     <hr />
     <div>
       <span>Subtotal</span>
-      <span>$ {{ totalPrice | number : "1.2-2" }}</span>
+      <span>R$ {{ totalPrice | number : "1.2-2" }}</span>
     </div>
     <div>
       <span>Imposto</span>
-      <span>$ {{ totalPrice / 100 | number : "1.2-2" }}</span>
+      <span>R$ {{ totalPrice / 100 | number : "1.2-2" }}</span>
     </div>
     <div>
       <span>Taxa de serviço</span>
-      <span>$ {{ serviceFee | number : "1.2-2" }}</span>
+      <span>R$ {{ serviceFee | number : "1.2-2" }}</span>
     </div>
   </div>
 
@@ -40,7 +40,7 @@
     <hr />
     <div>
       <span>Preço total</span>
-      <span>$ {{ serviceFee + totalPrice * 1.01 | number : "1.2-2" }}</span>
+      <span>R$ {{ serviceFee + totalPrice * 1.01 | number : "1.2-2" }}</span>
     </div>
     <button (click)="onOrderClick()">Pedido</button>
   </div>
