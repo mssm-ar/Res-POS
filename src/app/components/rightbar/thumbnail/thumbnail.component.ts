@@ -21,6 +21,7 @@ export class ThumbnailComponent {
   // set product thumbnail data when click this
   onThumbnailClick(product: any) {
     const thumbnailData = {
+      productId: product.id,
       image: product.urlFotoProduto,
       title: product.nome,
       stock: product.estoqueMinimo,

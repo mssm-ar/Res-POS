@@ -6,8 +6,10 @@ import { HttpClient } from "@angular/common/http";
 export interface ThumbnailData {
   image: string;
   title: string;
+  description: string;
   stock: number;
   price: number;
+  productId: number;
 }
 
 @Injectable({
@@ -64,7 +66,7 @@ export class SharedService {
     this.thumbnailHolder.next(null);
   }
 
-  // Method to display detailed information of clicked product thubnail
+  // Method to display detailed information of clicked product thubnail on addmodal
   getProductDetails(productId: number, tenantId: number = 1): Observable<any> {
     const apiUrl = `/api/Product/Details?productId=${productId}&tenantId=${tenantId}`;
     return this.http.get<any>(apiUrl);

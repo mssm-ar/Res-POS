@@ -14,20 +14,29 @@ export class AddmodalComponent implements OnInit {
 
   thumbnailData: any;
   product: any;
-  selectedSizeValue: number = 200;
+  selectedSizeValue: number = 0;
   productId: number = 1;
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.sharedService.thumbnail$.subscribe((data) => {
       this.thumbnailData = data;
+      if (data && data.productId) {
+        this.loadProductDetails(data.productId);
+      }
     });
-    this.loadProductDetails(this.productId);
   }
   // method to display detailed data of product
   loadProductDetails(productId: number): void {
     this.sharedService.getProductDetails(productId).subscribe((data) => {
       this.product = data;
-      this.selectedSizeValue = this.product.listaTamanhos[0].valor; // Default to first size
+      if (
+        this.product &&
+        this.product.listaTamanhos &&
+        this.product.listaTamanhos.length > 0
+      ) {
+        this.selectedSizeValue = this.product.listaTamanhos[0].valor; // Default to first size
+        this.updateThumbnailPrice(); // Calculate initial price
+      }
     });
   }
 
@@ -38,6 +47,7 @@ export class AddmodalComponent implements OnInit {
     );
     if (size) {
       this.selectedSizeValue = size.valor;
+      this.updateThumbnailPrice();
     }
   }
 
@@ -46,6 +56,30 @@ export class AddmodalComponent implements OnInit {
     this.loadProductDetails(id);
   }
 
+  updateThumbnailPrice(): void {
+    if (!this.product) return; // Check if product is defined
+
+    let basePrice = this.product.precoVenda || 0; // Default to 0 if undefined
+    let sizePrice = this.selectedSizeValue || 0; // Default to 0 if undefined
+
+    // Ensure listaComplementos exists
+    const selectedIngredientsPrice = (
+      this.product.listaComplementos || []
+    ).reduce((total: number, complemento: any) => {
+      return total + (complemento.preco * complemento.qtd || 0); // Default to 0 if undefined
+    }, 0);
+
+    const finalPrice = basePrice + sizePrice + selectedIngredientsPrice;
+
+    this.thumbnailData.price = finalPrice;
+
+    this.productAdded.emit();
+  }
+
+  onCheckboxChange(complemento: any, isChecked: boolean): void {
+    complemento.qtd = isChecked ? 1 : 0; // Set to 1 if checked, otherwise 0
+    this.updateThumbnailPrice(); // Recalculate the price
+  }
   // add to orderlist
   onAddClick() {
     if (this.thumbnailData) {
@@ -81,10 +115,12 @@ export class AddmodalComponent implements OnInit {
   decrementIngredient(complemento: any): void {
     if (complemento.qtd > 1) {
       complemento.qtd -= 1;
+      this.updateThumbnailPrice();
     }
   }
 
   incrementingredient(complemento: any) {
     complemento.qtd++;
+    this.updateThumbnailPrice();
   }
 }

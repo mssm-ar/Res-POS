@@ -22,7 +22,7 @@ export class OrderlistComponent {
       product.ordernumber--;
     } else {
       this.orderList.splice(index, 1);
-      this.removeOrder.emit(product); // Emit the product to the parent for removal
+      this.removeOrder.emit(product);
     }
     this.emitUpdatedOrderList();
   }

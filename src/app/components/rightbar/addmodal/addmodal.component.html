@@ -49,7 +49,6 @@
             />
             Grande
           </label>
-          <p>Valor: {{ selectedSizeValue }}</p>
         </div>
         <hr />
         <div class="addmodal-ficha">
@@ -71,7 +70,11 @@
             >
               <div class="addmodal-quantity-set">
                 <label>
-                  <input type="checkbox" />
+                  <input
+                    type="checkbox"
+                    [checked]="complemento.qtd > 0"
+                    (change)="complemento.qtd = $event.target.checked ? 1 : 0"
+                  />
                 </label>
                 <div class="addmodal-quantity-counter">
                   <button
