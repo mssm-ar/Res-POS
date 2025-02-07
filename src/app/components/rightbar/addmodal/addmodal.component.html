@@ -73,7 +73,9 @@
                   <input
                     type="checkbox"
                     [checked]="complemento.qtd > 0"
-                    (change)="complemento.qtd = $event.target.checked ? 1 : 0"
+                    (change)="
+                      onCheckboxChange(complemento, $event.target.checked)
+                    "
                   />
                 </label>
                 <div class="addmodal-quantity-counter">
@@ -94,7 +96,9 @@
                 </div>
               </div>
               <label class="addmodal-vassabi"
-                >{{ complemento.nome }} <br />${{ complemento.preco }}</label
+                >{{ complemento.nome }} <br />R${{
+                  complemento.preco | number : "1.2-2"
+                }}</label
               >
             </div>
           </div>
@@ -111,7 +115,7 @@
       </div>
       <div class="addmodal-submit-price">
         <span>Preço</span>
-        <p>${{ thumbnailData.price }}</p>
+        <p>R${{ thumbnailData.price | number : "1.2-2" }}</p>
       </div>
     </div>
   </div>

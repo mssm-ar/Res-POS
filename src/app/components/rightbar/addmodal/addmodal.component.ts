@@ -25,7 +25,7 @@ export class AddmodalComponent implements OnInit {
       }
     });
   }
-  // method to display detailed data of product
+  // method to display detailed extra data of product
   loadProductDetails(productId: number): void {
     this.sharedService.getProductDetails(productId).subscribe((data) => {
       this.product = data;
@@ -34,8 +34,8 @@ export class AddmodalComponent implements OnInit {
         this.product.listaTamanhos &&
         this.product.listaTamanhos.length > 0
       ) {
-        this.selectedSizeValue = this.product.listaTamanhos[0].valor; // Default to first size
-        this.updateThumbnailPrice(); // Calculate initial price
+        this.selectedSizeValue = this.product.listaTamanhos[0].valor;
+        this.updateThumbnailPrice();
       }
     });
   }
@@ -57,16 +57,15 @@ export class AddmodalComponent implements OnInit {
   }
 
   updateThumbnailPrice(): void {
-    if (!this.product) return; // Check if product is defined
+    if (!this.product) return;
 
-    let basePrice = this.product.precoVenda || 0; // Default to 0 if undefined
-    let sizePrice = this.selectedSizeValue || 0; // Default to 0 if undefined
+    let basePrice = this.product.precoVenda || 0;
+    let sizePrice = this.selectedSizeValue || 0;
 
-    // Ensure listaComplementos exists
     const selectedIngredientsPrice = (
       this.product.listaComplementos || []
     ).reduce((total: number, complemento: any) => {
-      return total + (complemento.preco * complemento.qtd || 0); // Default to 0 if undefined
+      return total + (complemento.preco * complemento.qtd || 0);
     }, 0);
 
     const finalPrice = basePrice + sizePrice + selectedIngredientsPrice;
@@ -77,8 +76,8 @@ export class AddmodalComponent implements OnInit {
   }
 
   onCheckboxChange(complemento: any, isChecked: boolean): void {
-    complemento.qtd = isChecked ? 1 : 0; // Set to 1 if checked, otherwise 0
-    this.updateThumbnailPrice(); // Recalculate the price
+    complemento.qtd = isChecked ? 1 : 0;
+    this.updateThumbnailPrice();
   }
   // add to orderlist
   onAddClick() {
