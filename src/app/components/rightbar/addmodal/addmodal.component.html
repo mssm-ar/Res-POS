@@ -21,7 +21,8 @@
         <hr />
         <div class="addmodal-size">
           <p>Tamanho</p>
-          <label>
+          <!-- <span class="addmodal-quantity-size-label"></span> -->
+          <label class="addmodal-quantity-size-label">
             <input
               type="radio"
               name="size"
@@ -30,8 +31,9 @@
               checked
             />
             Pequeno
+            <span class="addmodal-quantity-size-checkmark"></span>
           </label>
-          <label>
+          <label class="addmodal-quantity-size-label">
             <input
               type="radio"
               name="size"
@@ -39,8 +41,9 @@
               (change)="onSizeChange($event)"
             />
             Médio
+            <span class="addmodal-quantity-size-checkmark"></span>
           </label>
-          <label>
+          <label class="addmodal-quantity-size-label">
             <input
               type="radio"
               name="size"
@@ -48,15 +51,20 @@
               (change)="onSizeChange($event)"
             />
             Grande
+            <span class="addmodal-quantity-size-checkmark"></span>
           </label>
         </div>
         <hr />
         <div class="addmodal-ficha">
           <p>Ficha</p>
           <div class="addmodal-check">
-            <label *ngFor="let ingrediente of product.listaIngredientes">
+            <label
+              *ngFor="let ingrediente of product.listaIngredientes"
+              class="addmodal-quantity-ficha-label"
+            >
               <input type="checkbox" [checked]="ingrediente.quantidade === 1" />
               {{ ingrediente.nomeInsumo }}
+              <span class="addmodal-quantity-ficha-checkmark"></span>
             </label>
           </div>
         </div>
@@ -69,7 +77,7 @@
               *ngFor="let complemento of product.listaComplementos"
             >
               <div class="addmodal-quantity-set">
-                <label>
+                <label class="addmodal-quantity-set-label">
                   <input
                     type="checkbox"
                     [checked]="complemento.qtd > 0"
@@ -77,6 +85,7 @@
                       onCheckboxChange(complemento, $event.target.checked)
                     "
                   />
+                  <span class="addmodal-quantity-set-checkmark"></span>
                 </label>
                 <div class="addmodal-quantity-counter">
                   <button

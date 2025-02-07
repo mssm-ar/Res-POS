@@ -99,6 +99,7 @@ export class DeliverformComponent implements OnInit {
             this.selectedPromoCode,
             this.totalPrice
           );
+          console.log(this.discount);
         } else {
           alert("Invalid promo code");
         }
@@ -161,36 +162,30 @@ export class DeliverformComponent implements OnInit {
 
   appendToInput(value: string) {
     if (this.inputValue === "0") {
-      this.inputValue = value; // Replace zero if it's the current value
+      this.inputValue = value;
     } else {
-      this.inputValue += value; // Append the value to the existing input
+      this.inputValue += value;
     }
   }
 
-  // Method to handle backspace
   backspace() {
-    this.inputValue = this.inputValue.slice(0, -1) || "0"; // Remove last character or set to zero
+    this.inputValue = this.inputValue.slice(0, -1) || "0";
   }
 
-  // Method to handle OK button click
   confirm() {
-    // Add your logic for what happens when OK is clicked
     console.log("Confirmed value:", this.inputValue);
   }
 
-  // Method to handle dot button click
   appendDot() {
     if (!this.inputValue.includes(".")) {
-      this.inputValue += "."; // Append dot if not already present
+      this.inputValue += ".";
     }
   }
 
-  // Listen for keyboard events
   @HostListener("document:keydown", ["$event"])
   handleKeyboardEvent(event: KeyboardEvent) {
     const key = event.key;
 
-    // Check if the key is a number or specific keys
     if ("0123456789".includes(key)) {
       this.appendToInput(key);
     } else if (key === "Backspace") {

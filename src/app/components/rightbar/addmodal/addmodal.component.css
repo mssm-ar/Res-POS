@@ -107,6 +107,75 @@
   cursor: pointer;
   padding: 10px;
 }
+/* Customize the label (the container) */
+.addmodal-quantity-size-label {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.addmodal-quantity-size-label input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom radio button */
+.addmodal-quantity-size-checkmark {
+  position: absolute;
+  top: 10px;
+  left: -20px;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+  border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.addmodal-quantity-size-label:hover input ~ .addmodal-quantity-size-checkmark {
+  background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.addmodal-quantity-size-label
+  input:checked
+  ~ .addmodal-quantity-size-checkmark {
+  background-color: #1cff68;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.addmodal-quantity-size-checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.addmodal-quantity-size-label
+  input:checked
+  ~ .addmodal-quantity-size-checkmark:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.addmodal-quantity-size-label .addmodal-quantity-size-checkmark:after {
+  top: 9px;
+  left: 9px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: white;
+}
 .addmodal-ficha {
   display: flex;
   margin-bottom: 30px;
@@ -123,12 +192,73 @@
   padding-left: 60px;
 }
 .addmodal-check label {
-  flex: 0 0 33%;
+  flex: 0 0 27%;
   font-size: 16pt;
   cursor: pointer;
 }
-.addmodal-check input:checked ~ .checkmar {
-  background-color: #4caf50;
+.addmodal-quantity-ficha-label {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  color: black;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.addmodal-quantity-ficha-label input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+.addmodal-quantity-ficha-label span {
+  position: absolute;
+  top: 0px;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  border-radius: 5px;
+  background-color: #cacaca;
+}
+.addmodal-quantity-ficha-label:hover
+  input
+  ~ .addmodal-quantity-ficha-checkmark {
+  background-color: #b3b3b3;
+}
+.addmodal-quantity-ficha-label
+  input:checked
+  ~ .addmodal-quantity-ficha-checkmark {
+  background-color: #1cff68;
+}
+.addmodal-quantity-ficha-checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.addmodal-quantity-ficha-label
+  input:checked
+  ~ .addmodal-quantity-ficha-checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.addmodal-quantity-ficha-label .addmodal-quantity-ficha-checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
 }
 .addmodal-ingredient p {
   font-size: 18pt;
@@ -151,6 +281,66 @@
 }
 .addmodal-quantity-set {
   display: flex;
+}
+.addmodal-quantity-set-label {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  color: black;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.addmodal-quantity-set-label input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+.addmodal-quantity-set-label span {
+  position: absolute;
+  top: 9px;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  border-radius: 5px;
+  background-color: #cacaca;
+}
+.addmodal-quantity-set-label:hover input ~ .addmodal-quantity-set-checkmark {
+  background-color: #b3b3b3;
+}
+.addmodal-quantity-set-label input:checked ~ .addmodal-quantity-set-checkmark {
+  background-color: #1cff68;
+}
+.addmodal-quantity-set-checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.addmodal-quantity-set-label
+  input:checked
+  ~ .addmodal-quantity-set-checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.addmodal-quantity-set-label .addmodal-quantity-set-checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
 }
 .addmodal-quantity-set button {
   background-color: rgb(236, 236, 236);
