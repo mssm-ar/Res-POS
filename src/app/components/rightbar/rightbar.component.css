@@ -19,6 +19,14 @@
 .thumbnail-container app-thumbnail {
   flex: 0 0 20%;
   height: 340px;
+  transition: opacity 0.2s ease-out, transform 0.2s ease-out;
+}
+.thumbnail-container app-thumbnail:hover {
+  transform: scale(1.03);
+}
+.thumbnail-container app-thumbnail.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 .thumbnail-container div {
   font-size: 20pt;

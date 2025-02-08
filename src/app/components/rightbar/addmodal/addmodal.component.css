@@ -146,7 +146,7 @@
 .addmodal-quantity-size-label
   input:checked
   ~ .addmodal-quantity-size-checkmark {
-  background-color: #1cff68;
+  background-color: #73c409;
 }
 
 .addmodal-quantity-size-checkmark:after {
@@ -228,7 +228,7 @@
 .addmodal-quantity-ficha-label
   input:checked
   ~ .addmodal-quantity-ficha-checkmark {
-  background-color: #1cff68;
+  background-color: #73c409;
 }
 .addmodal-quantity-ficha-checkmark:after {
   content: "";
@@ -310,7 +310,7 @@
   background-color: #b3b3b3;
 }
 .addmodal-quantity-set-label input:checked ~ .addmodal-quantity-set-checkmark {
-  background-color: #1cff68;
+  background-color: #73c409;
 }
 .addmodal-quantity-set-checkmark:after {
   content: "";
