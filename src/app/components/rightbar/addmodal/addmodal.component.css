@@ -92,7 +92,7 @@
 .addmodal-size {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
   padding-right: 40px;
 }
 .addmodal-size p {
@@ -107,7 +107,7 @@
   cursor: pointer;
   padding: 10px;
 }
-/* Customize the label (the container) */
+
 .addmodal-quantity-size-label {
   display: block;
   position: relative;
@@ -121,7 +121,6 @@
   user-select: none;
 }
 
-/* Hide the browser's default radio button */
 .addmodal-quantity-size-label input {
   position: absolute;
   opacity: 0;
@@ -130,7 +129,6 @@
   width: 0;
 }
 
-/* Create a custom radio button */
 .addmodal-quantity-size-checkmark {
   position: absolute;
   top: 10px;
@@ -141,19 +139,16 @@
   border-radius: 50%;
 }
 
-/* On mouse-over, add a grey background color */
 .addmodal-quantity-size-label:hover input ~ .addmodal-quantity-size-checkmark {
   background-color: #ccc;
 }
 
-/* When the radio button is checked, add a blue background */
 .addmodal-quantity-size-label
   input:checked
   ~ .addmodal-quantity-size-checkmark {
   background-color: #1cff68;
 }
 
-/* Create the indicator (the dot/circle - hidden when not checked) */
 .addmodal-quantity-size-checkmark:after {
   content: "";
   position: absolute;
@@ -178,7 +173,7 @@
 }
 .addmodal-ficha {
   display: flex;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 .addmodal-ficha p {
   font-size: 20pt;
