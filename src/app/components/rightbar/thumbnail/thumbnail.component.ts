@@ -24,7 +24,7 @@ export class ThumbnailComponent {
       productId: product.id,
       image: product.urlFotoProduto,
       title: product.nome,
-      stock: product.estoqueMinimo,
+      stock: product.estoqueInicial,
       price: product.precoVenda,
       description: product.descricao,
     };
