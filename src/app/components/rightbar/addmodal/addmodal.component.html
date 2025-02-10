@@ -21,51 +21,37 @@
         <hr />
         <div class="addmodal-size">
           <p>Tamanho</p>
-          <div class="addmodal-quantity-size-container">
-            <label class="addmodal-quantity-size-label">
+          <div class="addmodal-size-container">
+            <label
+              *ngFor="let size of product.listaTamanhos"
+              class="addmodal-size-label"
+            >
               <input
                 type="radio"
                 name="size"
-                value="pequeno"
+                [value]="size.tamanho.toLowerCase()"
                 (change)="onSizeChange($event)"
-                checked
+                [checked]="
+                  size.tamanho.toLowerCase() ===
+                  product.listaTamanhos[0].tamanho.toLowerCase()
+                "
               />
-              Pequeno
-              <span class="addmodal-quantity-size-checkmark"></span>
-            </label>
-            <label class="addmodal-quantity-size-label">
-              <input
-                type="radio"
-                name="size"
-                value="médio"
-                (change)="onSizeChange($event)"
-              />
-              Médio
-              <span class="addmodal-quantity-size-checkmark"></span>
-            </label>
-            <label class="addmodal-quantity-size-label">
-              <input
-                type="radio"
-                name="size"
-                value="grande"
-                (change)="onSizeChange($event)"
-              />
-              Grande
-              <span class="addmodal-quantity-size-checkmark"></span>
+              {{ size.tamanho }}
+              <span class="addmodal-size-checkmark"></span>
             </label>
           </div>
         </div>
         <hr />
         <div class="addmodal-ficha">
           <p>Ficha</p>
-          <div class="addmodal-check">
+          <div class="addmodal-ficha-check">
             <label
               *ngFor="let ingrediente of product.listaIngredientes"
-              class="addmodal-quantity-ficha-label"
+              class="addmodal-ficha-label"
             >
               <input type="checkbox" [checked]="ingrediente.quantidade === 1" />
               {{ ingrediente.nomeInsumo }}
-              <span class="addmodal-quantity-ficha-checkmark"></span>
+              <span class="addmodal-ficha-checkmark"></span>
             </label>
           </div>
         </div>
@@ -108,21 +94,23 @@
               <label class="addmodal-vassabi"
                 >{{ complemento.nome }} <br />R${{
                   complemento.preco | number : "1.2-2"
-                }}</label
-              >
+                }}
+              </label>
             </div>
           </div>
         </div>
       </div>
     </div>
     <hr />
+    <div class="addmodal-submit-text">
+      <textarea placeholder="Observações"></textarea>
+    </div>
+    <hr />
     <div class="addmodal-submit">
       <button class="addmodal-submit-btn" (click)="onAddClick()">
         Adicionar
       </button>
-      <div class="addmodal-submit-text">
-        <textarea placeholder="Observações"></textarea>
-      </div>
+
       <div class="addmodal-submit-price">
         <span>Preço</span>
         <p>R${{ thumbnailData.price | number : "1.2-2" }}</p>

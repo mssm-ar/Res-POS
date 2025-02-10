@@ -34,7 +34,7 @@ export class AddmodalComponent implements OnInit {
         this.product.listaTamanhos &&
         this.product.listaTamanhos.length > 0
       ) {
-        this.selectedSizeValue = this.product.listaTamanhos[0].valor;
+        this.selectedSizeValue = this.product.listaTamanhos[0].valor; // Set default selected value
         this.updateThumbnailPrice();
       }
     });
@@ -43,10 +43,10 @@ export class AddmodalComponent implements OnInit {
   onSizeChange(event: any): void {
     const selectedSize = event.target.value;
     const size = this.product.listaTamanhos.find(
-      (s: any) => s.tamanho.toLowerCase() === selectedSize
+      (s: any) => s.tamanho.toLowerCase() === selectedSize.toLowerCase()
     );
     if (size) {
-      this.selectedSizeValue = size.valor;
+      this.selectedSizeValue = size.valor; // Update selected size value
       this.updateThumbnailPrice();
     }
   }

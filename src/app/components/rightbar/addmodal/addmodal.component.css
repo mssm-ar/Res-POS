@@ -14,7 +14,7 @@
 .addmodal-content-1 {
   background-color: white;
   width: 60%;
-  height: 72%;
+  height: 80%;
   margin: auto;
   padding: 40px;
   border-radius: 10px;
@@ -39,7 +39,8 @@
 .addmodal-image img {
   border-radius: 15px;
   width: 90%;
-  height: 80%;
+  height: 70%;
+  min-height: 300px;
 }
 
 .addmodal-counter {
@@ -99,21 +100,20 @@
   color: black;
   margin: 0px;
   padding-top: 10px;
-  padding-right: 45px;
+  padding-right: 36px;
 }
-.addmodal-size label {
-  font-size: 16pt;
+.addmodal-size-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.addmodal-size-container label {
+  flex: 0 0 30%;
+  font-size: 14pt;
   cursor: pointer;
   padding: 10px;
 }
-.addmodal-quantity-size-container {
-  display: flex;
-  flex-wrap: wrap;
-}
-.addmodal-quantity-size-container label {
-  flex: 0 0 33%;
-}
-.addmodal-quantity-size-label {
+.addmodal-size-label {
   display: block;
   position: relative;
   cursor: pointer;
@@ -124,7 +124,7 @@
   user-select: none;
 }
 
-.addmodal-quantity-size-label input {
+.addmodal-size-label input {
   position: absolute;
   opacity: 0;
   cursor: pointer;
@@ -132,7 +132,7 @@
   width: 0;
 }
 
-.addmodal-quantity-size-checkmark {
+.addmodal-size-checkmark {
   position: absolute;
   top: 10px;
   left: -20px;
@@ -142,33 +142,29 @@
   border-radius: 50%;
 }
 
-.addmodal-quantity-size-label:hover input ~ .addmodal-quantity-size-checkmark {
+.addmodal-size-label:hover input ~ .addmodal-size-checkmark {
   background-color: #ccc;
 }
 
-.addmodal-quantity-size-label
-  input:checked
-  ~ .addmodal-quantity-size-checkmark {
+.addmodal-size-label input:checked ~ .addmodal-size-checkmark {
   background-color: #73c409;
 }
 
-.addmodal-quantity-size-checkmark:after {
+.addmodal-size-checkmark:after {
   content: "";
   position: absolute;
   display: none;
 }
 
-.addmodal-quantity-size-label
-  input:checked
-  ~ .addmodal-quantity-size-checkmark:after {
+.addmodal-size-label input:checked ~ .addmodal-size-checkmark:after {
   display: block;
 }
 
-.addmodal-quantity-size-label .addmodal-quantity-size-checkmark:after {
-  top: 9px;
-  left: 9px;
-  width: 8px;
-  height: 8px;
+.addmodal-size-label .addmodal-size-checkmark:after {
+  top: 7px;
+  left: 8px;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
   background: white;
 }
@@ -177,22 +173,22 @@
   margin-bottom: 10px;
 }
 .addmodal-ficha p {
-  font-size: 20pt;
+  font-size: 18pt;
   font-weight: bold;
   color: black;
   margin: 0px;
   padding-right: 60px;
 }
-.addmodal-check {
+.addmodal-ficha-check {
   display: flex;
   flex-wrap: wrap;
 }
-.addmodal-check label {
+.addmodal-ficha-check label {
   flex: 0 0 27%;
-  font-size: 16pt;
+  font-size: 14pt;
   cursor: pointer;
 }
-.addmodal-quantity-ficha-label {
+.addmodal-ficha-label {
   display: block;
   position: relative;
   padding-left: 35px;
@@ -205,49 +201,43 @@
   -ms-user-select: none;
   user-select: none;
 }
-.addmodal-quantity-ficha-label input {
+.addmodal-ficha-label input {
   position: absolute;
   opacity: 0;
   cursor: pointer;
   height: 0;
   width: 0;
 }
-.addmodal-quantity-ficha-label span {
+.addmodal-ficha-label span {
   position: absolute;
   top: 0px;
   left: 0;
-  height: 25px;
-  width: 25px;
+  height: 20px;
+  width: 20px;
   border-radius: 5px;
   background-color: #cacaca;
 }
-.addmodal-quantity-ficha-label:hover
-  input
-  ~ .addmodal-quantity-ficha-checkmark {
+.addmodal-ficha-label:hover input ~ .addmodal-ficha-checkmark {
   background-color: #b3b3b3;
 }
-.addmodal-quantity-ficha-label
-  input:checked
-  ~ .addmodal-quantity-ficha-checkmark {
+.addmodal-ficha-label input:checked ~ .addmodal-ficha-checkmark {
   background-color: #73c409;
 }
-.addmodal-quantity-ficha-checkmark:after {
+.addmodal-ficha-checkmark:after {
   content: "";
   position: absolute;
   display: none;
 }
 
 /* Show the checkmark when checked */
-.addmodal-quantity-ficha-label
-  input:checked
-  ~ .addmodal-quantity-ficha-checkmark:after {
+.addmodal-ficha-label input:checked ~ .addmodal-ficha-checkmark:after {
   display: block;
 }
 
 /* Style the checkmark/indicator */
-.addmodal-quantity-ficha-label .addmodal-quantity-ficha-checkmark:after {
-  left: 9px;
-  top: 5px;
+.addmodal-ficha-label .addmodal-ficha-checkmark:after {
+  left: 7px;
+  top: 2px;
   width: 5px;
   height: 10px;
   border: solid white;
@@ -268,8 +258,9 @@
 }
 .addmodal-quantity {
   display: flex;
-  width: 50%;
+  width: 48%;
   align-items: flex-start;
+  padding: 4px;
 }
 .addmodal-quantity input {
   cursor: pointer;
@@ -302,8 +293,8 @@
   position: absolute;
   top: 9px;
   left: 0;
-  height: 25px;
-  width: 25px;
+  height: 20px;
+  width: 20px;
   border-radius: 5px;
   background-color: #cacaca;
 }
@@ -328,8 +319,8 @@
 
 /* Style the checkmark/indicator */
 .addmodal-quantity-set-label .addmodal-quantity-set-checkmark:after {
-  left: 9px;
-  top: 5px;
+  left: 7px;
+  top: 2px;
   width: 5px;
   height: 10px;
   border: solid white;
@@ -390,7 +381,7 @@
 }
 
 .addmodal-vassabi {
-  font-size: 15pt;
+  font-size: 12pt;
   margin: 5px;
 }
 .addmodal-submit {
@@ -416,9 +407,9 @@
 }
 .addmodal-submit-text textarea {
   align-items: center;
-  width: 70%;
+  width: 60%;
   height: 80px;
-  margin-left: 100px;
+  margin-left: 33%;
   padding: 5px;
   border: none;
   border-radius: 5px;
