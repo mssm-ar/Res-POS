@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed, waitForAsync } from "@angular/core/testing";
 
-import { RightbarComponent } from "./rightbar.component";
+import { HomeComponent } from "./home.component";
 
-describe("RightbarComponent", () => {
-  let component: RightbarComponent;
-  let fixture: ComponentFixture<RightbarComponent>;
+describe("HomeComponent", () => {
+  let component: HomeComponent;
+  let fixture: ComponentFixture<HomeComponent>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [RightbarComponent],
+      declarations: [HomeComponent],
     }).compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(RightbarComponent);
+    fixture = TestBed.createComponent(HomeComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

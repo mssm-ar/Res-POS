@@ -3,9 +3,9 @@ import { SharedService } from "app/services/shared.service";
 import { trigger, transition, style, animate } from "@angular/animations";
 
 @Component({
-  selector: "app-rightbar",
-  templateUrl: "./rightbar.component.html",
-  styleUrls: ["./rightbar.component.css"],
+  selector: "app-home",
+  templateUrl: "./home.component.html",
+  styleUrls: ["./home.component.css"],
   animations: [
     trigger("dropAnimation", [
       transition(":enter", [
@@ -18,7 +18,7 @@ import { trigger, transition, style, animate } from "@angular/animations";
     ]),
   ],
 })
-export class RightbarComponent implements OnInit {
+export class HomeComponent implements OnInit {
   constructor(private sharedService: SharedService) {}
   products: any[] = [];
   bags: { id: number; orderList: any[]; isActive: boolean }[] = [

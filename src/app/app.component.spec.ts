@@ -2,13 +2,13 @@ import { TestBed, waitForAsync } from "@angular/core/testing";
 import { AppComponent } from "./app.component";
 import { NavbarComponent } from "./components/navbar/navbar.component";
 import { LeftbarComponent } from "./components/leftbar/leftbar.component";
-import { RightbarComponent } from "./components/rightbar/rightbar.component";
-import { FiltermenuComponent } from "./components/rightbar/filtermanu/filtermenu.component";
-import { ThumbnailComponent } from "./components/rightbar/thumbnail/thumbnail.component";
-import { BagComponent } from "./components/rightbar/bag/bag.component";
-import { OrderlistComponent } from "./components/rightbar/product/orderlist/orderlist.component";
-import { AddmodalComponent } from "./components/rightbar/addmodal/addmodal.component";
-import { DeliverformComponent } from "./components/rightbar/deliverform/deliverform.component";
+import { HomeComponent } from "./components/home/home.component";
+import { FiltermenuComponent } from "./components/home/filtermanu/filtermenu.component";
+import { ThumbnailComponent } from "./components/home/thumbnail/thumbnail.component";
+import { BagComponent } from "./components/home/bag/bag.component";
+import { OrderlistComponent } from "./components/home/product/orderlist/orderlist.component";
+import { AddmodalComponent } from "./components/home/addmodal/addmodal.component";
+import { DeliverformComponent } from "./components/home/deliverform/deliverform.component";
 
 describe("AppComponent", () => {
   beforeEach(waitForAsync(() => {
@@ -17,7 +17,7 @@ describe("AppComponent", () => {
         AppComponent,
         NavbarComponent,
         LeftbarComponent,
-        RightbarComponent,
+        HomeComponent,
         FiltermenuComponent,
         ThumbnailComponent,
         BagComponent,
