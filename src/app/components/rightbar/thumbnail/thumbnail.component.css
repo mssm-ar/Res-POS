@@ -63,6 +63,22 @@
   font-weight: bold;
   font-size: 18pt;
 }
+
+.out-of-stock {
+  filter: grayscale(100%) !important; /* Garante o efeito preto e branco */
+  opacity: 0.5;
+  pointer-events: none; /* Impede cliques */
+}
+
+.out-of-stock .thumbnail-image img {
+  filter: grayscale(100%) !important; /* Aplica à imagem */
+}
+
+.out-of-stock:hover {
+  background-color: white !important; /* Remove efeito hover */
+  cursor: default;
+}
+
 @media only screen and (max-width: 1630px) {
   .food-title-container {
     font-size: 15pt;
