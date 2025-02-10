@@ -21,37 +21,39 @@
         <hr />
         <div class="addmodal-size">
           <p>Tamanho</p>
-          <label class="addmodal-quantity-size-label">
-            <input
-              type="radio"
-              name="size"
-              value="pequeno"
-              (change)="onSizeChange($event)"
-              checked
-            />
-            Pequeno
-            <span class="addmodal-quantity-size-checkmark"></span>
-          </label>
-          <label class="addmodal-quantity-size-label">
-            <input
-              type="radio"
-              name="size"
-              value="médio"
-              (change)="onSizeChange($event)"
-            />
-            Médio
-            <span class="addmodal-quantity-size-checkmark"></span>
-          </label>
-          <label class="addmodal-quantity-size-label">
-            <input
-              type="radio"
-              name="size"
-              value="grande"
-              (change)="onSizeChange($event)"
-            />
-            Grande
-            <span class="addmodal-quantity-size-checkmark"></span>
-          </label>
+          <div class="addmodal-quantity-size-container">
+            <label class="addmodal-quantity-size-label">
+              <input
+                type="radio"
+                name="size"
+                value="pequeno"
+                (change)="onSizeChange($event)"
+                checked
+              />
+              Pequeno
+              <span class="addmodal-quantity-size-checkmark"></span>
+            </label>
+            <label class="addmodal-quantity-size-label">
+              <input
+                type="radio"
+                name="size"
+                value="médio"
+                (change)="onSizeChange($event)"
+              />
+              Médio
+              <span class="addmodal-quantity-size-checkmark"></span>
+            </label>
+            <label class="addmodal-quantity-size-label">
+              <input
+                type="radio"
+                name="size"
+                value="grande"
+                (change)="onSizeChange($event)"
+              />
+              Grande
+              <span class="addmodal-quantity-size-checkmark"></span>
+            </label>
+          </div>
         </div>
         <hr />
         <div class="addmodal-ficha">

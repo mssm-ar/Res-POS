@@ -91,9 +91,7 @@
 }
 .addmodal-size {
   display: flex;
-  justify-content: space-between;
   margin-bottom: 10px;
-  padding-right: 40px;
 }
 .addmodal-size p {
   font-size: 18pt;
@@ -101,18 +99,23 @@
   color: black;
   margin: 0px;
   padding-top: 10px;
+  padding-right: 45px;
 }
 .addmodal-size label {
   font-size: 16pt;
   cursor: pointer;
   padding: 10px;
 }
-
+.addmodal-quantity-size-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.addmodal-quantity-size-container label {
+  flex: 0 0 33%;
+}
 .addmodal-quantity-size-label {
   display: block;
   position: relative;
-  padding-left: 35px;
-  margin-bottom: 12px;
   cursor: pointer;
   font-size: 22px;
   -webkit-user-select: none;
@@ -155,14 +158,12 @@
   display: none;
 }
 
-/* Show the indicator (dot/circle) when checked */
 .addmodal-quantity-size-label
   input:checked
   ~ .addmodal-quantity-size-checkmark:after {
   display: block;
 }
 
-/* Style the indicator (dot/circle) */
 .addmodal-quantity-size-label .addmodal-quantity-size-checkmark:after {
   top: 9px;
   left: 9px;
@@ -180,11 +181,11 @@
   font-weight: bold;
   color: black;
   margin: 0px;
+  padding-right: 60px;
 }
 .addmodal-check {
   display: flex;
   flex-wrap: wrap;
-  padding-left: 60px;
 }
 .addmodal-check label {
   flex: 0 0 27%;
