@@ -25,6 +25,7 @@ export class AddmodalComponent implements OnInit {
       }
     });
   }
+
   // method to display detailed extra data of product
   loadProductDetails(productId: number): void {
     this.sharedService.getProductDetails(productId).subscribe((data) => {
@@ -82,10 +83,15 @@ export class AddmodalComponent implements OnInit {
   // add to orderlist
   onAddClick() {
     if (this.thumbnailData) {
+      const selectedComplementos = this.product.listaComplementos.filter(
+        (complemento: any) => complemento.qtd > 0
+      );
+
       const newProduct = {
         ...this.thumbnailData,
         ordernumber: this.ordernumber,
         ingredient_number: this.ingredient_number,
+        complementos: selectedComplementos,
       };
       this.sharedService.addToOrderList(newProduct);
     }

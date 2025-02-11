@@ -1,7 +1,7 @@
 import { Component, Input, Output, OnInit, EventEmitter } from "@angular/core";
 import { Subscription } from "rxjs";
 import { SharedService } from "app/services/shared.service";
-import { map } from "rxjs/operators";
+import { DomSanitizer, SafeHtml } from "@angular/platform-browser";
 
 @Component({
   selector: "app-orderlist",
@@ -35,5 +35,15 @@ export class OrderlistComponent {
 
   emitUpdatedOrderList() {
     this.orderListChange.emit(this.orderList);
+  }
+
+  // Method to display ingredients
+  displayIngredients(product: any): string {
+    return product.complementos
+      .map(
+        (complemento: any) =>
+          `${complemento.nome} (R$${complemento.preco} × ${complemento.qtd})`
+      )
+      .join("<br>");
   }
 }

@@ -10,8 +10,10 @@
 }
 .food-extra {
   margin: 0px;
+  padding-left: 10px;
   padding-bottom: 5px;
   color: grey;
+  font-size: 13pt;
 }
 .order-number p {
   font-size: 16pt;

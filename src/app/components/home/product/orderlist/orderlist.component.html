@@ -1,7 +1,7 @@
 <div class="order-list-container" *ngFor="let product of orderList">
   <p class="food-title">{{ product.title }}</p>
-  <div *ngFor="let product of orderList" class="food-extra-contianer">
-    <p class="food-extra">Hamburger Extra(R$9.90 × 1)</p>
+  <div *ngFor="let product of orderList" class="food-extra-container">
+    <p class="food-extra" [innerHTML]="displayIngredients(product)"></p>
   </div>
   <div class="detail-container">
     <div class="order-number">
