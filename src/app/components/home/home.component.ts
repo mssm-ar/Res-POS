@@ -20,7 +20,23 @@ import { trigger, transition, style, animate } from "@angular/animations";
 })
 export class HomeComponent implements OnInit {
   constructor(private sharedService: SharedService) {}
+
   products: any[] = [];
+  filteredProducts: any[] = [];
+  activeFilter: number = 0;
+
+  ngOnInit(): void {
+    this.sharedService.products$.subscribe((data) => {
+      this.products = data;
+      this.filteredProducts = data;
+    });
+  }
+
+  setActiveFilter(categoryId: number): void {
+    this.activeFilter = categoryId;
+    this.sharedService.fetchProducts(categoryId, 1);
+  }
+
   bags: { id: number; orderList: any[]; isActive: boolean }[] = [
     { id: 1, orderList: [], isActive: true },
   ];
@@ -49,11 +65,7 @@ export class HomeComponent implements OnInit {
   selectBag(index: number) {
     this.bags.forEach((bag, i) => (bag.isActive = i + 1 === index));
   }
-  ngOnInit(): void {
-    this.sharedService.products$.subscribe((data) => {
-      this.products = data;
-    });
-  }
+
   getActiveBag() {
     return this.bags.find((bag) => bag.isActive);
   }

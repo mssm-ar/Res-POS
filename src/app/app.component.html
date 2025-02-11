@@ -1,10 +1,5 @@
-<!-- <app-header [title]="title" (titleClick)="onTitleClicked()"> </app-header> -->
-
-<!-- <div>Header clicks: {{ headerClicks }}</div>
-<div>Footer clicks: {{ footerClicks }}</div> -->
-<!-- <app-header></app-header> -->
 <div class="root-container">
-  <app-navbar></app-navbar>
+  <app-navbar (searchKeyword)="onSearch($event)"></app-navbar>
   <hr class="devider" />
   <div class="second-container">
     <app-leftbar class="left-bar"></app-leftbar>
@@ -12,13 +7,13 @@
       <app-home></app-home>
     </div>
     <div *ngIf="activeTab === 'shopping'">
-      <app-shopping-component></app-shopping-component>
+      <app-shopping></app-shopping>
     </div>
     <div *ngIf="activeTab === 'user'">
-      <app-user-component></app-user-component>
+      <app-user></app-user>
     </div>
     <div *ngIf="activeTab === 'dashboard'">
-      <app-dashboard-component></app-dashboard-component>
+      <app-dashboard></app-dashboard>
     </div>
   </div>
 </div>

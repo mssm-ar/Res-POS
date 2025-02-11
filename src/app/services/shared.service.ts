@@ -1,6 +1,7 @@
 import { Injectable } from "@angular/core";
 import { Observable, BehaviorSubject } from "rxjs";
 import { HttpClient } from "@angular/common/http";
+import { map } from "rxjs/operators";
 
 // tumbnail data
 export interface ThumbnailData {
@@ -39,7 +40,7 @@ export class SharedService {
   }
 
   // Fetch product thumbnails from the API to display product thumbnaiul according to filtermenu
-  private productsSubject = new BehaviorSubject<any[]>([]);
+  public productsSubject = new BehaviorSubject<any[]>([]);
   products$ = this.productsSubject.asObservable();
 
   fetchProducts(categoryId: number, tenantId: number): void {
@@ -51,6 +52,17 @@ export class SharedService {
       (error) => {
         console.error("Error fetching products:", error);
       }
+    );
+  }
+
+  // Method to filter products based on a search term
+  filterProducts(searchTerm: string): Observable<any[]> {
+    return this.products$.pipe(
+      map((products) =>
+        products.filter((product) =>
+          product.nome.toLowerCase().startsWith(searchTerm.toLowerCase())
+        )
+      )
     );
   }
 

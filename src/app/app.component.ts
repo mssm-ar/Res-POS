@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { SharedService } from "./services/shared.service";
 
 @Component({
   selector: "app-root",
@@ -8,10 +9,15 @@ import { Component } from "@angular/core";
 export class AppComponent {
   activeTab: string = "home";
   title = "app";
-  headerClicks = 0;
-  footerClicks = 0;
 
-  onTitleClicked() {
-    this.headerClicks += 1;
+  constructor(private sharedService: SharedService) {}
+
+  // Search event
+  onSearch(keyword: string): void {
+    if (this.activeTab === "home") {
+      this.sharedService.filterProducts(keyword).subscribe((filtered) => {
+        this.sharedService.productsSubject.next(filtered);
+      });
+    }
   }
 }

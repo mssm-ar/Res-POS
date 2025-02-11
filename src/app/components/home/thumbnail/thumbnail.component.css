@@ -50,10 +50,6 @@
 .food-title-container {
   font-size: 16pt;
   width: 150px;
-  /* white-space: nowrap; */
-  /* overflow: hidden; */
-  /* text-overflow: ellipsis; */
-  /* width: 100%;  */
 }
 .food-stock-container {
   color: #5ca102;

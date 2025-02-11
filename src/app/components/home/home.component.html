@@ -2,8 +2,11 @@
   <div class="filter-thumbnail-container">
     <app-filtermenu class="filtermenu-container"></app-filtermenu>
     <div class="thumbnail-container">
-      <div *ngIf="!products.length">Não há produtos disponíveis.</div>
-      <app-thumbnail *ngFor="let product of products" [product]="product">
+      <div *ngIf="!filteredProducts.length">Não há produtos disponíveis.</div>
+      <app-thumbnail
+        *ngFor="let product of filteredProducts"
+        [product]="product"
+      >
       </app-thumbnail>
       <app-addmodal [selectedBagId]="getActiveBag()?.id"></app-addmodal>
     </div>

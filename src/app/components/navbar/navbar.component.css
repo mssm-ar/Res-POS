@@ -12,6 +12,7 @@
   font-weight: bold;
   font-family: sans-serif;
   height: 60px;
+  min-width: 150px;
 }
 .logo-icon {
   width: 40px;

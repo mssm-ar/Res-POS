@@ -11,4 +11,11 @@ export class NavbarComponent {
 
   @Output()
   titleClick = new EventEmitter<NavbarComponent>();
+
+  @Output() searchKeyword = new EventEmitter<string>();
+
+  onSearchChange(event: Event): void {
+    const input = event.target as HTMLInputElement;
+    this.searchKeyword.emit(input.value);
+  }
 }
