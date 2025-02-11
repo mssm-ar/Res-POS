@@ -78,11 +78,13 @@
 @media (max-width: 1380px) {
   .thumbnail-container app-thumbnail {
     flex: 0 0 33.333333%;
+    height: 400px;
   }
 }
 @media (max-width: 1100px) {
   .thumbnail-container app-thumbnail {
     flex: 0 0 50%;
+    height: 450px;
   }
 }
 @media (max-width: 768px) {
@@ -93,6 +95,7 @@
   }
   .thumbnail-container app-thumbnail {
     flex: 0 0 33.333333%;
+    height: 320px;
   }
 }
 @media (max-width: 500px) {
