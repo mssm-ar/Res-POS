@@ -113,7 +113,7 @@
 
       <div class="addmodal-submit-price">
         <span>Preço</span>
-        <p>R${{ thumbnailData.price | number : "1.2-2" }}</p>
+        <p>R${{ thumbnailData.price * this.ordernumber | number : "1.2-2" }}</p>
       </div>
     </div>
   </div>

@@ -5,6 +5,14 @@
   font-size: 16pt;
   margin: 10px;
 }
+.food-extra-contianer {
+  margin: 10px;
+}
+.food-extra {
+  margin: 0px;
+  padding-bottom: 5px;
+  color: grey;
+}
 .order-number p {
   font-size: 16pt;
   margin: 10px 0px;

@@ -1,6 +1,7 @@
 import { Component, Input, Output, OnInit, EventEmitter } from "@angular/core";
 import { Subscription } from "rxjs";
 import { SharedService } from "app/services/shared.service";
+import { map } from "rxjs/operators";
 
 @Component({
   selector: "app-orderlist",
