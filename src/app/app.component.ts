@@ -8,13 +8,15 @@ import { SharedService } from "./services/shared.service";
 })
 export class AppComponent {
   activeTab: string = "home";
-  title = "app";
 
   constructor(private sharedService: SharedService) {}
 
   // Search event
   onSearch(keyword: string): void {
     if (this.activeTab === "home") {
+      this.sharedService.productsSubject.next(
+        this.sharedService.productsSubject.getValue()
+      );
       this.sharedService.filterProducts(keyword).subscribe((filtered) => {
         this.sharedService.productsSubject.next(filtered);
       });

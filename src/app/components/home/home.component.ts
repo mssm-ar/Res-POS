@@ -28,8 +28,23 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.sharedService.products$.subscribe((data) => {
       this.products = data;
-      this.filteredProducts = data;
+      this.filteredProducts = data; // Initialize with all products
     });
+
+    // Subscribe to the search term from the navbar
+    this.sharedService.products$.subscribe(() => {
+      this.filterProducts(""); // Reset filter on initial load
+    });
+  }
+
+  filterProducts(searchTerm: string): void {
+    if (!searchTerm) {
+      this.filteredProducts = this.products;
+    } else {
+      this.filteredProducts = this.products.filter((product) =>
+        product.nome.toLowerCase().startsWith(searchTerm.toLowerCase())
+      );
+    }
   }
 
   setActiveFilter(categoryId: number): void {

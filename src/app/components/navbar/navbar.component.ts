@@ -6,12 +6,6 @@ import { Component, Input, Output, EventEmitter } from "@angular/core";
   styleUrls: ["./navbar.component.css"],
 })
 export class NavbarComponent {
-  @Input()
-  title = "Footer";
-
-  @Output()
-  titleClick = new EventEmitter<NavbarComponent>();
-
   @Output() searchKeyword = new EventEmitter<string>();
 
   onSearchChange(event: Event): void {

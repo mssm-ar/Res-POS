@@ -58,14 +58,16 @@ export class SharedService {
   // Method to filter products based on a search term
   filterProducts(searchTerm: string): Observable<any[]> {
     return this.products$.pipe(
-      map((products) =>
-        products.filter((product) =>
+      map((products) => {
+        if (!searchTerm) {
+          return products;
+        }
+        return products.filter((product) =>
           product.nome.toLowerCase().startsWith(searchTerm.toLowerCase())
-        )
-      )
+        );
+      })
     );
   }
-
   // Thumbnail Holder when i click product thumbnail
   private thumbnailHolder = new BehaviorSubject<ThumbnailData | null>(null);
   thumbnail$ = this.thumbnailHolder.asObservable();
