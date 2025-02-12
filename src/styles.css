@@ -2,6 +2,7 @@
 body {
   height: 100%;
   margin: 0px;
+  font-family: sans-serif;
 }
 app-root {
   display: flex;

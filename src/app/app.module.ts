@@ -19,6 +19,10 @@ import { ConfirmComponent } from "./components/home/deliverform/confirm/confirm.
 import { CashComponent } from "./components/cash/cash.component";
 import { DeliveryComponent } from './components/delivery/delivery.component';
 import { TableComponent } from './components/table/table.component';
+import { PendingComponent } from './components/delivery/pending/pending.component';
+import { ConfirmedComponent } from './components/delivery/confirmed/confirmed.component';
+import { SentComponent } from './components/delivery/sent/sent.component';
+import { CancelledComponent } from './components/delivery/cancelled/cancelled.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +43,10 @@ import { TableComponent } from './components/table/table.component';
     CashComponent,
     DeliveryComponent,
     TableComponent,
+    PendingComponent,
+    ConfirmedComponent,
+    SentComponent,
+    CancelledComponent,
   ],
   imports: [BrowserModule, HttpClientModule],
   providers: [],

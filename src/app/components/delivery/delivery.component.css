@@ -1,0 +1,17 @@
+.delivery-title-container {
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  padding: 20px;
+}
+.delivery-title-container p {
+  margin: 0px;
+  font-size: 24pt;
+}
+.delivery-title-container i {
+  padding: 5px;
+  font-size: 20pt;
+}
+.delivery-title-container i:hover {
+  cursor: pointer;
+}
