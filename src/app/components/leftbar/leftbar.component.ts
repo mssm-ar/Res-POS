@@ -7,9 +7,4 @@ import { Component, Input, Output, EventEmitter } from "@angular/core";
 })
 export class LeftbarComponent {
   activeTab: string = "home";
-
-  @Input()
-  title = "Leftbar";
-  @Output()
-  titleClick = new EventEmitter<LeftbarComponent>();
 }

@@ -3,17 +3,19 @@
   <hr class="devider" />
   <div class="second-container">
     <app-leftbar class="left-bar"></app-leftbar>
-    <div class="right-bar" *ngIf="activeTab === 'home'">
-      <app-home></app-home>
-    </div>
-    <div *ngIf="activeTab === 'shopping'">
-      <app-shopping></app-shopping>
-    </div>
-    <div *ngIf="activeTab === 'user'">
-      <app-user></app-user>
-    </div>
-    <div *ngIf="activeTab === 'dashboard'">
-      <app-dashboard></app-dashboard>
+    <div class="right-bar">
+      <div *ngIf="activeTab === 'home'">
+        <app-home></app-home>
+      </div>
+      <div *ngIf="activeTab === 'shopping'">
+        <app-shopping></app-shopping>
+      </div>
+      <div *ngIf="activeTab === 'user'">
+        <app-user></app-user>
+      </div>
+      <div *ngIf="activeTab === 'dashboard'">
+        <app-dashboard></app-dashboard>
+      </div>
     </div>
   </div>
 </div>

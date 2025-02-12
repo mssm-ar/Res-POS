@@ -7,40 +7,30 @@
   height: calc(100vh-100px);
 }
 
-.leftbar-menu-home {
-  display: flex;
-  flex: 0 0 auto;
-  font-size: 26px;
-  color: rgb(0, 0, 0);
-  cursor: pointer;
-  padding: 15px;
-  margin-top: 20px;
-}
-.leftbar-menu-home.leftbar-menu-active {
-  background-color: #89e70a;
-  border-radius: 10px;
-}
-
 .leftbar-menu {
-  /* flex: 0 0 auto; */
   font-size: 26px;
   color: rgb(0, 0, 0);
   cursor: pointer;
   padding: 15px;
-  margin-top: 20px;
+  margin-top: 10px;
+  text-align: center;
+  width: 26px;
 }
 .leftbar-menu.leftbar-menu-active {
   background-color: #89e70a;
   border-radius: 10px;
+  width: 26px;
+  text-align: center;
 }
 .leftbar-menu:hover {
   background-color: #89e70a;
   border-radius: 10px;
+  width: 26px;
+  text-align: center;
 }
 .profile {
-  margin-top: auto;
+  margin-top: 240px;
   cursor: pointer;
-  /* width: 30px; */
 }
 .profile img {
   width: 45px;
