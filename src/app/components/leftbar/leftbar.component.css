@@ -2,9 +2,9 @@
   font-size: 12px;
   display: flex;
   flex-direction: column;
-  margin-top: 10px;
   align-items: center;
-  height: calc(100vh-100px);
+  width: 80px;
+  height: 856px;
 }
 
 .leftbar-menu {
@@ -12,7 +12,7 @@
   color: rgb(0, 0, 0);
   cursor: pointer;
   padding: 15px;
-  margin-top: 10px;
+  margin-top: 20px;
   text-align: center;
   width: 26px;
 }
@@ -37,11 +37,14 @@
   border-radius: 50%;
 }
 .leftbar-logout {
-  margin-top: auto;
-  font-size: 30px;
+  margin-top: 20px;
+  font-size: 19pt;
   color: rgb(0, 0, 0);
   cursor: pointer;
-  padding: 20px;
+  padding: 15px;
+  width: 26px;
+  height: 26px;
+  text-align: center;
 }
 .leftbar-logout:hover {
   background-color: #89e70a;

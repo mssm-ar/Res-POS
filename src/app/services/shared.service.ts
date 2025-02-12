@@ -22,7 +22,16 @@ export class SharedService {
 
   // private apiUrl = "";  This is base url of api
 
-  //Here is display product method.
+  // BehaviorSubject to manage the active tab state
+  private activeTabSubject = new BehaviorSubject<string>("home");
+  activeTab$ = this.activeTabSubject.asObservable();
+
+  setActiveTab(tab: string): void {
+    this.activeTabSubject.next(tab);
+  }
+
+  // State management and API for home page.
+  // Here is display product method.
   // Fetch categories from the API to display categories on filtermenu
   private categoriesSubject = new BehaviorSubject<any[]>([]);
   categories$ = this.categoriesSubject.asObservable();

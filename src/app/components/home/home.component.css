@@ -10,7 +10,7 @@
   border-radius: 20px;
   display: flex;
   flex-wrap: wrap;
-  max-height: 748px;
+  max-height: 780px;
   overflow-y: auto;
 }
 .thumbnail-container::-webkit-scrollbar {

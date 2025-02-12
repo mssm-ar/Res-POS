@@ -3,14 +3,16 @@
     class="leftbar-menu"
     [class.leftbar-menu-active]="activeTab === 'home'"
     (click)="activeTab = 'home'"
+    (click)="onTabClick('home')"
   >
     <i class="fa-solid fa-house"></i>
   </div>
 
   <div
     class="leftbar-menu"
-    [class.leftbar-menu-active]="activeTab === 'shopping'"
-    (click)="activeTab = 'shopping'"
+    [class.leftbar-menu-active]="activeTab === 'delivery'"
+    (click)="activeTab = 'delivery'"
+    (click)="onTabClick('delivery')"
   >
     <i class="fa-solid fa-bag-shopping"></i>
   </div>
@@ -19,14 +21,16 @@
     class="leftbar-menu"
     [class.leftbar-menu-active]="activeTab === 'user'"
     (click)="activeTab = 'user'"
+    (click)="onTabClick('user')"
   >
     <i class="fas fa-user"></i>
   </div>
 
   <div
     class="leftbar-menu"
-    [class.leftbar-menu-active]="activeTab === 'dashboard'"
-    (click)="activeTab = 'dashboard'"
+    [class.leftbar-menu-active]="activeTab === 'table'"
+    (click)="activeTab = 'table'"
+    (click)="onTabClick('table')"
   >
     <i class="fas fa-th-large"></i>
   </div>
@@ -35,14 +39,16 @@
     class="leftbar-menu"
     [class.leftbar-menu-active]="activeTab === 'dollar'"
     (click)="activeTab = 'dollar'"
+    (click)="onTabClick('dollar')"
   >
     <i class="fa-solid fa-dollar-sign"></i>
   </div>
 
   <div
     class="leftbar-menu"
-    [class.leftbar-menu-active]="activeTab === 'clock'"
-    (click)="activeTab = 'clock'"
+    [class.leftbar-menu-active]="activeTab === 'cash'"
+    (click)="activeTab = 'cash'"
+    (click)="onTabClick('cash')"
   >
     <i class="fa-regular fa-clock"></i>
   </div>

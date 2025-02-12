@@ -9,7 +9,11 @@ import { SharedService } from "./services/shared.service";
 export class AppComponent {
   activeTab: string = "home";
 
-  constructor(private sharedService: SharedService) {}
+  constructor(private sharedService: SharedService) {
+    this.sharedService.activeTab$.subscribe((tab) => {
+      this.activeTab = tab;
+    });
+  }
 
   // Search event
   onSearch(keyword: string): void {

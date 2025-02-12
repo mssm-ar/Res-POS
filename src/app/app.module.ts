@@ -17,6 +17,8 @@ import { SelectuserComponent } from "./components/home/deliverform/selectuser/se
 import { SelectaddressComponent } from "./components/home/deliverform/selectaddress/selectaddress.component";
 import { ConfirmComponent } from "./components/home/deliverform/confirm/confirm.component";
 import { CashComponent } from "./components/cash/cash.component";
+import { DeliveryComponent } from './components/delivery/delivery.component';
+import { TableComponent } from './components/table/table.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +37,8 @@ import { CashComponent } from "./components/cash/cash.component";
     SelectaddressComponent,
     ConfirmComponent,
     CashComponent,
+    DeliveryComponent,
+    TableComponent,
   ],
   imports: [BrowserModule, HttpClientModule],
   providers: [],

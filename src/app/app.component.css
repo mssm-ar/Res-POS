@@ -9,7 +9,7 @@
   width: 100%;
 }
 .left-bar {
-  width: 100px;
+  width: 80px;
 }
 .right-bar {
   flex-grow: 1;
