@@ -30,6 +30,7 @@ export class DeliverformComponent implements OnInit {
   hasSelectedCustomer: boolean = false;
   hasSelectedPayment: boolean = false;
   selectedCustomerId: number | null = null;
+  selectedCustomer: any = null;
 
   promoCodeInput: string = "";
   promoCodes: any[] = [];
@@ -86,6 +87,7 @@ export class DeliverformComponent implements OnInit {
   // Fetch addresses for the selected customer
   onCustomerSelect(customerId: number): void {
     this.selectedCustomerId = customerId;
+    this.selectedCustomer = this.customers.find((c) => c.id === customerId);
     this.sharedService.fetchAddresses(customerId);
   }
 

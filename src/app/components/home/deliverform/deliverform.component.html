@@ -22,6 +22,7 @@
             class="delivermodal-select"
             (click)="onCustomerSelectBoxClick()"
             (change)="onCustomerSelect($event.target.value)"
+            [(ngModel)]="selectedCustomerId"
           >
             <option *ngIf="!hasSelectedCustomer" value="" disabled selected>
               Selecionar usuário
