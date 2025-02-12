@@ -42,7 +42,7 @@ export class OrderlistComponent {
     return product.complementos
       .map(
         (complemento: any) =>
-          `${complemento.nome} (R$${complemento.preco} × ${complemento.qtd})`
+          `-${complemento.nome} (R$${complemento.preco} × ${complemento.qtd})`
       )
       .join("<br>");
   }

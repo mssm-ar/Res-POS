@@ -30,6 +30,11 @@ export class AddmodalComponent implements OnInit {
   loadProductDetails(productId: number): void {
     this.sharedService.getProductDetails(productId).subscribe((data) => {
       this.product = data;
+      if (this.product.listaComplementos) {
+        this.product.listaComplementos.forEach((complemento: any) => {
+          complemento.qtd = 0;
+        });
+      }
       if (
         this.product &&
         this.product.listaTamanhos &&
@@ -94,6 +99,12 @@ export class AddmodalComponent implements OnInit {
         complementos: selectedComplementos,
       };
       this.sharedService.addToOrderList(newProduct);
+    }
+
+    if (this.product && this.product.listaComplementos) {
+      this.product.listaComplementos.forEach((complemento: any) => {
+        complemento.qtd = 0;
+      });
     }
     this.sharedService.clearThumbnail();
     this.ordernumber = 1;
