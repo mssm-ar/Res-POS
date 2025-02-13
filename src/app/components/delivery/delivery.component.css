@@ -19,6 +19,11 @@
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  max-height: 780px;
+  overflow-y: auto;
+}
+.delivery-content-container::-webkit-scrollbar {
+  display: none;
 }
 .delivery-content-container div {
   flex: 20%;

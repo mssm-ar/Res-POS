@@ -21,7 +21,10 @@
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  background-color: rgb(234, 0, 255);
-  color: white;
+  background-color: rgb(255, 251, 0);
+  color: rgb(102, 0, 0);
   font-weight: bold;
+}
+.delivery-cancelled-lists {
+  margin: 20px;
 }

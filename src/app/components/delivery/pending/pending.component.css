@@ -21,7 +21,10 @@
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  background-color: red;
+  background-color: rgb(174, 0, 255);
   color: white;
   font-weight: bold;
+}
+.delivery-pending-lists {
+  margin: 20px;
 }

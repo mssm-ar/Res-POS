@@ -10,6 +10,7 @@
 }
 .left-bar {
   width: 80px;
+  border-right: 2px solid #ddd;
 }
 .right-bar {
   flex-grow: 1;
