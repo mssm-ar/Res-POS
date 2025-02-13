@@ -25,6 +25,9 @@ import { SentComponent } from './components/delivery/sent/sent.component';
 import { CancelledComponent } from './components/delivery/cancelled/cancelled.component';
 import { DeliveredComponent } from './components/delivery/delivered/delivered.component';
 import { DeliverlistComponent } from './components/delivery/deliverlist/deliverlist.component';
+import { OrderdetailComponent } from './components/delivery/orderdetail/orderdetail.component';
+import { OrderidComponent } from './components/delivery/orderid/orderid.component';
+import { CompositionComponent } from './components/delivery/composition/composition.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +54,9 @@ import { DeliverlistComponent } from './components/delivery/deliverlist/deliverl
     CancelledComponent,
     DeliveredComponent,
     DeliverlistComponent,
+    OrderdetailComponent,
+    OrderidComponent,
+    CompositionComponent,
   ],
   imports: [BrowserModule, HttpClientModule],
   providers: [],

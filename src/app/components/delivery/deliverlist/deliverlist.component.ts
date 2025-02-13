@@ -1,10 +1,8 @@
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
 
 @Component({
-  selector: 'app-deliverlist',
-  templateUrl: './deliverlist.component.html',
-  styleUrls: ['./deliverlist.component.css']
+  selector: "app-deliverlist",
+  templateUrl: "./deliverlist.component.html",
+  styleUrls: ["./deliverlist.component.css"],
 })
-export class DeliverlistComponent {
-
-}
+export class DeliverlistComponent {}
