@@ -15,3 +15,11 @@
 .delivery-title-container i:hover {
   cursor: pointer;
 }
+.delivery-content-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.delivery-content-container div {
+  flex: 20%;
+}

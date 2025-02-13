@@ -93,9 +93,9 @@
   flex-direction: row;
 }
 .badge {
-  /* position: absolute; */
-  top: 22px;
-  right: 20px;
+  position: relative;
+  top: 2px;
+  right: -9px;
   background-color: #89e70a;
   color: rgb(0, 0, 0);
   font-size: 18pt;

@@ -23,6 +23,8 @@ import { PendingComponent } from './components/delivery/pending/pending.componen
 import { ConfirmedComponent } from './components/delivery/confirmed/confirmed.component';
 import { SentComponent } from './components/delivery/sent/sent.component';
 import { CancelledComponent } from './components/delivery/cancelled/cancelled.component';
+import { DeliveredComponent } from './components/delivery/delivered/delivered.component';
+import { DeliverlistComponent } from './components/delivery/deliverlist/deliverlist.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +49,8 @@ import { CancelledComponent } from './components/delivery/cancelled/cancelled.co
     ConfirmedComponent,
     SentComponent,
     CancelledComponent,
+    DeliveredComponent,
+    DeliverlistComponent,
   ],
   imports: [BrowserModule, HttpClientModule],
   providers: [],
