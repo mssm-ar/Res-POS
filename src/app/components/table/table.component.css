@@ -6,9 +6,7 @@
   flex: 6;
   flex-direction: column;
 }
-.table-right {
-  flex: 2;
-}
+
 .table-title-container {
   display: flex;
   padding: 10px;
@@ -65,4 +63,20 @@
   padding: 10px;
   border-radius: 8px;
   cursor: pointer;
+}
+.table-card-conatiner {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10px;
+  height: 690px;
+  overflow-y: auto;
+}
+.table-card-conatiner::-webkit-scrollbar {
+  display: none;
+}
+.table-card-conatiner app-selcard {
+  width: 20%;
+}
+.table-right {
+  flex: 2;
 }
