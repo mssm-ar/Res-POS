@@ -28,6 +28,9 @@ import { DeliverlistComponent } from './components/delivery/deliverlist/deliverl
 import { OrderdetailComponent } from './components/delivery/orderdetail/orderdetail.component';
 import { OrderidComponent } from './components/delivery/orderid/orderid.component';
 import { CompositionComponent } from './components/delivery/composition/composition.component';
+import { SelcardComponent } from './components/table/selcard/selcard.component';
+import { EntryComponent } from './components/cash/entry/entry.component';
+import { CashlistComponent } from './components/cash/cashlist/cashlist.component';
 
 @NgModule({
   declarations: [
@@ -57,6 +60,9 @@ import { CompositionComponent } from './components/delivery/composition/composit
     OrderdetailComponent,
     OrderidComponent,
     CompositionComponent,
+    SelcardComponent,
+    EntryComponent,
+    CashlistComponent,
   ],
   imports: [BrowserModule, HttpClientModule],
   providers: [],

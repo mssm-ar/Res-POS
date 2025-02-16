@@ -22,6 +22,7 @@ export class SharedService {
 
   // private apiUrl = "";  This is base url of api
 
+  // Leftbar
   // BehaviorSubject to manage the active tab state
   private activeTabSubject = new BehaviorSubject<string>("home");
   activeTab$ = this.activeTabSubject.asObservable();
@@ -216,11 +217,11 @@ export class SharedService {
     if (!promo) return 0;
 
     if (promo.code === "cupom12") {
-      return 0; // No discount
+      return 0;
     } else if (promo.code === "desconto20") {
-      return (promo.valorPorcentagem / 100) * totalPrice; // Percentage discount
+      return (promo.valorPorcentagem / 100) * totalPrice;
     } else if (promo.code === "desc5") {
-      return promo.valorPorcentagem; // Fixed discount
+      return promo.valorPorcentagem;
     }
 
     return 0;
@@ -241,4 +242,10 @@ export class SharedService {
       }
     );
   }
+
+  // State management and API for delivery page.
+
+  // State management and API for table page.
+
+  // State management and API for cash page.
 }
