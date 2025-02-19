@@ -11,6 +11,7 @@
 .left-bar {
   width: 80px;
   border-right: 2px solid #ddd;
+  position: relative;
 }
 .right-bar {
   flex-grow: 1;
@@ -22,5 +23,8 @@
     flex-direction: column;
     justify-content: center;
     width: 100%;
+  }
+  .left-bar {
+    border-right: none;
   }
 }

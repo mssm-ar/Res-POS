@@ -4,17 +4,19 @@
   flex-direction: column;
   align-items: center;
   width: 80px;
-  height: 856px;
+  height: calc(100vh-100px);
+  background-color: #ffffff;
 }
 
 .leftbar-menu {
-  font-size: 26px;
+  font-size: 20pt;
   color: rgb(0, 0, 0);
   cursor: pointer;
   padding: 15px;
   margin-top: 20px;
   text-align: center;
   width: 26px;
+  display: flex;
 }
 .leftbar-menu.leftbar-menu-active {
   background-color: #89e70a;
@@ -29,7 +31,7 @@
   text-align: center;
 }
 .profile {
-  margin-top: 240px;
+  margin-top: 220px;
   cursor: pointer;
 }
 .profile img {
@@ -37,29 +39,114 @@
   border-radius: 50%;
 }
 .leftbar-logout {
-  margin-top: 20px;
-  font-size: 19pt;
+  font-size: 20pt;
   color: rgb(0, 0, 0);
   cursor: pointer;
   padding: 15px;
-  width: 26px;
-  height: 26px;
+  margin-top: 20px;
   text-align: center;
+  width: 26px;
+  display: flex;
 }
 .leftbar-logout:hover {
   background-color: #89e70a;
   border-radius: 10px;
 }
+.leftbar-container.mobile {
+  position: absolute;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100vh;
+  overflow-x: hidden;
+  padding-top: 10px;
+}
+
+.leftbar-container.open {
+  width: 120px;
+}
+.leftbar-container a {
+  position: absolute;
+  top: -16px;
+  right: 0px;
+  padding: 8px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+}
+
+.leftbar-container a:hover {
+  color: #e40000;
+}
+.closebtn {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  right: 25px;
+  font-size: 24pt;
+}
+.openbtn {
+  font-size: 18pt;
+  cursor: pointer;
+  background-color: #89e70a;
+  color: black;
+  padding: 10px 15px;
+  border: none;
+  display: none;
+}
+
+.openbtn:hover {
+  background-color: #61aa02;
+}
 @media (max-width: 800px) {
   .leftbar-container {
-    font-size: 12px;
-    display: flex;
-    flex-direction: row;
-    margin-top: 10px;
-    align-items: center;
+    width: 0px;
+  }
+  .leftbar-menu {
+    margin-top: 2px;
+    width: 100%;
+    padding-left: 40px;
+  }
+  .leftbar-menu i {
+    margin-top: 0px;
+    font-size: 12pt;
+  }
+  .leftbar-menu span {
+    margin-left: 10px;
+    font-size: 12pt;
+  }
+  .leftbar-menu:hover {
+    border-radius: 0px;
+    text-align: center;
+    width: 100%;
+    padding-left: 40px;
+  }
+  .leftbar-menu.leftbar-menu-active {
+    border-radius: 0px;
+    text-align: center;
+    width: 100%;
+    padding-left: 40px;
+  }
+  .openbtn {
+    display: block;
   }
   .profile {
-    margin-top: 0px;
-    cursor: pointer;
+    margin-top: 260px;
+    width: 100%;
+    padding-left: 10px;
+  }
+  .profile img {
+    width: 36px;
+  }
+  .leftbar-logout {
+    font-size: 14pt;
+    width: 100%;
+    padding-left: 40px;
+  }
+  .leftbar-logout span {
+    margin-left: 10px;
+    font-size: 12pt;
   }
 }

@@ -1,4 +1,20 @@
-<div class="leftbar-container">
+<button class="openbtn" *ngIf="isMobile" (click)="toggleNav($)">☰</button>
+
+<div
+  id="mySidepanel"
+  class="leftbar-container"
+  [class.mobile]="isMobile"
+  [class.open]="isMenuOpen"
+  [class.desktop]="!isMobile"
+  [ngStyle]="{ top: menuPosition.top, left: menuPosition.left }"
+>
+  <a
+    href="javascript:void(0)"
+    *ngIf="isMobile"
+    class="closebtn"
+    (click)="toggleNav()"
+    >&times;</a
+  >
   <div
     class="leftbar-menu"
     [class.leftbar-menu-active]="activeTab === 'home'"
@@ -6,6 +22,7 @@
     (click)="onTabClick('home')"
   >
     <i class="fa-solid fa-house"></i>
+    <span *ngIf="isMobile">Home</span>
   </div>
 
   <div
@@ -15,6 +32,7 @@
     (click)="onTabClick('delivery')"
   >
     <i class="fa-solid fa-bag-shopping"></i>
+    <span *ngIf="isMobile">Entrega</span>
   </div>
 
   <div
@@ -24,6 +42,7 @@
     (click)="onTabClick('user')"
   >
     <i class="fas fa-user"></i>
+    <span *ngIf="isMobile">Usuário</span>
   </div>
 
   <div
@@ -33,6 +52,7 @@
     (click)="onTabClick('table')"
   >
     <i class="fas fa-th-large"></i>
+    <span *ngIf="isMobile">Tabela</span>
   </div>
 
   <div
@@ -42,6 +62,7 @@
     (click)="onTabClick('dollar')"
   >
     <i class="fa-solid fa-dollar-sign"></i>
+    <span *ngIf="isMobile">Dólar</span>
   </div>
 
   <div
@@ -51,6 +72,7 @@
     (click)="onTabClick('cash')"
   >
     <i class="fa-regular fa-clock"></i>
+    <span *ngIf="isMobile">Dinheiro</span>
   </div>
   <div class="profile">
     <img src="../../../assets/img/minion.png" />
@@ -58,5 +80,6 @@
 
   <div class="leftbar-logout">
     <i class="fa-solid fa-arrow-right-from-bracket"></i>
+    <span *ngIf="isMobile">Sair</span>
   </div>
 </div>
