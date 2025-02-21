@@ -101,11 +101,6 @@ export class AddmodalComponent implements OnInit {
       this.sharedService.addToOrderList(newProduct);
     }
 
-    if (this.product && this.product.listaComplementos) {
-      this.product.listaComplementos.forEach((complemento: any) => {
-        complemento.qtd = 0;
-      });
-    }
     this.sharedService.clearThumbnail();
     this.ordernumber = 1;
     this.ingredient_number = 1;

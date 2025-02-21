@@ -52,6 +52,8 @@ export class DeliverformComponent implements OnInit {
       this.serviceFee = data;
     });
 
+    // Fetch customers once on initialization
+    this.sharedService.fetchCustomers(0, 1);
     // Subscribe to customer data
     this.sharedService.customers$.subscribe((data) => {
       this.customers = data;
@@ -66,6 +68,7 @@ export class DeliverformComponent implements OnInit {
     this.promoCodes = this.sharedService.getPromoCodes();
 
     // Subscribe to payment method data
+    this.sharedService.fetchPaymentMethods(1);
     this.sharedService.paymentMethods$.subscribe((data) => {
       this.paymentMethods = data;
     });
@@ -73,7 +76,10 @@ export class DeliverformComponent implements OnInit {
 
   // customer select method
   onCustomerSelectBoxClick(): void {
-    this.sharedService.fetchCustomers(0, 1);
+    // this.sharedService.fetchCustomers(0, 1);
+    if (!this.customers.length) {
+      this.sharedService.fetchCustomers(0, 1);
+    }
     this.hasSelectedCustomer = true;
   }
 
@@ -114,7 +120,6 @@ export class DeliverformComponent implements OnInit {
 
   // payment select method
   onPaymentSelectBoxClick(): void {
-    this.sharedService.fetchPaymentMethods(1);
     this.hasSelectedPayment = true;
   }
 
