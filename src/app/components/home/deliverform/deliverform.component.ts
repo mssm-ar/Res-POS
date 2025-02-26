@@ -77,9 +77,6 @@ export class DeliverformComponent implements OnInit {
   // customer select method
   onCustomerSelectBoxClick(): void {
     // this.sharedService.fetchCustomers(0, 1);
-    if (!this.customers.length) {
-      this.sharedService.fetchCustomers(0, 1);
-    }
     this.hasSelectedCustomer = true;
   }
 
@@ -91,10 +88,13 @@ export class DeliverformComponent implements OnInit {
   }
 
   // Fetch addresses for the selected customer
-  onCustomerSelect(customerId: number): void {
-    this.selectedCustomerId = customerId;
-    this.selectedCustomer = this.customers.find((c) => c.id === customerId);
-    this.sharedService.fetchAddresses(customerId);
+  onCustomerSelect(customerId: string | number): void {
+    this.selectedCustomerId =
+      typeof customerId === "string" ? Number(customerId) : customerId;
+    this.selectedCustomer = this.customers.find(
+      (c) => c.id === this.selectedCustomerId
+    );
+    this.sharedService.fetchAddresses(this.selectedCustomerId);
   }
 
   // Fetch promo code

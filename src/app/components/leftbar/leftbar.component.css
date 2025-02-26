@@ -100,7 +100,7 @@
 .openbtn:hover {
   background-color: #61aa02;
 }
-@media (max-width: 800px) {
+@media (max-width: 768px) {
   .leftbar-container {
     width: 0px;
   }
