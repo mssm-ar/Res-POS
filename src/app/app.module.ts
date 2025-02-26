@@ -31,6 +31,7 @@ import { CompositionComponent } from './components/delivery/composition/composit
 import { SelcardComponent } from './components/table/selcard/selcard.component';
 import { EntryComponent } from './components/cash/entry/entry.component';
 import { CashlistComponent } from './components/cash/cashlist/cashlist.component';
+import { HomeMobileComponent } from './components/home-mobile/home-mobile/home-mobile.component';
 
 @NgModule({
   declarations: [
@@ -63,6 +64,7 @@ import { CashlistComponent } from './components/cash/cashlist/cashlist.component
     SelcardComponent,
     EntryComponent,
     CashlistComponent,
+    HomeMobileComponent,
   ],
   imports: [BrowserModule, HttpClientModule],
   providers: [],

@@ -5,7 +5,8 @@
     <app-leftbar class="left-bar"></app-leftbar>
     <div class="right-bar">
       <div *ngIf="activeTab === 'home'">
-        <app-home></app-home>
+        <app-home *ngIf="!isMobile"></app-home>
+        <app-home-mobile *ngIf="isMobile"></app-home-mobile>
       </div>
       <div *ngIf="activeTab === 'delivery'">
         <app-delivery></app-delivery>
