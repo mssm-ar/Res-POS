@@ -9,7 +9,8 @@
 .thumbnail-container {
   border-radius: 20px;
   display: flex;
-  overflow-x: auto;
+  flex-direction: column;
+  /* overflow-x: auto; */
   margin: 5px;
 }
 .thumbnail-container::-webkit-scrollbar {
@@ -28,8 +29,14 @@
   transform: translateY(0);
 }
 .thumbnail-container div {
-  font-size: 20pt;
-  margin: 10px;
+  font-size: 16pt;
+  font-weight: bold;
+  margin: 5px;
+}
+.recently-order-thumbnail {
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
 }
 .thumbnail-container-hor {
   display: flex;
@@ -37,7 +44,7 @@
   margin: 5px;
 }
 .thumbnail-container-hor-title {
-  font-size: 20pt;
+  font-size: 16pt;
   font-weight: bold;
   margin: 5px;
 }
