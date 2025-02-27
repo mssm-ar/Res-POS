@@ -8,9 +8,19 @@
         [product]="product"
       >
       </app-thumbnail>
+
       <app-addmodal [selectedBagId]="getActiveBag()?.id"></app-addmodal>
     </div>
+    <div class="thumbnail-container-hor">
+      <div class="thumbnail-container-hor-title">Most popular</div>
+      <app-thumbnail-mobile-hor
+        *ngFor="let product of filteredProducts"
+        [product]="product"
+      >
+      </app-thumbnail-mobile-hor>
+    </div>
   </div>
+
   <div class="bag-product-container">
     <div class="bag-container">
       <app-bag

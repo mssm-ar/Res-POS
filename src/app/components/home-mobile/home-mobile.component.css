@@ -9,9 +9,8 @@
 .thumbnail-container {
   border-radius: 20px;
   display: flex;
-  flex-wrap: wrap;
-  max-height: 780px;
-  overflow-y: auto;
+  overflow-x: auto;
+  margin: 5px;
 }
 .thumbnail-container::-webkit-scrollbar {
   display: none;
@@ -31,6 +30,16 @@
 .thumbnail-container div {
   font-size: 20pt;
   margin: 10px;
+}
+.thumbnail-container-hor {
+  display: flex;
+  flex-direction: column;
+  margin: 5px;
+}
+.thumbnail-container-hor-title {
+  font-size: 20pt;
+  font-weight: bold;
+  margin: 5px;
 }
 .bag-product-container {
   flex: 2;
