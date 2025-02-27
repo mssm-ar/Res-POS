@@ -144,8 +144,8 @@
 @media (max-width: 768px) {
   .search-bar {
     padding: 10px 30px;
-    max-width: 90%;
-    min-width: auto;
+    max-width: 70%;
+    min-width: 250px;
   }
   .search-bar i {
     padding-top: 6px;

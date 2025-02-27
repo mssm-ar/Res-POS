@@ -12,7 +12,9 @@
       </div>
       <div class="recently-order-comment">Alguma observação?</div>
 
-      <app-addmodal [selectedBagId]="getActiveBag()?.id"></app-addmodal>
+      <app-addmodal-mobile
+        [selectedBagId]="getActiveBag()?.id"
+      ></app-addmodal-mobile>
     </div>
     <app-filtermenu-mobile class="filtermenu-container"></app-filtermenu-mobile>
     <div class="thumbnail-container-hor">

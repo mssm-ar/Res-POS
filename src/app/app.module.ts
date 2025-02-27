@@ -32,6 +32,10 @@ import { SelcardComponent } from "./components/table/selcard/selcard.component";
 import { EntryComponent } from "./components/cash/entry/entry.component";
 import { CashlistComponent } from "./components/cash/cashlist/cashlist.component";
 import { HomeMobileComponent } from './components/home-mobile/home-mobile.component';
+import { ThumbnailMobileHorComponent } from './components/home-mobile/thumbnail-mobile-hor/thumbnail-mobile-hor.component';
+import { FiltermenuMobileComponent } from './components/home-mobile/filtermenu-mobile/filtermenu-mobile.component';
+import { ThumbnailRecentComponent } from './components/home-mobile/thumbnail-recent/thumbnail-recent.component';
+import { AddmodalMobileComponent } from './components/home-mobile/addmodal-mobile/addmodal-mobile.component';
 
 @NgModule({
   declarations: [
@@ -65,6 +69,10 @@ import { HomeMobileComponent } from './components/home-mobile/home-mobile.compon
     EntryComponent,
     CashlistComponent,
     HomeMobileComponent,
+    ThumbnailMobileHorComponent,
+    FiltermenuMobileComponent,
+    ThumbnailRecentComponent,
+    AddmodalMobileComponent,
   ],
   imports: [BrowserModule, HttpClientModule],
   providers: [],
