@@ -3,11 +3,12 @@
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
   border-radius: 12px;
+  padding: 10px;
   background-color: white;
   font-family: sans-serif;
   overflow: hidden;
-  display: flex;
-  height: 150px;
+  height: 200px;
+  width: 130px;
 }
 
 .thumbnail:hover {
@@ -16,24 +17,25 @@
   background-color: #d6fca5;
 }
 .thumbnail-image {
-  flex: 2;
-  margin: 10px;
+  width: 100%;
+  height: 70%;
   object-fit: contain;
 }
 .thumbnail-image img {
   border-radius: 10px;
   width: 100%;
   height: 100%;
+  /* object-fit: cover; */
 }
 
 .list-container {
-  margin: 10px;
-  flex: 3;
   padding: 2px;
   width: 97%;
+  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   position: relative;
+  /* width: 200px; */
 }
 .list-container:hover {
   animation: scroll-text 5s linear infinite;
@@ -47,31 +49,22 @@
   margin: 5px 0px;
 }
 .food-title-container {
-  white-space: nowrap;
   font-size: 14pt;
   width: 150px;
 }
-.food-content-container {
-  color: #4d4d4d;
-  font-size: 11pt;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
 .food-price-heart {
-  padding-top: 10px;
   display: flex;
+  justify-content: space-between;
 }
 .food-price-heart i {
   margin: 8px;
   color: #d44300;
+  font-size: 12pt;
 }
 .food-price-container {
-  color: #d44300;
   font-weight: bold;
   font-size: 16pt;
+  color: #d44300;
 }
 
 .out-of-stock {

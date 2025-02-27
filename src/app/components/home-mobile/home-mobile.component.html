@@ -4,18 +4,23 @@
       <div *ngIf="!filteredProducts.length">Não há produtos disponíveis.</div>
       <div class="recently-order-title">Pedidos recentes</div>
       <div class="recently-order-thumbnail">
-        <app-thumbnail
+        <app-thumbnail-recent
           *ngFor="let product of filteredProducts"
           [product]="product"
         >
-        </app-thumbnail>
+        </app-thumbnail-recent>
       </div>
+      <div class="recently-order-comment">Alguma observação?</div>
 
       <app-addmodal [selectedBagId]="getActiveBag()?.id"></app-addmodal>
     </div>
     <app-filtermenu-mobile class="filtermenu-container"></app-filtermenu-mobile>
     <div class="thumbnail-container-hor">
-      <div class="thumbnail-container-hor-title">Mais populares</div>
+      <div class="thumbnail-container-hor-tab">
+        <div class="thumbnail-container-hor-title">Mais populares</div>
+        <p class="thumbnail-container-hor-all">Ver tudo</p>
+      </div>
+
       <app-thumbnail-mobile-hor
         *ngFor="let product of filteredProducts"
         [product]="product"

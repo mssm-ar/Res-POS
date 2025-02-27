@@ -1,18 +1,13 @@
-import { Component, Input, OnInit } from "@angular/core";
+import { Component, Input } from "@angular/core";
 import { SharedService } from "app/services/shared.service";
 
 @Component({
-  selector: "app-thumbnail-mobile-hor",
-  templateUrl: "./thumbnail-mobile-hor.component.html",
-  styleUrls: ["./thumbnail-mobile-hor.component.css"],
+  selector: "app-thumbnail-recent",
+  templateUrl: "./thumbnail-recent.component.html",
+  styleUrls: ["./thumbnail-recent.component.css"],
 })
-export class ThumbnailMobileHorComponent {
+export class ThumbnailRecentComponent {
   products: any[] = [];
-  // isFavorite: boolean = false;
-
-  // toggleFavorite() {
-  //   this.isFavorite = !this.isFavorite;
-  // }
 
   @Input() product: any;
 
