@@ -30,6 +30,34 @@
   width: 26px;
   text-align: center;
 }
+.fa-house {
+  color: white;
+  -webkit-text-stroke: 2px black;
+}
+.fa-bag-shopping {
+  color: white;
+  -webkit-text-stroke: 2px black;
+}
+.fa-user {
+  color: white;
+  -webkit-text-stroke: 2px black;
+}
+.fa-th-large {
+  color: white;
+  -webkit-text-stroke: 2px black;
+}
+.fa-dollar-sign {
+  color: white;
+  -webkit-text-stroke: 2px black;
+}
+.fa-clock {
+  color: white;
+  -webkit-text-stroke: 2px black;
+}
+.fa-arrow-right-from-bracket {
+  color: white;
+  -webkit-text-stroke: 2px black;
+}
 .profile {
   margin-top: 220px;
   cursor: pointer;

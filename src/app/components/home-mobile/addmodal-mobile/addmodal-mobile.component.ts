@@ -17,6 +17,19 @@ export class AddmodalMobileComponent implements OnInit {
   selectedSizeValue: number = 0;
   productId: number = 1;
 
+  rating: number = 0;
+  stars: number[] = Array(5).fill(0);
+
+  setRating(value: number) {
+    this.rating = value;
+  }
+
+  isFavorite: boolean = false;
+
+  toggleFavorite() {
+    this.isFavorite = !this.isFavorite;
+  }
+
   ngOnInit(): void {
     this.sharedService.thumbnail$.subscribe((data) => {
       this.thumbnailData = data;
