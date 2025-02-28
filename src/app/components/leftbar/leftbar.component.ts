@@ -9,7 +9,7 @@ import { SharedService } from "../../services/shared.service";
 export class LeftbarComponent {
   constructor(private sharedService: SharedService, private eRef: ElementRef) {}
 
-  activeTab: string = "home";
+  activeTab: string = "Chats";
 
   // Method to handle tab clicks
   onTabClick(tab: string): void {

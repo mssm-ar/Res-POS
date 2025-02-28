@@ -1,5 +1,4 @@
 <button class="openbtn" *ngIf="isMobile" (click)="toggleNav($)">☰</button>
-
 <div
   id="mySidepanel"
   class="leftbar-container"
@@ -8,74 +7,137 @@
   [class.desktop]="!isMobile"
   [ngStyle]="{ top: menuPosition.top, left: menuPosition.left }"
 >
-  <a
-    href="javascript:void(0)"
-    *ngIf="isMobile"
-    class="closebtn"
-    (click)="toggleNav()"
-    >&times;</a
-  >
-  <div
-    class="leftbar-menu"
-    [class.leftbar-menu-active]="activeTab === 'home'"
-    (click)="activeTab = 'home'"
-    (click)="onTabClick('home')"
-  >
-    <i class="fa-solid fa-house"></i>
-    <span *ngIf="isMobile">Home</span>
+  <div class="profile-name" *ngIf="isMobile">
+    <i
+      class="fa-solid fa-angle-left"
+      href="javascript:void(0)"
+      (click)="toggleNav()"
+    ></i>
+    <p>Leandro Almeida</p>
+    <!-- <div class="profile">
+      <img src="../../../assets/img/minion.png" />
+    </div> -->
   </div>
 
   <div
     class="leftbar-menu"
-    [class.leftbar-menu-active]="activeTab === 'delivery'"
-    (click)="activeTab = 'delivery'"
-    (click)="onTabClick('delivery')"
+    [class.leftbar-menu-active]="activeTab === 'Chats'"
+    (click)="activeTab = 'Chats'"
+    (click)="onTabClick('Chats')"
   >
-    <i class="fa-solid fa-bag-shopping"></i>
-    <span *ngIf="isMobile">Entrega</span>
+    <i class="fa-regular fa-message"></i>
+    <span *ngIf="isMobile">Chats</span>
+    <span class="right-arrow"
+      ><i *ngIf="isMobile" class="fa-solid fa-angle-right"></i
+    ></span>
   </div>
-
   <div
     class="leftbar-menu"
-    [class.leftbar-menu-active]="activeTab === 'user'"
-    (click)="activeTab = 'user'"
-    (click)="onTabClick('user')"
+    [class.leftbar-menu-active]="activeTab === 'Pedidos'"
+    (click)="activeTab = 'Pedidos'"
+    (click)="onTabClick('Pedidos')"
   >
-    <i class="fas fa-user"></i>
-    <span *ngIf="isMobile">Usuário</span>
+    <i class="fa-solid fa-clipboard"></i>
+    <span *ngIf="isMobile">Pedidos</span>
+    <span class="right-arrow"
+      ><i *ngIf="isMobile" class="fa-solid fa-angle-right"></i
+    ></span>
   </div>
-
   <div
     class="leftbar-menu"
-    [class.leftbar-menu-active]="activeTab === 'table'"
-    (click)="activeTab = 'table'"
-    (click)="onTabClick('table')"
+    [class.leftbar-menu-active]="activeTab === 'Cupons'"
+    (click)="activeTab = 'Cupons'"
+    (click)="onTabClick('Cupons')"
   >
-    <i class="fas fa-th-large"></i>
-    <span *ngIf="isMobile">Tabela</span>
+    <i class="fa-solid fa-percent"></i>
+    <span *ngIf="isMobile">Meus Cupons</span>
+    <span class="right-arrow"
+      ><i *ngIf="isMobile" class="fa-solid fa-angle-right"></i
+    ></span>
   </div>
-
   <div
     class="leftbar-menu"
-    [class.leftbar-menu-active]="activeTab === 'dollar'"
-    (click)="activeTab = 'dollar'"
-    (click)="onTabClick('dollar')"
+    [class.leftbar-menu-active]="activeTab === 'Favoritos'"
+    (click)="activeTab = 'Favoritos'"
+    (click)="onTabClick('Favoritos')"
   >
-    <i class="fa-solid fa-dollar-sign"></i>
-    <span *ngIf="isMobile">Dólar</span>
+    <i class="fa-regular fa-heart"></i>
+    <span *ngIf="isMobile">Favoritos</span>
+    <span class="right-arrow"
+      ><i *ngIf="isMobile" class="fa-solid fa-angle-right"></i
+    ></span>
   </div>
-
   <div
     class="leftbar-menu"
-    [class.leftbar-menu-active]="activeTab === 'cash'"
-    (click)="activeTab = 'cash'"
-    (click)="onTabClick('cash')"
+    [class.leftbar-menu-active]="activeTab === 'Pagamento'"
+    (click)="activeTab = 'Pagamento'"
+    (click)="onTabClick('Pagamento')"
   >
-    <i class="fa-regular fa-clock"></i>
-    <span *ngIf="isMobile">Dinheiro</span>
+    <i class="fa-regular fa-credit-card"></i>
+    <span *ngIf="isMobile">Pagamento</span>
+    <span class="right-arrow"
+      ><i *ngIf="isMobile" class="fa-solid fa-angle-right"></i
+    ></span>
   </div>
-  <div class="profile">
-    <img src="../../../assets/img/minion.png" />
+  <div
+    class="leftbar-menu"
+    [class.leftbar-menu-active]="activeTab === 'Fidelidade'"
+    (click)="activeTab = 'Fidelidade'"
+    (click)="onTabClick('Fidelidade')"
+  >
+    <i class="fa-regular fa-star"></i>
+    <span *ngIf="isMobile">Fidelidade</span>
+    <span class="right-arrow"
+      ><i *ngIf="isMobile" class="fa-solid fa-angle-right"></i
+    ></span>
+  </div>
+  <div
+    class="leftbar-menu"
+    [class.leftbar-menu-active]="activeTab === 'Ajuda'"
+    (click)="activeTab = 'Ajuda'"
+    (click)="onTabClick('Ajuda')"
+  >
+    <i class="fa-solid fa-life-ring"></i>
+    <span *ngIf="isMobile">Ajuda</span>
+    <span class="right-arrow"
+      ><i *ngIf="isMobile" class="fa-solid fa-angle-right"></i
+    ></span>
+  </div>
+  <div
+    class="leftbar-menu"
+    [class.leftbar-menu-active]="activeTab === 'Ajuda'"
+    (click)="activeTab = 'Ajuda'"
+    (click)="onTabClick('Ajuda')"
+  >
+    <i class="fa-solid fa-life-ring"></i>
+    <span *ngIf="isMobile">Ajuda</span>
+    <span class="right-arrow"
+      ><i *ngIf="isMobile" class="fa-solid fa-angle-right"></i
+    ></span>
+  </div>
+  <div
+    class="leftbar-menu"
+    [class.leftbar-menu-active]="activeTab === 'Dados'"
+    (click)="activeTab = 'Dados'"
+    (click)="onTabClick('Dados')"
+  >
+    <i class="fa-solid fa-gear"></i>
+    <span *ngIf="isMobile">Meus Dados</span>
+    <span class="right-arrow"
+      ><i *ngIf="isMobile" class="fa-solid fa-angle-right"></i
+    ></span>
+  </div>
+  <div
+    class="leftbar-menu"
+    [class.leftbar-menu-active]="activeTab === 'Segurança'"
+    (click)="activeTab = 'Segurança'"
+    (click)="onTabClick('Segurança')"
+  >
+    <i class="fa-solid fa-shield"></i>
+    <span *ngIf="isMobile">Segurança</span>
+    <span class="right-arrow"
+      ><i *ngIf="isMobile" class="fa-solid fa-angle-right"></i
+    ></span>
   </div>
 
   <div class="leftbar-logout">
