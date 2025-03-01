@@ -25,13 +25,12 @@
   color: rgb(0, 0, 0);
   cursor: pointer;
   padding: 15px;
+  padding-left: 60px;
+  margin-bottom: 10px;
   text-align: center;
   display: flex;
-  display: flex;
   position: relative;
-  margin-top: 10px;
   width: 100%;
-  padding-left: 60px;
 }
 .leftbar-menu.leftbar-menu-active {
   background-color: #89e70a;
@@ -68,22 +67,33 @@
 .leftbar-alert {
   display: flex;
   background-color: #f7f7f7;
-  margin: 20px;
+  margin: 15px;
   font-size: 11pt;
+  position: relative;
 }
 .leftbar-alert p {
   margin: 10px 0px;
 }
 .leftbar-alert-img {
-  width: 20%;
+  flex: 1;
+  padding: 10px;
 }
 .leftbar-alert-img img {
   width: 100%;
   object-fit: contain;
 }
 .leftbar-alert-right {
+  flex: 5;
+  padding: 0px 10px;
+}
+.leftbar-alert-title {
+  font-weight: bold;
 }
 .leftbar-alert-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 12pt;
 }
 .leftbar-alert-confirm {
   color: #d44300;
@@ -129,18 +139,23 @@
   border-radius: 50%;
 }
 .leftbar-logout {
-  font-size: 20pt;
+  font-size: 14pt;
   color: rgb(0, 0, 0);
   cursor: pointer;
   padding: 15px;
-  margin-top: 20px;
   text-align: center;
   width: 26px;
   display: flex;
+  padding-left: 60px;
+  width: 100%;
 }
 .leftbar-logout:hover {
   background-color: #89e70a;
   border-radius: 10px;
+}
+.leftbar-logout span {
+  margin-left: 20px;
+  font-size: 12pt;
 }
 .leftbar-container.mobile {
   position: absolute;
@@ -166,8 +181,15 @@
 }
 .profile-name {
   display: flex;
-  position: relative;
+  display: flex;
+  position: sticky;
+  bottom: 0px;
+  z-index: 3;
+  position: sticky;
+  z-index: 3;
+  top: 0px;
   width: 100%;
+  background-color: white;
   border-bottom: 2px;
 }
 .profile-name i {
@@ -195,12 +217,41 @@
   font-size: 24pt;
 }
 
-.leftbar-logout {
-  font-size: 14pt;
-  width: 100%;
-  padding-left: 60px;
+.leftbar-app {
+  display: flex;
+  background-color: #f7f7f7;
+  margin: 15px;
+  font-size: 11pt;
+  position: relative;
 }
-.leftbar-logout span {
-  margin-left: 20px;
+.leftbar-app p {
+  margin: 10px 0px;
+}
+.leftbar-app-img {
+  flex: 1;
+  padding: 10px;
+}
+.leftbar-app-img img {
+  width: 100%;
+  object-fit: contain;
+}
+.leftbar-app-right {
+  flex: 5;
+  padding: 10px;
+}
+.leftbar-app-title {
+  font-weight: bold;
+}
+.leftbar-app-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
   font-size: 12pt;
+}
+.leftbar-app-confirm {
+  background-color: #d44300;
+  color: white;
+  border-radius: 4px;
+  border: none;
+  padding: 7px;
 }
