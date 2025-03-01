@@ -19,6 +19,18 @@
     </div> -->
   </div>
 
+  <!-- <div
+    ngIf="!isMobile"
+    class="leftbar-menu"
+    [class.leftbar-menu-active]="activeTab === 'Home'"
+    (click)="activeTab = 'Home'"
+    (click)="onTabClick('Home')"
+  >
+    <i class="fa-regular fa-message"></i>
+    <span class="right-arrow"
+      ><i *ngIf="isMobile" class="fa-solid fa-angle-right"></i
+    ></span>
+  </div> -->
   <div
     class="leftbar-menu"
     [class.leftbar-menu-active]="activeTab === 'Chats'"

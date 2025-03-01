@@ -1,0 +1,180 @@
+.leftbar-container {
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80px;
+  height: calc(100vh-120px);
+  background-color: #ffffff;
+}
+.openbtn {
+  font-size: 18pt;
+  cursor: pointer;
+  background-color: white;
+  color: black;
+  padding: 10px 15px;
+  border: none;
+  display: none;
+}
+
+.openbtn:hover {
+  background-color: #a3a3a3;
+}
+.leftbar-menu {
+  font-size: 20pt;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  padding: 15px;
+  text-align: center;
+  display: flex;
+  display: flex;
+  position: relative;
+  margin-top: 20px;
+  width: 26px;
+  padding-left: 20px;
+}
+.leftbar-menu.leftbar-menu-active {
+  background-color: #89e70a;
+  border-radius: 10px;
+  width: 26px;
+  text-align: center;
+}
+.leftbar-menu:hover {
+  background-color: #89e70a;
+  border-radius: 10px;
+  width: 26px;
+  text-align: center;
+}
+.leftbar-menu i {
+  margin-top: 0px;
+  font-size: 18pt;
+}
+.leftbar-menu span {
+  margin-left: 20px;
+  font-size: 12pt;
+}
+.right-arrow {
+  position: absolute;
+  right: 60px;
+}
+.fa-house {
+  color: white;
+  -webkit-text-stroke: 2px black;
+}
+.fa-bag-shopping {
+  color: white;
+  -webkit-text-stroke: 2px black;
+}
+.fa-user {
+  color: white;
+  -webkit-text-stroke: 2px black;
+}
+.fa-th-large {
+  color: white;
+  -webkit-text-stroke: 2px black;
+}
+.fa-dollar-sign {
+  color: white;
+  -webkit-text-stroke: 2px black;
+}
+.fa-clock {
+  color: white;
+  -webkit-text-stroke: 2px black;
+}
+.fa-arrow-right-from-bracket {
+  color: white;
+  -webkit-text-stroke: 2px black;
+}
+.profile {
+  margin-top: 220px;
+  cursor: pointer;
+}
+.profile img {
+  width: 45px;
+  border-radius: 50%;
+}
+.leftbar-logout {
+  font-size: 20pt;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  padding: 15px;
+  margin-top: 20px;
+  text-align: center;
+  width: 26px;
+  display: flex;
+}
+.leftbar-logout:hover {
+  background-color: #89e70a;
+  border-radius: 10px;
+}
+.leftbar-container.mobile {
+  position: absolute;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100vh;
+  overflow-x: hidden;
+  padding-top: 10px;
+}
+
+.leftbar-container.open {
+  width: 120px;
+  position: fixed;
+}
+.profile {
+  margin-top: 260px;
+  width: 100%;
+  padding-left: 30px;
+}
+.profile img {
+  width: 36px;
+}
+.profile-name {
+  display: flex;
+  position: relative;
+  width: 100%;
+  border-bottom: 2px;
+}
+.profile-name i {
+  position: absolute;
+  top: -16px;
+  right: 0px;
+  padding: 8px;
+  text-decoration: none;
+  display: block;
+  font-size: 18pt;
+  color: rgb(221, 25, 11);
+}
+.profile-name p {
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 15pt;
+}
+
+.leftbar-container a:hover {
+  color: #e40000;
+}
+.closebtn {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  right: 25px;
+  font-size: 24pt;
+}
+
+.leftbar-logout {
+  font-size: 20pt;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  padding: 15px;
+  margin-top: 20px;
+  text-align: center;
+  width: 26px;
+  display: flex;
+}
+.leftbar-logout span {
+  margin-left: 10px;
+  font-size: 12pt;
+}

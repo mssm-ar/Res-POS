@@ -31,11 +31,13 @@ import { CompositionComponent } from "./components/delivery/composition/composit
 import { SelcardComponent } from "./components/table/selcard/selcard.component";
 import { EntryComponent } from "./components/cash/entry/entry.component";
 import { CashlistComponent } from "./components/cash/cashlist/cashlist.component";
-import { HomeMobileComponent } from './components/home-mobile/home-mobile.component';
-import { ThumbnailMobileHorComponent } from './components/home-mobile/thumbnail-mobile-hor/thumbnail-mobile-hor.component';
-import { FiltermenuMobileComponent } from './components/home-mobile/filtermenu-mobile/filtermenu-mobile.component';
-import { ThumbnailRecentComponent } from './components/home-mobile/thumbnail-recent/thumbnail-recent.component';
-import { AddmodalMobileComponent } from './components/home-mobile/addmodal-mobile/addmodal-mobile.component';
+import { HomeMobileComponent } from "./components/home-mobile/home-mobile.component";
+import { ThumbnailMobileHorComponent } from "./components/home-mobile/thumbnail-mobile-hor/thumbnail-mobile-hor.component";
+import { FiltermenuMobileComponent } from "./components/home-mobile/filtermenu-mobile/filtermenu-mobile.component";
+import { ThumbnailRecentComponent } from "./components/home-mobile/thumbnail-recent/thumbnail-recent.component";
+import { AddmodalMobileComponent } from "./components/home-mobile/addmodal-mobile/addmodal-mobile.component";
+
+import { LeftbarDesktopComponent } from "./components/leftbar-desktop/leftbar-desktop.component";
 
 @NgModule({
   declarations: [
@@ -73,6 +75,7 @@ import { AddmodalMobileComponent } from './components/home-mobile/addmodal-mobil
     FiltermenuMobileComponent,
     ThumbnailRecentComponent,
     AddmodalMobileComponent,
+    LeftbarDesktopComponent,
   ],
   imports: [BrowserModule, HttpClientModule],
   providers: [],
