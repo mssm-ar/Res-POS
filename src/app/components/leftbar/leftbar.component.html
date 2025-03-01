@@ -18,19 +18,21 @@
       <img src="../../../assets/img/minion.png" />
     </div> -->
   </div>
-
-  <!-- <div
-    ngIf="!isMobile"
-    class="leftbar-menu"
-    [class.leftbar-menu-active]="activeTab === 'Home'"
-    (click)="activeTab = 'Home'"
-    (click)="onTabClick('Home')"
-  >
-    <i class="fa-regular fa-message"></i>
-    <span class="right-arrow"
-      ><i *ngIf="isMobile" class="fa-solid fa-angle-right"></i
-    ></span>
-  </div> -->
+  <div class="leftbar-alert">
+    <div class="leftbar-alert-img">
+      <img src="../../../assets/img/alert.png" />
+    </div>
+    <div class="leftbar-alert-right">
+      <p class="leftbar-alert-title">Active as notification</p>
+      <p class="leftbar-alert-text">
+        Acompanhe de perto o andamento dos seus pedidos, promogöes e novidades.
+      </p>
+      <p class="leftbar-alert-confirm">Activar</p>
+    </div>
+    <div class="leftbar-alert-close">
+      <i class="fa-solid fa-xmark"></i>
+    </div>
+  </div>
   <div
     class="leftbar-menu"
     [class.leftbar-menu-active]="activeTab === 'Chats'"

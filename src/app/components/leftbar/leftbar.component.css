@@ -65,6 +65,29 @@
   width: 100%;
   padding-left: 60px;
 }
+.leftbar-alert {
+  display: flex;
+  background-color: #f7f7f7;
+  margin: 20px;
+  font-size: 11pt;
+}
+.leftbar-alert p {
+  margin: 10px 0px;
+}
+.leftbar-alert-img {
+  width: 20%;
+}
+.leftbar-alert-img img {
+  width: 100%;
+  object-fit: contain;
+}
+.leftbar-alert-right {
+}
+.leftbar-alert-close {
+}
+.leftbar-alert-confirm {
+  color: #d44300;
+}
 .right-arrow {
   position: absolute;
   right: 60px;
