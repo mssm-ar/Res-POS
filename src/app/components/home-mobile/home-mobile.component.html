@@ -2,6 +2,9 @@
   <div class="filter-thumbnail-container">
     <div class="thumbnail-container">
       <div *ngIf="!filteredProducts.length">Não há produtos disponíveis.</div>
+      <div>
+        <app-banner></app-banner>
+      </div>
       <div class="recently-order-title">Pedidos recentes</div>
       <div class="recently-order-thumbnail">
         <app-thumbnail-recent
@@ -31,7 +34,7 @@
     </div>
   </div>
 
-  <div class="bag-product-container">
+  <!-- <div class="bag-product-container">
     <div class="bag-container">
       <app-bag
         *ngFor="let bag of bags; let i = index"
@@ -50,5 +53,5 @@
         [orderList]="getActiveBag()?.orderList"
       ></app-product>
     </div>
-  </div>
+  </div> -->
 </div>

@@ -38,6 +38,7 @@ import { ThumbnailRecentComponent } from "./components/home-mobile/thumbnail-rec
 import { AddmodalMobileComponent } from "./components/home-mobile/addmodal-mobile/addmodal-mobile.component";
 
 import { LeftbarDesktopComponent } from "./components/leftbar-desktop/leftbar-desktop.component";
+import { BannerComponent } from './components/home-mobile/banner/banner.component';
 
 @NgModule({
   declarations: [
@@ -76,6 +77,7 @@ import { LeftbarDesktopComponent } from "./components/leftbar-desktop/leftbar-de
     ThumbnailRecentComponent,
     AddmodalMobileComponent,
     LeftbarDesktopComponent,
+    BannerComponent,
   ],
   imports: [BrowserModule, HttpClientModule],
   providers: [],

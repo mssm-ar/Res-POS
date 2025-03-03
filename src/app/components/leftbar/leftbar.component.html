@@ -119,18 +119,6 @@
   </div>
   <div
     class="leftbar-menu"
-    [class.leftbar-menu-active]="activeTab === 'Ajuda'"
-    (click)="activeTab = 'Ajuda'"
-    (click)="onTabClick('Ajuda')"
-  >
-    <i class="fa-solid fa-life-ring"></i>
-    <span *ngIf="isMobile">Ajuda</span>
-    <span class="right-arrow"
-      ><i *ngIf="isMobile" class="fa-solid fa-angle-right"></i
-    ></span>
-  </div>
-  <div
-    class="leftbar-menu"
     [class.leftbar-menu-active]="activeTab === 'Dados'"
     (click)="activeTab = 'Dados'"
     (click)="onTabClick('Dados')"

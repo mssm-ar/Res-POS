@@ -39,6 +39,11 @@ export class SharedService {
     return this.isMobileSubject.getValue();
   }
 
+  getBanners(): Observable<any[]> {
+    const apiUrl = `/api/Promotion/GetBanners?tenantId=1`;
+    return this.http.get<any[]>(apiUrl);
+  }
+
   // private apiUrl = "";  This is base url of api
 
   // Leftbar
