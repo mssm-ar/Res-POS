@@ -36,6 +36,7 @@
 }
 .recently-order-thumbnail {
   display: flex;
+
   flex-direction: row;
   overflow-x: auto;
 }
@@ -43,7 +44,8 @@
   display: none;
 }
 .recently-order-comment {
-  font-size: 11pt;
+  font-size: 10pt;
+  font-weight: 100;
   text-align: right;
 }
 
